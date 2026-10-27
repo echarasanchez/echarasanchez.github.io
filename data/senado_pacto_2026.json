@@ -1,0 +1,15 @@
+{
+ "_que": "Pacto PP-Vox para el Senado del 29-N-2026, anunciado el 26-oct-2026. Lo usa model.senate().",
+ "_fuentes": [
+  "Comparecencia del secretario general del PP, 26-oct-2026 (audio transcrito): PP con tres candidatos y Vox con uno en las 14 provincias; el votante de Vox marca al suyo y a dos del PP",
+  "Vox en X, 26-oct-2026",
+  "elDiario.es, 26-oct-2026: https://www.eldiario.es/politica/vox-retira-seis-provincias-senado-presenta-candidato-14-favorecer-pp_1_13615577.html",
+  "The Objective, 26-oct-2026: https://theobjective.com/espana/politica/2026-10-26/acuerdo-derecha-senado-vox-pp/",
+  "Demócrata, 26-oct-2026: https://www.democrata.es/politica/ampliacion-feijoo-y-abascal-sellan-un-acuerdo-en-el-senado-vox-se-retira-en-seis-provincias-y-el-pp-en-tres/"
+ ],
+ "_supuestos": "Sin Vox: sus votantes votan a la lista del PP (que lleva un independiente propuesto por Vox). Un candidato de Vox: los votantes del PP marcan a sus tres candidatos y los de Vox, al suyo y a dos del PP. Sin PP: se calcula a dónde le conviene ir a su voto. Pendiente de comprobar con las candidaturas del BOE.",
+ "sin_vox": ["Cádiz", "Valencia", "Castellón", "Las Palmas", "Santa Cruz de Tenerife", "Baleares"],
+ "vox_un_candidato": ["Sevilla", "Huelva", "Asturias", "Badajoz", "Álava", "Navarra", "Cáceres", "Huesca", "Zaragoza",
+                      "Alicante", "Granada", "Cuenca", "Pontevedra", "Jaén"],
+ "sin_pp": ["Gipuzkoa", "Girona", "Tarragona"]
+}

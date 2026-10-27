@@ -1,0 +1,74 @@
+{
+ "A_media_privadas": {
+  "escanos_medios": {
+   "PP": 132.9,
+   "PSOE": 106.6,
+   "VOX": 65.7,
+   "FA": 10.4,
+   "POD": 3.4,
+   "ERC": 11.2,
+   "JUNTS": 3.8,
+   "BILDU": 6.7,
+   "PNV": 5.7,
+   "BNG": 1.5,
+   "CC": 1.1,
+   "UPN": 1.0
+  },
+  "bloque_S_media": 145.6,
+  "bloque_S_IC90": [
+   126,
+   166
+  ],
+  "P_bloque_S_ge_176": 0.009,
+  "P_PP_VOX_UPN_ge_176": 0.977,
+  "P_PP_VOX_UPN_JUNTS_ge_176": 0.987
+ },
+ "B_CIS": {
+  "escanos_medios": {
+   "PP": 91.4,
+   "PSOE": 152.4,
+   "VOX": 61.5,
+   "FA": 9.6,
+   "POD": 4.4,
+   "ERC": 11.2,
+   "JUNTS": 3.8,
+   "BILDU": 6.4,
+   "PNV": 5.4,
+   "BNG": 1.7,
+   "CC": 1.2,
+   "UPN": 1.0
+  },
+  "bloque_S_media": 191.2,
+  "bloque_S_IC90": [
+   169,
+   215
+  ],
+  "P_bloque_S_ge_176": 0.864,
+  "P_PP_VOX_UPN_ge_176": 0.06,
+  "P_PP_VOX_UPN_JUNTS_ge_176": 0.105
+ },
+ "C_fallo_como_2023": {
+  "escanos_medios": {
+   "PP": 124.3,
+   "PSOE": 121.0,
+   "VOX": 61.8,
+   "FA": 10.1,
+   "POD": 3.3,
+   "ERC": 11.2,
+   "JUNTS": 3.8,
+   "BILDU": 6.3,
+   "PNV": 5.1,
+   "BNG": 1.1,
+   "CC": 1.0,
+   "UPN": 1.0
+  },
+  "bloque_S_media": 158.1,
+  "bloque_S_IC90": [
+   138,
+   179
+  ],
+  "P_bloque_S_ge_176": 0.086,
+  "P_PP_VOX_UPN_ge_176": 0.835,
+  "P_PP_VOX_UPN_JUNTS_ge_176": 0.893
+ }
+}

@@ -1,0 +1,216 @@
+{
+ "real": {
+  "bloque": 171,
+  "PP_Vox_UPN": 171
+ },
+ "escenarios": [
+  {
+   "fraccion": 0.05,
+   "bloque": 168,
+   "PP_Vox_UPN": 174,
+   "provincias": [
+    {
+     "provincia": "Albacete",
+     "movimiento": "PP->VOX",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "VOX"
+     ]
+    },
+    {
+     "provincia": "Murcia",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Sevilla",
+     "movimiento": "PP->VOX",
+     "pierde": [
+      "SUMAR"
+     ],
+     "gana": [
+      "VOX"
+     ]
+    }
+   ]
+  },
+  {
+   "fraccion": 0.1,
+   "bloque": 168,
+   "PP_Vox_UPN": 174,
+   "provincias": [
+    {
+     "provincia": "Albacete",
+     "movimiento": "PP->VOX",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "VOX"
+     ]
+    },
+    {
+     "provincia": "Murcia",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Sevilla",
+     "movimiento": "PP->VOX",
+     "pierde": [
+      "SUMAR"
+     ],
+     "gana": [
+      "VOX"
+     ]
+    }
+   ]
+  },
+  {
+   "fraccion": 0.2,
+   "bloque": 167,
+   "PP_Vox_UPN": 175,
+   "provincias": [
+    {
+     "provincia": "La Rioja",
+     "movimiento": "PP->VOX",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "VOX"
+     ]
+    },
+    {
+     "provincia": "Murcia",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Pontevedra",
+     "movimiento": "PP->VOX",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "VOX"
+     ]
+    },
+    {
+     "provincia": "Sevilla",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "SUMAR"
+     ],
+     "gana": [
+      "PP"
+     ]
+    }
+   ]
+  },
+  {
+   "fraccion": 1.0,
+   "bloque": 163,
+   "PP_Vox_UPN": 179,
+   "provincias": [
+    {
+     "provincia": "Albacete",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Baleares",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Burgos",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "La Rioja",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Lleida",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Murcia",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Pontevedra",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "PSOE"
+     ],
+     "gana": [
+      "PP"
+     ]
+    },
+    {
+     "provincia": "Sevilla",
+     "movimiento": "VOX->PP",
+     "pierde": [
+      "SUMAR"
+     ],
+     "gana": [
+      "PP"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+<title>Quiénes somos · Echar a Sánchez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Colores y fuentes: los mismos del informe (se copian de report_template.html al generar la página). */
+/*__TOKENS__*/
+/*__TOPBAR_CSS__*/
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+a{color:var(--accent)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--inv)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:32px;align-items:center;padding-block:44px 36px}
+.hero h1{font-size:clamp(30px,5vw,46px);font-weight:800;font-stretch:85%;letter-spacing:-.01em;margin:10px 0 16px}
+.hero .lede{font-size:18px;line-height:1.55;color:var(--ink)}
+.hero .big-logo{width:100%;max-width:220px;height:auto;justify-self:end}
+.big-logo .lg-bg{fill:var(--accent-soft)} .big-logo .lg-face{fill:var(--ink)} .big-logo .lg-pin{fill:var(--inv)}
+.big-logo .lg-wire{stroke:var(--ink)} .big-logo .lg-coil{fill:var(--accent-soft);stroke:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:20px;display:grid;gap:8px;align-content:start}
+.card h2{font-size:22px;font-weight:800;font-stretch:88%}
+.card p{color:var(--muted)}
+.card.ink{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.card.ink p{color:var(--bg);opacity:.85}
+.nots{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
+.nots li{display:flex;gap:10px;color:var(--muted)}
+.nots li::before{content:"✕";color:var(--inv);font-family:var(--mono);font-weight:600}
+.close{margin-top:40px;border-top:1px solid var(--rule);padding-top:28px;display:grid;gap:10px}
+.close p{font-family:var(--display);font-size:clamp(22px,3.2vw,30px);font-weight:750;font-stretch:90%;max-width:36ch;line-height:1.2}
+.close span{font-size:14px;color:var(--muted)}
+@media (max-width:700px){
+  .hero{grid-template-columns:minmax(0,1fr);padding-block:28px}
+  .hero .big-logo{max-width:120px;justify-self:start;grid-row:1}
+}
+</style>
+
+/*__TOPBAR__*/
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Sociedad civil · sin carné</p>
+      <h1>Quiénes somos</h1>
+      <p class="lede">Gente corriente. Con nómina o con facturas, con hipoteca o con alquiler, y con una declaración de la renta que cada año sube sola aunque nadie la haya votado. No somos un partido, ni su fundación, ni su sindicato, ni su tertuliano de guardia. Nadie nos paga por esto y no le cobramos nada a nadie.</p>
+    </div>
+    /*__LOGO__*/
+  </header>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Pagamos, luego opinamos.</h2>
+      <p>Trabajamos y pagamos nuestros impuestos. Ese es todo nuestro cargo público. No tenemos más credencial que esa ni la necesitamos: el voto de quien madruga vale exactamente lo mismo que el de quien reparte los ministerios.</p>
+    </section>
+    <section class="card">
+      <h2>Sin carné, sin siglas.</h2>
+      <p>Ninguno de nosotros tiene carné de partido ni de sindicato, ni responde a ninguna sigla. Tampoco a las que esta web recomienda votar. Si un partido nos llama mañana, la respuesta es la misma que hoy: no.</p>
+    </section>
+    <section class="card ink">
+      <h2>Con la nariz tapada.</h2>
+      <p>Por eso el logo es una pinza. No te pedimos que te guste a quien votas: a nosotros tampoco nos gusta del todo. Te pedimos que tu voto cuente. Según la provincia, lo que más resta al bloque de investidura es el PP, Vox o Junts, y lo decimos sin entusiasmo por ninguno. El entusiasmo lo guardamos para el día después.</p>
+    </section>
+    <section class="card">
+      <h2>¿Por qué sin nombres?</h2>
+      <p>Porque un argumento no debería depender de quién lo firma. Aquí no hay que creerse a nadie: lo que se puede comprobar es el método. Las encuestas están citadas, el reparto es D'Hondt y cada una de las razones enlaza a su sentencia, su auto o su noticia. Si nos equivocamos, que lo demuestren los números. Es más fácil que demostrar que no tenemos razón.</p>
+    </section>
+    <section class="card">
+      <h2>Lo que no hacemos.</h2>
+      <ul class="nots">
+        <li>No hay publicidad pagada ni la habrá.</li>
+        <li>No pedimos donaciones ni vendemos nada.</li>
+        <li>No usamos cookies ni guardamos qué provincia consultas.</li>
+        <li>No pedimos tu correo, ni tu voto por escrito, ni tu nombre.</li>
+        <li>No cobramos de ningún partido, fundación ni Administración.</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Cómo comprobarnos.</h2>
+      <p>El modelo se probó con las elecciones de 2023: asignó bien 324 de 350 escaños partiendo de las encuestas de entonces, y lo contamos en la pestaña <a href="./#metodo">Método</a>, con lo que falló. El código y los datos están <a href="https://github.com/echarasanchez/echarasanchez.github.io" rel="noopener">en abierto en GitHub</a>, para que cualquiera pueda rehacer las cuentas y llegar a otra conclusión si los datos se la dan.</p>
+    </section>
+  </div>
+
+  <div class="close">
+    <p>Si todo esto sirve para algo, nunca sabrás nuestros nombres. Sabrás que en tu provincia faltaban unos cientos de votos y que uno lo pusiste tú.</p>
+    <span><a href="./#provincia">Ver qué votar en tu provincia</a> · <a href="razones.html">Razones para echar a Sánchez</a></span>
+  </div>
+</div>

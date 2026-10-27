@@ -1,0 +1,642 @@
+<title>Echar a Sánchez · Qué votar en tu provincia el 29-N</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: una columna de informe (máx. 1080px). El Congreso va sobre "papeleta blanca"; el Senado, sobre "papeleta sepia", como las papeletas reales. */
+:root{
+  --bg:#f6f7f9; --paper:#ffffff; --ink:#14202e; --muted:#5b6674; --rule:#dfe3e8;
+  --accent:#1f4f8a; --accent-soft:#e6eef8;
+  --sepia:#f3e7cf; --sepia-ink:#5a4321; --sepia-rule:#e2d1ad; --sepia-soft:#faf4e8;
+  --good:#1e7a4c; --warn:#a86a00; --none:#8a939e;
+  --pp:#2a6fcb; --vox:#5e9e2e; --junts:#15a197; --indif:#d3d9e0; --flash:#fff3c4;
+  --inv:#c23b3b; --inv-soft:#f8e1df; --der:#1f4f8a; --der-soft:#dde8f5; --oth:#c5ccd4;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --paper:#161d27; --ink:#e7ecf2; --muted:#9aa6b4; --rule:#2a3442;
+  --accent:#8bb6ec; --accent-soft:#1c2b40;
+  --sepia:#2a2418; --sepia-ink:#e6cf9f; --sepia-rule:#4a3d26; --sepia-soft:#342c1e;
+  --good:#5cc490; --warn:#e3a94a; --none:#7d8794;
+  --pp:#4f8fe6; --vox:#7dbb4c; --junts:#2fc2b6; --indif:#3a4554; --flash:#3b3420;
+  --inv:#e06a62; --inv-soft:#3d2224; --der:#8bb6ec; --der-soft:#1c2b40; --oth:#4a5563; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --paper:#161d27; --ink:#e7ecf2; --muted:#9aa6b4; --rule:#2a3442;
+  --accent:#8bb6ec; --accent-soft:#1c2b40;
+  --sepia:#2a2418; --sepia-ink:#e6cf9f; --sepia-rule:#4a3d26; --sepia-soft:#342c1e;
+  --good:#5cc490; --warn:#e3a94a; --none:#7d8794;
+  --pp:#4f8fe6; --vox:#7dbb4c; --junts:#2fc2b6; --indif:#3a4554; --flash:#3b3420;
+  --inv:#e06a62; --inv-soft:#3d2224; --der:#8bb6ec; --der-soft:#1c2b40; --oth:#4a5563; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px;display:grid;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(30px,5vw,46px);font-weight:800;font-stretch:85%;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:750;font-stretch:90%}
+h3{font-size:16px;font-weight:700}
+p{margin:0;max-width:68ch}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:grid;gap:14px}
+.lede{font-size:18px;line-height:1.55;color:var(--ink);max-width:none}  /* texto de entrada bajo cada título: igual en las tres páginas */
+.muted{color:var(--muted)}
+section{display:grid;gap:16px}
+.scen{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:16px;display:grid;gap:10px;align-content:start}
+.big{font-family:var(--display);font-size:34px;font-weight:800;font-stretch:80%;font-variant-numeric:tabular-nums;line-height:1}
+.bar{height:10px;border-radius:2px;background:var(--rule);position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--accent)}
+.bar b{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);left:50.3%}
+.kv{display:grid;grid-template-columns:1fr auto;gap:2px 12px;font-size:13px}
+.kv span:nth-child(even){font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.filters button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#q,#qs{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink);min-width:0;flex:1 1 180px;max-width:260px}
+.tablebox{overflow-x:auto;background:var(--paper);border:1px solid var(--rule);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--paper);position:sticky;top:0}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+.rec{font-family:var(--display);font-weight:750;font-size:16px;font-stretch:90%}
+#tb td.c-prov strong,#tb td.c-rec .rec,#sb td.c-prov strong,#sb .rec{font-family:var(--display);font-size:18px;font-weight:800;font-stretch:88%;line-height:1.15}  /* Congreso: provincia y partido, mismo tamaño */
+.pill{display:inline-block;font-size:11px;font-family:var(--mono);padding:1px 7px;border-radius:3px;border:1px solid currentColor;margin-top:4px;white-space:nowrap}
+.pill.alto{color:var(--good)} .pill.medio{color:var(--accent)} .pill.bajo{color:var(--warn)} .pill.indif{color:var(--none)}
+.seats{display:flex;flex-wrap:wrap;gap:3px;max-width:260px}
+.seat{font-family:var(--mono);font-size:11px;padding:1px 5px;border-radius:2px;border:1px solid var(--rule);white-space:nowrap}
+.seat.s{background:var(--inv-soft);border-color:var(--inv-soft)}
+.seat.d{background:var(--der-soft);border-color:var(--der-soft)}
+.blocs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.blocs>div{display:grid;gap:2px}
+.blocs>div:last-child{text-align:right}
+.blocs .big{color:var(--inv)} .blocs>div:last-child .big{color:var(--der)}
+.blocs .lab{font-size:12.5px;font-weight:600}
+.sbar{display:flex;height:14px;border-radius:3px;position:relative;background:var(--oth)}
+.sbar i:first-child{border-radius:3px 0 0 3px} .sbar i:last-of-type{border-radius:0 3px 3px 0}
+.sbar i{display:block;height:100%}
+.sbar .i{background:var(--inv)} .sbar .o{background:var(--oth);flex:1} .sbar .d{background:var(--der)}
+.sbar b{position:absolute;top:-6px;bottom:-6px;width:4px;margin-left:-2px;left:50%;background:var(--ink);border-radius:2px;box-shadow:0 0 0 2px var(--paper)}  /* mayoría: 176 */
+.sbarlab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.why{color:var(--muted);font-size:13px;max-width:44ch}
+.meter{display:flex;align-items:center;gap:8px}
+.meter .bar{width:70px;flex:none}
+.senado{background:var(--sepia);color:var(--sepia-ink);border-radius:6px;padding:20px;display:grid;gap:14px}
+.senado .tablebox{background:transparent;border-color:var(--sepia-rule)}
+.senado th{background:var(--sepia);color:var(--sepia-ink)}
+.senado td,.senado th{border-color:var(--sepia-rule)}
+.senado .muted{color:var(--sepia-ink);opacity:.8}
+.senado .why{color:var(--sepia-ink);opacity:.9;max-width:52ch}
+.senado .pill{color:var(--sepia-ink)}
+.senado .legend{color:var(--sepia-ink)}
+#sb .rec{font-family:inherit;font-size:15px;font-weight:400;font-stretch:normal;line-height:1.45}
+.senado .filters button,.senado #qs{background:var(--sepia-soft);border-color:var(--sepia-rule);color:var(--sepia-ink)}
+.senado .filters button[aria-pressed="true"]{background:var(--sepia-ink);border-color:var(--sepia-ink);color:var(--sepia-soft)}
+.senado .filters button:focus-visible,.senado #qs:focus-visible{outline-color:var(--sepia-ink)}
+.reglas{display:grid;gap:8px}
+.reglas p{max-width:none;font-size:17px;line-height:1.5}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+ul{margin:0;padding-left:20px;display:grid;gap:6px;max-width:70ch}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted)}
+.legend .seat{margin-right:4px}
+/* Portada: titular arriba a todo el ancho; debajo, el mapa (limitado para que quepa en la ventana) y el panel */
+/* El recuadro del mapa se ajusta al dibujo (ancho = alto × proporción); la columna derecha se queda el resto */
+.mapgrid{display:grid;grid-template-columns:auto minmax(280px,1fr);gap:20px;align-items:start}
+.mapbox{display:grid;gap:10px;justify-items:center}
+@media (max-width:760px){.mapgrid{grid-template-columns:minmax(0,1fr)} .mapbox{padding:6px} #map{width:100%!important;height:auto!important}}
+.mapbox{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px;min-width:0}
+#map{display:block;height:clamp(320px, calc(100vh - 430px), 650px);width:auto;max-width:100%}  /* tope 650 px: más alto no cabe en la columna y dejaría hueco */
+#map .prov{stroke:var(--paper);stroke-width:1.2;cursor:pointer;transition:opacity .15s}
+#map .prov:hover,#map .prov.on{stroke:var(--ink);stroke-width:2.2}
+#map .prov:focus-visible{outline:none;stroke:var(--accent);stroke-width:3}
+#map .canbox{fill:none;stroke:var(--rule);stroke-width:1.5}
+#map .canlab{fill:var(--muted);font-family:var(--mono);font-size:16px}
+#map .st-pp{stop-color:var(--pp)} #map .st-vox{stop-color:var(--vox)} #map .st-junts{stop-color:var(--junts)}
+.mapside{display:grid;gap:10px;align-content:start;position:relative;align-self:stretch}  /* alto del mapa: la ficha no se sale */
+.key{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;font-size:12px;width:0;min-width:100%}  /* width:0 + min-width: no ensancha la columna */
+.key .muted{flex-basis:100%;text-align:center}
+.key span{display:flex;align-items:center;gap:8px}
+.sw{width:18px;height:12px;border-radius:2px;flex:none;border:1px solid var(--rule)}
+.hover{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px;display:grid;gap:6px;font-size:13px}
+.hover.sel{position:absolute;top:0;left:0;right:0;z-index:5;padding:14px 16px;box-shadow:0 12px 32px rgba(20,32,46,.18);max-height:100%;overflow-y:auto;overscroll-behavior:contain}  /* ficha flotante sobre el resumen */
+@media (max-width:760px){.hover.sel{position:static;box-shadow:none}}  /* en el móvil la ficha empuja hacia abajo: superpuesta no tapaba del todo */
+.hover strong{font-family:var(--display);font-size:34px;font-weight:800;font-stretch:85%;line-height:1.05}
+tr.flash td{background:var(--flash);transition:background .6s}
+footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;border-top:1px solid var(--rule);padding-top:16px}
+@media (prefers-reduced-motion:no-preference){.bar i{transition:width .4s ease}}
+/*__TOPBAR_CSS__*/
+/* Pestañas: cada <section class="tab"> se muestra sola según el #hash (sin JS se ven todas) */
+[hidden]{display:none!important}
+section.tab{grid-template-columns:minmax(0,1fr)}  /* que ningún hijo (p. ej. el mapa) ensanche la página en el móvil */
+.tabhead{display:grid;gap:10px}
+.tabhead p,.tab>p{max-width:none}
+.eyebrow.red{color:var(--inv)}
+details.more .in>p{max-width:none}
+.how{margin:0;padding-left:22px;display:grid;gap:10px;max-width:none;font-size:15px}
+#cf .card h3{font-size:16px}
+.mini{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;display:grid;gap:10px}
+.minihead{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.minihead strong{font-family:var(--display);font-size:16px;font-stretch:92%}
+.minilink{font-size:12.5px;color:var(--accent)}
+.mrow{display:grid;grid-template-columns:1fr auto;gap:3px 8px;align-items:end}
+.mlab{font-size:12.5px;color:var(--muted)}
+.mnums{display:flex;gap:10px;font-family:var(--display);font-size:20px;font-weight:800;font-stretch:85%;line-height:1}
+.mrow .sbar{grid-column:1/-1;height:10px}
+.minikey{font-size:11.5px;color:var(--muted);margin:0}
+.pano{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:12px;scroll-margin-top:90px}
+.ptab{min-width:640px}
+@media (max-width:640px){.ptab{min-width:0} .ptab td.num{grid-column:auto;white-space:normal}}
+.sub{font-family:var(--display);font-size:clamp(20px,2.6vw,27px);font-weight:750;font-stretch:90%;line-height:1.15;color:var(--ink);margin-top:-4px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px;max-width:none}
+.steps li{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.steps b{font-family:var(--display);font-size:26px;font-weight:800;color:var(--inv);line-height:1}
+.steps strong{display:block;font-family:var(--display);font-size:17px;font-weight:750;font-stretch:92%;margin-bottom:2px}
+.steps span{font-size:14px;color:var(--muted);line-height:1.45}
+.steps a,.lede a,footer a{color:var(--accent)}
+@media (max-width:760px){.steps{grid-template-columns:minmax(0,1fr)}}
+.strip{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+/* Detalle de la provincia (panel junto al mapa) */
+.res{display:grid;gap:12px}
+.res .row{display:grid;gap:4px;border-top:1px solid var(--rule);padding-top:12px}
+.res .rec{font-size:34px;font-weight:800;font-stretch:85%;line-height:1}
+/* Veredicto: partido + sello de la recomendación, centrado en el espacio que queda a la derecha */
+.verdict{display:flex;align-items:center;gap:12px;min-height:56px}
+.seal{margin:0 auto;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 12px;border:2px solid currentColor;outline:1px solid currentColor;outline-offset:2px;border-radius:3px;
+  transform:rotate(-6deg);white-space:nowrap}
+.seal.alto{color:#0f8a43;background:#e3f6ea} .seal.medio{color:#1f5fc0;background:#e4eefb}
+.seal.bajo{color:#c56f00;background:#fdf0dc} .seal.indif{color:#6b7480;background:#eef0f3}
+.res .why{max-width:none;font-size:14px}
+button.mas{font:inherit;font-size:13px;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.res .seats{max-width:none}
+/* Plegables */
+details.more{background:var(--paper);border:1px solid var(--rule);border-radius:6px}
+details.more>summary{cursor:pointer;padding:14px 16px;font-family:var(--display);font-weight:700;font-size:18px;font-stretch:90%;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"+";color:var(--muted);font-family:var(--mono)}
+details.more[open]>summary::after{content:"−"}
+details.more>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details.more>.in{padding:0 16px 16px;display:grid;gap:14px}
+details.more .card{background:var(--bg)}
+td[data-l]::before{display:none}
+.tapgos{display:flex;flex-wrap:wrap;gap:8px}
+.tapgo{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;justify-self:start}
+/* Móvil: tablas como tarjetas */
+@media (max-width:640px){
+  body{font-size:15px}
+  .wrap{gap:28px;padding-block:18px 48px}
+  h2{font-size:21px}
+  .lede{font-size:16px}
+  .hide-m{display:none}
+  .tablebox{overflow:visible;background:none;border:none}
+  .senado .tablebox{background:none}
+  table{min-width:0}
+  thead{display:none}
+  table,tbody,tr,td{display:block}
+  tbody tr{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;margin-bottom:10px;display:grid;grid-template-columns:1fr auto;gap:8px 12px}
+  .senado tbody tr{background:transparent;border-color:var(--sepia-rule)}
+  td{padding:0;border:none}
+  td.c-prov{grid-column:1;grid-row:1}
+  td.c-rec{grid-column:2;grid-row:1;text-align:right}
+  td.c-wide{grid-column:1/-1}
+  td[data-l]::before{display:block;content:attr(data-l);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  .senado td[data-l]::before{color:var(--sepia-ink);opacity:.8}
+  .seats,.why{max-width:none}
+  #tb tr.flash,#sb tr.flash{background:var(--flash)}
+  tr.flash td{background:none}
+  .filters button{padding:6px 10px}
+  #q,#qs{flex-basis:100%;max-width:none;font-size:16px}
+  .senado{padding:16px}
+  .card{padding:14px}
+  .big{font-size:30px}
+}
+</style>
+
+/*__TOPBAR__*/
+<div class="wrap">
+
+<section class="tab" id="t-provincia" aria-labelledby="map-h">
+  <div class="tabhead"><p class="eyebrow red">Elecciones generales · 29 de noviembre de 2026</p>
+    <h1 id="map-h">Echar a Sánchez</h1>
+    <p class="sub">Que tu voto le quite un escaño a Sánchez.</p>
+    <p class="lede">En muchas provincias el último diputado se decide por unos pocos miles de votos. <strong>Pulsa tu provincia en el mapa</strong> y verás a qué partido conviene votar para quitarle escaños al bloque que invistió a Sánchez. Con encuestas, con D'Hondt y, si hace falta, con la nariz tapada.</p>
+  </div>
+  <div class="mapgrid">
+    <div class="mapbox"><svg id="map" role="group" aria-label="Mapa de provincias: pulsa una para ver qué votar"></svg><div class="key" id="key"></div></div>
+    <div class="mapside">
+      <div class="hover res" id="hover" aria-live="polite"></div>
+      <div class="mini" id="mini" aria-label="Escaños de cada bloque según las encuestas"></div>
+    <ol class="steps">
+        <li><b>1</b><div><strong>Congreso: mira tu provincia</strong><span>El color del mapa es la lista que más escaños resta; cuanto más intenso, más pesa tu voto. Al pulsar verás por cuántos votos.</span></div></li>
+        <li><b>2</b><div><strong>Senado: tres cruces, bien puestas</strong><span>Donde PP y Vox van por separado, las tres al mismo partido: repartirlas puede regalar el 3-1 a la izquierda, que va unida. Donde han pactado, mira la regla de tu provincia.</span></div></li>
+        <li><b>3</b><div><strong>Datos, no consignas</strong><span>En 2023, con el voto de la derecha unido en 8 provincias, PP + Vox + UPN habrían tenido mayoría absoluta. <a href="#metodo">Ver el método</a></span></div></li>
+      </ol>
+    </div>
+  </div>
+<section class="pano" id="panorama" aria-labelledby="pano-h">
+    <h2 id="pano-h">Panorama nacional</h2>
+    <p class="lede">Qué votar en cada provincia para quitar escaños al <strong style="color:var(--inv)">bloque de investidura</strong>. En noviembre de 2023 Sánchez fue investido con los votos de PSOE, Sumar (Podemos iba entonces en sus listas), ERC, Junts, EH Bildu, PNV, BNG y Coalición Canaria. Junts rompió después con el Gobierno y CC, con un solo diputado, no es decisiva, así que el modelo deja a ambos aparte y cuenta como bloque de investidura a PSOE, Frente Amplio, Podemos, ERC, Bildu, PNV y BNG. Cada escaño que pierde suele ir al <strong style="color:var(--der)">bloque de la derecha</strong> (PP, Vox y UPN).</p>
+    <p class="lede">Las barras de arriba son la media de 4.000 simulaciones por escenario. Aquí, el margen de error y la probabilidad de que cada bloque llegue a la mayoría absoluta (176).</p>
+    <div class="tablebox"><table class="ptab"><thead><tr><th>Escenario</th><th>Bloque de investidura</th><th>PP + Vox + UPN</th><th>Horquilla 90% del bloque</th><th>Prob. mayoría del bloque</th><th>Prob. mayoría PP + Vox + UPN</th></tr></thead><tbody id="scen"></tbody></table></div>
+  </section>
+</section>
+
+
+<section class="tab" id="t-congreso">
+  <h1>Congreso: todas las provincias</h1>
+  <p class="lede">Impacto: probabilidad de quitar un escaño al bloque de investidura si un 1% de los votantes de la provincia se suma a la opción recomendada (70% media de privadas, 30% CIS).</p>
+  <div class="legend"><span><span class="pill alto">impacto alto</span> 8% o más</span><span><span class="pill medio">impacto medio</span> 4-7%</span><span><span class="pill bajo">impacto bajo</span> menos del 4%</span><span><span class="pill indif">indiferente</span> no hay escaño en juego entre bloques</span><span><b>PP o Vox</b>: empate, valen casi igual</span><span><span class="seat s">PSOE 3</span>bloque de investidura</span><span><span class="seat d">PP 3</span>bloque de la derecha</span></div>
+  <div class="filters" role="group" aria-label="Filtrar">
+    <button id="f-all" aria-pressed="true" data-f="all">Todas</button>
+    <button id="f-alto" aria-pressed="false" data-f="alto">Impacto alto</button>
+    <button id="f-medio" aria-pressed="false" data-f="medio">Medio</button>
+    <button id="f-bajo" aria-pressed="false" data-f="bajo">Bajo</button>
+    <button id="f-empate" aria-pressed="false" data-f="empate">Empates</button>
+    <button id="f-indif" aria-pressed="false" data-f="indif">Indiferentes</button>
+    <input id="q" type="search" placeholder="Buscar provincia" aria-label="Buscar provincia">
+  </div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Provincia</th><th>Vota</th><th>Impacto</th><th>Reparto central</th><th>La aritmética</th></tr></thead>
+    <tbody id="tb"></tbody>
+  </table></div>
+  <p class="muted" id="salf"></p>
+</section>
+
+<section class="tab senado" id="t-senado">
+  <h1>Senado: tres cruces, bien puestas</h1>
+  <p class="lede" id="senTot"></p>
+  <div class="legend" id="senPacto"></div>
+  <div class="filters" id="sfil" role="group" aria-label="Filtrar">
+    <button aria-pressed="true" data-f="all">Todas</button>
+    <button aria-pressed="false" data-f="sin_vox">Vox no se presenta</button>
+    <button aria-pressed="false" data-f="vox_un_candidato">Vox, un candidato</button>
+    <button aria-pressed="false" data-f="sin_pp">El PP no se presenta</button>
+    <button aria-pressed="false" data-f="normal">Sin pacto</button>
+    <input id="qs" type="search" placeholder="Buscar provincia" aria-label="Buscar provincia">
+  </div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Provincia</th><th>Pacto</th><th>Qué marcar</th><th>Senadores del bloque, de 4:<br>sin pacto → con pacto</th><th>Por qué</th></tr></thead>
+    <tbody id="sb"></tbody>
+  </table></div>
+  <p class="muted">Aproximado: usa el voto al Congreso como estimación del voto al Senado y supone que cada votante sigue la pauta de su partido. Donde Vox no se presenta, sus votantes votan a la lista del PP; donde lleva un candidato, marcan al suyo y a los dos primeros del PP. Islas, Ceuta y Melilla eligen sus senadores con otro sistema y no están en el cálculo. En Cataluña el cálculo es tosco.</p>
+</section>
+
+<section class="tab" id="t-metodo">
+<h1>Método</h1>
+<p class="lede">Las encuestas dicen cuánto vota España, pero los diputados se reparten provincia a provincia: son 52 elecciones separadas, y en las pequeñas una encuesta nacional apenas entrevista a unas decenas de personas. El <strong>modelo</strong> es el programa que cubre ese hueco: convierte las encuestas nacionales en votos y diputados de cada provincia. Así sabemos qué escaños están en el filo en la tuya, que son los únicos donde un voto táctico cambia algo. El código y los datos están <a href="https://github.com/echarasanchez/echarasanchez.github.io" rel="noopener">en abierto en GitHub</a>: cualquiera puede rehacer las cuentas.</p>
+<details class="more" open>
+  <summary>Cómo funciona, en cuatro pasos</summary>
+  <div class="in"><ol class="how">
+    <li><b>Los votos de partida.</b> Tomamos lo que votó cada provincia el 23 de julio de 2023.</li>
+    <li><b>Lo que dicen hoy las encuestas.</b> Ajustamos esos votos a la media de 12 encuestas de octubre y, aparte, al CIS. En Cataluña, a la encuesta catalana del CEO.</li>
+    <li><b>4.000 elecciones de ensayo.</b> Las encuestas fallan, así que repetimos la elección 4.000 veces con errores realistas y en cada una repartimos los diputados con la ley D'Hondt, como el día de verdad.</li>
+    <li><b>La recomendación.</b> En cada provincia probamos: si un 1% de los votantes se pasa al PP, a Vox o a Junts, ¿en cuántas de esas 4.000 elecciones le quita un escaño al bloque de investidura? La opción que más escaños quita es la recomendada. Si dos están casi igual, la web dice «empate» en vez de dar una orden. Ese porcentaje es el impacto: alto si llega al 8%, medio entre el 4% y el 7% y bajo por debajo; en el mapa se ve en la intensidad del color.</li>
+  </ol></div>
+</details>
+
+<details class="more" open>
+  <summary>Qué habría pasado en 2023 con la derecha unida</summary>
+  <div class="in" id="cf"></div>
+</details>
+
+<details class="more" open>
+  <summary>¿Calcula bien los escaños? Lo probamos con las elecciones de 2023</summary>
+  <div class="in">
+    <p>Para saber si el modelo convierte bien encuestas en diputados, lo pusimos a prueba con unas elecciones cuyo resultado ya conocemos. Le dimos solo lo que se sabía <em>antes</em> del 23J: los votos de 2019 y las últimas encuestas de la campaña. Le pedimos que adivinara cuántos diputados sacaría cada partido en cada provincia y comparamos con lo que pasó de verdad.</p>
+    <div class="cols">
+      <div class="card"><h3>Con las encuestas de entonces</h3>
+        <div class="kv"><span>Diputados bien adivinados</span><span>324 de 350</span><span>Provincias con el reparto exacto</span><span>30 de 52</span><span>Escaños que dio al bloque de Sánchez</span><span>entre 144 y 186</span><span>Escaños que sacó de verdad</span><span>171</span></div>
+        <p class="muted">Acertó dentro de su margen. Las encuestas de 2023 se quedaron cortas con el PSOE (unos 3,5 puntos) y el modelo arrastró ese error.</p></div>
+      <div class="card"><h3>Dándole el resultado nacional exacto</h3>
+        <div class="kv"><span>Diputados bien adivinados</span><span>328 de 350</span><span>Provincias con el reparto exacto</span><span>32 de 52</span></div>
+        <p class="muted">Aun sabiendo el voto nacional exacto, en una de cada cuatro provincias falla un escaño. Por eso, cuando dos opciones están casi igualadas, no decimos «vota X»: decimos «empate».</p></div>
+    </div>
+  </div>
+</details>
+
+<details class="more" open>
+  <summary>Supuestos que conviene revisar</summary>
+  <div class="in"><div class="cols">
+    <ul>
+      <li>Escaños 2026: Madrid pasa a 38 y Cádiz a 8; el resto como en 2023. Hay que confirmarlo con el anexo del Real Decreto.</li>
+      <li>Frente Amplio y Podemos van separados salvo en la Comunitat Valenciana (Compromís-Front Valencià) y Canarias (Unidad del Pueblo Canario); en Cataluña Podemos va con ERC; en Andalucía y Aragón Podemos no se presenta. Se revisará con las candidaturas proclamadas.</li>
+      <li>Vox no se presentó en Santa Cruz de Tenerife en 2023: su base se reconstruye al nivel de Las Palmas.</li>
+      <li>SALF se modela con un 1,5% repartido de forma uniforme porque no hay datos fiables de su peso provincial.</li>
+    </ul>
+    <ul>
+      <li>Cataluña se calibra con el CEO de octubre (PSC 19, ERC 11, PP 6, Vox 6, Junts 4, Comuns 2); es igual en ambos escenarios.</li>
+      <li>País Vasco, Navarra, Galicia y Canarias mantienen el peso de 2023 de PNV, Bildu, BNG, CC y UPN: no hay encuestas recientes de esas formaciones en las generales.</li>
+      <li>Votos por provincia estimados a partir de la población (±15%). Sirven para el orden de magnitud, no para la cifra exacta.</li>
+      <li>Desde el 24-N no se pueden difundir encuestas (art. 69.7 LOREG): el 23-N a las 21:00 esta web retira el mapa, las tablas y las recomendaciones, y el 27-N, al acabar la campaña, todo lo demás.</li>
+    </ul>
+  </div></div>
+</details>
+
+<footer>
+  <span>Base: resultado de 2023 por provincia, reparto de escaños de 2026, media de 12 encuestas de octubre, CIS de octubre y CEO para Cataluña. 4.000 simulaciones por escenario. Fuera del bloque de investidura: PP, Vox, UPN y Junts (Junts se recomienda donde es lo más eficaz); CC cuenta como neutral.</span>
+  <span>Fuentes: Ministerio del Interior vía Wikipedia (resultados 2019 y 2023 por circunscripción); archivo de encuestas de Demócrata (12 sondeos, campo 5–16 oct 2026); CIS barómetro de octubre 2026; CEO octubre 2026 (vía Ara); Diario de León y El Español (calendario y reparto de escaños).</span>
+  <span>Modelo: swing proporcional con ajuste iterativo a la media nacional, ruido nacional, autonómico y provincial log-normal, D'Hondt con barrera del 3%.</span>
+  <span>Código y datos: <a href="https://github.com/echarasanchez/echarasanchez.github.io" rel="noopener">github.com/echarasanchez/echarasanchez.github.io</a> (licencia MIT).</span>
+</footer>
+</section>
+<div class="strip"><span class="eyebrow">Datos a /*__DATOS_A__*/ · <span id="cuenta">/*__CUENTA__*/</span></span></div>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+// Cuenta atrás calculada al abrir la página (hora de Madrid), para que no se quede vieja entre actualizaciones.
+// Misma regla que web.cuenta_atras(), que pone el texto inicial.
+(() => {
+  const hoy = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Madrid'}).format(new Date());
+  const n = Math.round((Date.parse('/*__ELECCION__*/') - Date.parse(hoy)) / 864e5);
+  if (!isNaN(n)) document.getElementById('cuenta').textContent =
+    n > 1 ? `${n} días para el 29-N` : n === 1 ? 'Mañana se vota' : n === 0 ? 'Hoy se vota' : 'Elecciones del 29-N';
+})();
+const NAME = {PP:'PP',PSOE:'PSOE',VOX:'Vox',FA:'Frente Amplio',POD:'Podemos',ERC:'ERC',JUNTS:'Junts',BILDU:'EH Bildu',PNV:'PNV',BNG:'BNG',CC:'CC',UPN:'UPN',SALF:'SALF'};
+const SBLOC = new Set(['PSOE','FA','POD','ERC','BILDU','PNV','BNG']);
+const SDER = new Set(['PP','VOX','UPN']);
+const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+const nm = s => s.split(' o ').map(k => NAME[k] || k).join(' o ');
+const slug = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');
+
+// escenarios
+const SC = [['A_media_privadas','Media de 12 encuestas privadas','PP 31,6 · PSOE 26,5 · Vox 19,0'],
+            ['C_fallo_como_2023','Si fallan como en 2023','PSOE +3,4 · PP −1,3 · Vox −0,6'],
+            ['B_CIS','CIS de octubre','PSOE 34,0 · PP 22,2 · Vox 17,1']];
+// Resumen compacto para la portada: los tres escenarios en barras, junto al mapa
+document.getElementById('mini').innerHTML = `<div class="minihead"><strong>España: escaños por bloque</strong><a href="#panorama" class="minilink">Detalle</a></div>` +
+  SC.filter(([k]) => DATA.nac[k]).map(([k,t]) => {
+    const r = DATA.nac[k], e = r.escanos_medios;
+    const inv = Math.round(r.bloque_S_media), der = Math.round(e.PP + e.VOX + e.UPN);
+    return `<div class="mrow"><span class="mlab">${t}</span><div class="mnums"><b style="color:var(--inv)">${inv}</b><b style="color:var(--der)">${der}</b></div>
+      <div class="sbar"><i class="i" style="width:${inv/350*100}%"></i><i class="o"></i><i class="d" style="width:${der/350*100}%"></i><b></b></div></div>`;
+  }).join('') + `<p class="minikey"><span style="color:var(--inv)">■</span> Bloque de investidura · <span style="color:var(--der)">■</span> PP + Vox + UPN · la marca es la mayoría (176)</p>`;
+document.getElementById('scen').innerHTML = SC.filter(([k]) => DATA.nac[k]).map(([k,t,sub]) => {
+  const r = DATA.nac[k]; const e = r.escanos_medios;
+  const inv = Math.round(r.bloque_S_media), der = Math.round(e.PP + e.VOX + e.UPN);
+  return `<tr><td class="c-prov"><strong>${t}</strong><br><span class="muted">${sub}</span></td>
+    <td class="num" data-l="Bloque de investidura" style="color:var(--inv);font-weight:700">${inv}</td>
+    <td class="num" data-l="PP + Vox + UPN" style="color:var(--der);font-weight:700">${der}</td>
+    <td class="num" data-l="Horquilla 90% del bloque">${r.bloque_S_IC90[0]}–${r.bloque_S_IC90[1]}</td>
+    <td class="num" data-l="Prob. mayoría del bloque">${Math.round(r.P_bloque_S_ge_176*100)}%</td>
+    <td class="num" data-l="Prob. mayoría PP + Vox + UPN">${Math.round(r.P_PP_VOX_UPN_ge_176*100)}%</td></tr>`;
+}).join('');
+
+// Nivel de impacto (cuánto pesa el voto), sobre el porcentaje que se muestra: alto ≥ 8%, medio 4-7%, bajo < 4%
+function level(r){ if (r.recomendacion==='Indiferente') return 'indif'; const p = Math.round(r.v_best*100); return p>=8 ? 'alto' : p>=4 ? 'medio' : 'bajo'; }
+const LVL = {alto:'impacto alto', medio:'impacto medio', bajo:'impacto bajo', indif:'indiferente'};
+const OPAC = {alto:1, medio:.68, bajo:.45, indif:1};   // en el mapa, la intensidad del color
+const empate = r => r.ventaja==='empate técnico';
+// «La aritmética»: el texto lo escribe model/narrativa.py (último escaño, ataque y defensa, media de privadas y CIS).
+// Se ve la versión corta; «Ver más» la cambia por la completa.
+function why(r){
+  if (r.explicacion_corta === r.explicacion) return r.explicacion;
+  return `<span class="w-c">${r.explicacion_corta}</span><span class="w-l" hidden>${r.explicacion}</span> <button type="button" class="mas" aria-expanded="false">Ver más</button>`;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('button.mas'); if (!b) return;
+  const p = b.parentElement, abrir = b.getAttribute('aria-expanded') === 'false';
+  p.querySelector('.w-c').hidden = abrir; p.querySelector('.w-l').hidden = !abrir;
+  b.setAttribute('aria-expanded', abrir); b.textContent = abrir ? 'Ver menos' : 'Ver más';
+});
+let F = 'all';
+try { F = localStorage.getItem('f') || 'all'; } catch(e) {}
+if (!document.querySelector(`#t-congreso .filters button[data-f="${F}"]`)) F = 'all';   // filtros de versiones anteriores
+function render(){
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const rows = DATA.prov.filter(r => (F==='all' || (F==='empate' ? empate(r) : level(r)===F)) && r.provincia.toLowerCase().includes(q));
+  document.getElementById('tb').innerHTML = rows.map(r => {
+    const lv = level(r); const pct = Math.round(r.v_best*100);
+    const seats = Object.entries(r.escanos_centrales).sort((a,b)=>b[1]-a[1]).map(([k,v]) => `<span class="seat ${SBLOC.has(k)?'s':SDER.has(k)?'d':''}">${NAME[k]} ${v}</span>`).join('');
+    return `<tr id="row-${slug(r.provincia)}"><td class="c-prov"><strong>${r.provincia}</strong><br><span class="muted">${r.escanos} escaños</span></td>
+      <td class="c-rec"><span class="rec">${r.recomendacion==='Indiferente'?'Cualquiera':nm(r.recomendacion)}</span><br><span class="pill ${lv}">${LVL[lv]}</span></td>
+      <td class="num c-wide" data-l="Impacto"><div class="meter"><div class="bar"><i style="width:${Math.min(100,pct/26*100)}%"></i></div>${pct}%</div></td>
+      <td class="c-wide" data-l="Reparto central"><div class="seats">${seats}</div></td><td class="why c-wide" data-l="La aritmética">${why(r)}</td></tr>`;
+  }).join('') || `<tr><td colspan="5" class="muted">Ninguna provincia coincide.</td></tr>`;
+  document.querySelectorAll('#t-congreso .filters button').forEach(b => b.setAttribute('aria-pressed', b.dataset.f===F));
+}
+document.querySelectorAll('#t-congreso .filters button').forEach(b => b.addEventListener('click', () => { F=b.dataset.f; try{localStorage.setItem('f',F)}catch(e){} render(); }));
+document.getElementById('q').addEventListener('input', render);
+render();
+
+// ---------- 2023 con la derecha unida (model/contrafactual_2023.py)
+(() => {
+  const cf = DATA.cf, poco = cf.escenarios.find(e => e.fraccion === 0.05), todo = cf.escenarios.find(e => e.fraccion === 1);
+  const lista = e => e.provincias.map(c => c.provincia).join(', ').replace(/, ([^,]*)$/, ' y $1');
+  document.getElementById('cf').innerHTML = `<p>El 23J el bloque que invistió a Sánchez sacó ${cf.real.bloque} escaños y PP + Vox + UPN, ${cf.real.PP_Vox_UPN}. Ninguno llegó a 176. Repetimos el reparto con los votos reales, cambiando solo cómo se repartió el voto de la derecha en cada provincia:</p>
+    <div class="cols">
+      <div class="card"><h3>Si 1 de cada 20 votantes de la derecha hubiera cambiado de papeleta</h3>
+        <div class="blocs"><div><span class="big">${poco.bloque}</span><span class="lab" style="color:var(--inv)">Bloque de investidura</span></div><div><span class="big">${poco.PP_Vox_UPN}</span><span class="lab" style="color:var(--der)">PP + Vox + UPN</span></div></div>
+        <p class="muted">Bastaba en ${lista(poco)}: el bloque habría perdido ${cf.real.bloque - poco.bloque} escaños.</p></div>
+      <div class="card"><h3>Si en ${todo.provincias.length} provincias el voto de Vox hubiera ido al PP</h3>
+        <div class="blocs"><div><span class="big">${todo.bloque}</span><span class="lab" style="color:var(--inv)">Bloque de investidura</span></div><div><span class="big">${todo.PP_Vox_UPN}</span><span class="lab" style="color:var(--der)">PP + Vox + UPN</span></div></div>
+        <p class="muted">${lista(todo)}. PP + Vox + UPN habrían tenido mayoría absoluta y Sánchez no habría podido ser investido. Es un máximo: supone que todos los votantes de Vox de esas provincias votan al PP.</p></div>
+    </div>`;
+})();
+
+// ---------- mapa
+const NS = 'http://www.w3.org/2000/svg';
+const M = DATA.map; const svg = document.getElementById('map');
+// Canarias: el recuadro se dibuja en el mar, bajo Baleares y al 85 %, para que el mapa sea más bajo
+const CANARIAS = new Set(['Las Palmas','Santa Cruz de Tenerife']);
+const gCan = document.createElementNS(NS,'g');
+gCan.setAttribute('transform', `translate(721 575) scale(.85) translate(${-M.canbox[0]} ${-M.canbox[1]})`);
+// abajo, el encuadre llega hasta Ceuta y Melilla (subida)
+const [x0,y0,x1,y1] = [M.bbox[0], M.bbox[1], M.bbox[2], 815]; svg.setAttribute('viewBox', `${x0-6} ${y0-6} ${x1-x0+12} ${y1-y0+12}`);
+svg.style.aspectRatio = `${x1-x0+12} / ${y1-y0+12}`;
+const SHIFT = {Melilla: 'translate(0 -52)'};  // Melilla, más cerca de la costa: el mapa es más bajo
+const byName = Object.fromEntries(DATA.prov.map(r => [r.provincia, r]));
+function cat(r){ if (r.recomendacion==='Indiferente') return 'INDIF'; return r.recomendacion.split(' o ').sort().join('+'); }
+const CATS = {PP:['PP'],VOX:['Vox'],JUNTS:['Junts'],'PP+VOX':['PP o Vox'],'JUNTS+PP':['Junts o PP'],'JUNTS+PP+VOX':['Junts, PP o Vox'],INDIF:['Cualquiera (sin escaño en juego)']};
+const COL = {PP:'var(--pp)',VOX:'var(--vox)',JUNTS:'var(--junts)',INDIF:'var(--indif)'};
+const defs = document.createElementNS(NS,'defs');
+function stripes(id, cols){
+  const w = 9*cols.length;
+  defs.insertAdjacentHTML('beforeend', `<pattern id="${id}" patternUnits="userSpaceOnUse" width="${w}" height="${w}" patternTransform="rotate(45)">` +
+    cols.map((c,i)=>`<rect x="${i*9}" y="0" width="9" height="${w}" style="fill:${COL[c]}"></rect>`).join('') + `</pattern>`);
+}
+stripes('p-PP+VOX',['PP','VOX']); stripes('p-JUNTS+PP',['JUNTS','PP']); stripes('p-JUNTS+PP+VOX',['JUNTS','PP','VOX']);
+svg.appendChild(defs);
+const fillOf = c => COL[c] || `url(#p-${c})`;
+const cb = M.canbox; const box = document.createElementNS(NS,'rect');
+box.setAttribute('class','canbox'); box.setAttribute('x',cb[0]); box.setAttribute('y',cb[1]); box.setAttribute('width',cb[2]-cb[0]); box.setAttribute('height',cb[3]-cb[1]); box.setAttribute('rx',6);
+gCan.appendChild(box);
+const lab = document.createElementNS(NS,'text'); lab.setAttribute('class','canlab'); lab.setAttribute('x',cb[0]+10); lab.setAttribute('y',cb[1]+22); lab.textContent='Canarias'; gCan.appendChild(lab); svg.appendChild(gCan);
+const hov = document.getElementById('hover');
+const SEN = Object.fromEntries(DATA.senado.map(r => [r.p, r]));
+function seatsHTML(r){ return Object.entries(r.escanos_centrales).sort((a,b)=>b[1]-a[1]).map(([k,v]) => `<span class="seat ${SBLOC.has(k)?'s':SDER.has(k)?'d':''}">${NAME[k]} ${v}</span>`).join(''); }
+// Senado de una provincia: qué marcar según el pacto PP-Vox (data/senado_pacto_2026.json) y senadores del bloque, de 4
+const n1 = x => x.toFixed(1).replace('.', ',');
+const VOXREGLA = {repartir: 'tu candidato y dos del PP, los que quieras: no hace falta que sean los dos primeros',
+  concentrar: 'tu candidato y los dos primeros del PP', igual: 'tu candidato y dos del PP, da igual cuáles'};
+function senRegla(s){
+  return {mismo_partido: 'Las tres cruces al mismo partido', lista_pp: 'Las tres cruces a la lista del PP',
+    repartir: 'PP: sus tres. Vox: el suyo y dos del PP, los que quieras', concentrar: 'PP: sus tres. Vox: el suyo y los dos primeros del PP',
+    igual: s.grupo === 'sin_pp' ? 'Da igual: los 4 serán del bloque' : 'PP: sus tres. Vox: el suyo y dos del PP, da igual cuáles',
+    a_VOX: 'Si votabas al PP: Vox', a_JUNTS: 'Si votabas al PP: Junts'}[s.regla];
+}
+function senText(s){
+  if (!s) return 'Aquí el Senado se elige con otro sistema (islas, Ceuta o Melilla): el modelo no lo cubre.';
+  if (s.fuera_del_modelo) return 'Vox no se presenta al Senado: el PP lleva en su lista a un independiente propuesto por Vox. Aquí el Senado se elige por islas y el modelo no lo cubre.';
+  const bloq = k => `${n1(s[k][0])} (${n1(s[k][1])} con el CIS)`;
+  if (s.grupo === 'sin_vox') return `Vox no se presenta al Senado: el PP lleva en su lista a un independiente propuesto por Vox. <b>Las tres cruces, a la lista del PP.</b> Si la votan también los votantes de Vox, el bloque pasa de ${bloq('antes')} a ${bloq('pacto')} senadores de 4.`;
+  if (s.grupo === 'vox_un_candidato') {
+    const why = {repartir: ', porque la mayoría marcará a los dos primeros y a esos les sobrarán votos: el que se queda corto es el tercero del PP',
+      concentrar: '. Aquí la derecha solo pelea uno o dos senadores: repartir debilitaría a los del PP que sí pueden entrar', igual: ''}[s.regla];
+    const lab = ['antes del pacto', 'con él', 'si los de Vox repartieran sus cruces del PP'];
+    const ks = s.regla === 'repartir' ? ['antes', 'pacto', 'reparto_todos'] : ['antes', 'pacto'];
+    return `Vox presenta un solo candidato y el PP, tres. <b>Si votas al PP: sus tres candidatos. Si votas a Vox: ${VOXREGLA[s.regla]}</b>${why}. ` +
+      `Senadores del bloque, de 4: ${ks.map((k, i) => `${n1(s[k][0])} ${lab[i]}`).join('; ')}. Con el CIS: ${ks.map(k => n1(s[k][1])).join('; ')}.`;
+  }
+  if (s.grupo === 'sin_pp') {
+    if (s.regla === 'igual') return 'El PP no se presenta al Senado. Aquí los cuatro senadores serán del bloque en cualquier caso: el voto al Senado no cambia el resultado.';
+    const k = s.regla.slice(2), otros = Object.keys(s.dest).filter(x => x !== k);
+    return `El PP no se presenta al Senado. <b>Si votabas al PP, tus tres cruces a los candidatos de ${NAME[k]}.</b> ${s.porque} ` +
+      `Senadores del bloque, de 4: ${n1(s.dest[k][0])} si van a ${NAME[k]}; ` + otros.map(o => `${n1(s.dest[o][0])} si van a ${NAME[o]}; `).join('') +
+      `${n1(s.blanco[0])} en blanco, nulo o sin votar, que en el Senado no cuentan para nada. Aproximado: usa el voto al Congreso` +
+      (s.p === 'Girona' || s.p === 'Tarragona' ? ' y en Cataluña el cálculo del Senado es tosco.' : '.');
+  }
+
+
+  return `Las tres cruces al mismo partido. Senadores del bloque, de 4: ${bloq('pacto')}. Si los votantes de PP y Vox dieran sus cruces a los mismos tres candidatos: ${bloq('max')}.`;
+}
+// En la ficha, como en Congreso: a la vista la situación y la regla (hasta el final de la negrita); el porqué y los
+// números, tras «Ver más», solo si son largos
+function senCard(s){
+  const t = senText(s), i = t.indexOf('</b>');
+  if (i < 0 || t.length - i < 150) return t;
+  let c = t.slice(0, i + 4);
+  c = /[.:]<\/b>$/.test(c) ? c : c.slice(0, -4) + '.</b>';
+  if (s.porque_corto) c += ' ' + s.porque_corto;     // donde el PP no va: por qué esa lista y no la otra, ya a la vista
+  return `<span class="w-c">${c}</span><span class="w-l" hidden>${t}</span> <button type="button" class="mas" aria-expanded="false">Ver más</button>`;
+}
+// Detalle de una provincia: Congreso, reparto y Senado
+function showInfo(r){
+  hov.classList.add('sel');
+  const lv = level(r); const s = SEN[r.provincia];
+  const sen = senCard(s);
+  hov.innerHTML = `<strong>${r.provincia}</strong>
+    <div class="row"><span class="eyebrow">Congreso · ${r.escanos} escaños</span>
+      <div class="verdict"><span class="rec">${r.recomendacion==='Indiferente'?'Cualquiera':nm(r.recomendacion)}</span><span class="seal ${lv}">${LVL[lv]}</span></div>
+      <span class="why">${why(r)}</span><span class="muted" style="font-size:13px">Impacto ${Math.round(r.v_best*100)}%</span></div>
+    <div class="row"><span class="eyebrow">Reparto central</span><div class="seats">${seatsHTML(r)}</div></div>
+    <div class="row"><span class="eyebrow">Senado</span><span class="why">${sen}</span></div>
+    <div class="tapgos"><button class="tapgo" type="button" data-t="congreso">Tabla del Congreso</button><button class="tapgo" type="button" data-t="senado">Tabla del Senado</button></div>`;
+  hov.querySelectorAll('.tapgo').forEach(b => b.addEventListener('click', () => goTo(r.provincia, b.dataset.t)));
+}
+let SELECTED = null; const shapes = {};
+function mark(name, on){ (shapes[name]||[]).forEach(e => e.classList.toggle('on', on)); }
+function select(name){
+  if (SELECTED) mark(SELECTED, false);
+  SELECTED = name; mark(name, true); showInfo(byName[name]);
+  if (TOUCH) hov.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'nearest'});
+}
+const TOUCH = matchMedia('(hover: none)').matches;
+// Panel antes de elegir provincia: la foto nacional y la instrucción
+function showDefault(){
+  hov.classList.remove('sel');
+  hov.innerHTML = `<span class="why">${TOUCH ? 'Toca' : 'Pulsa'} tu provincia en el mapa para ver qué votar al Congreso y al Senado.</span>`;
+}
+showDefault();
+// «Tabla del Congreso» / «Tabla del Senado»: abre la pestaña sin filtros y resalta la fila de la provincia
+function goTo(name, tab = 'congreso'){
+  if (location.hash !== '#' + tab) { history.pushState(null, '', '#' + tab); showTab(false); }
+  if (tab === 'senado') { FS = 'all'; document.getElementById('qs').value = ''; renderSen(); }
+  else { F = 'all'; document.getElementById('q').value = ''; render(); }
+  const tr = document.getElementById((tab === 'senado' ? 'srow-' : 'row-') + slug(name)); if (!tr) return;
+  tr.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'center'});
+  tr.classList.add('flash'); setTimeout(() => tr.classList.remove('flash'), 2200);
+}
+for (const [name, g] of Object.entries(M.provs)){
+  const r = byName[name]; if (!r) continue;
+  const c = cat(r); const op = OPAC[level(r)];
+  const els = []; shapes[name] = els;
+  const p = document.createElementNS(NS,'path'); p.setAttribute('d', g.d); els.push(p);
+  if (name==='Ceuta' || name==='Melilla'){ const ci = document.createElementNS(NS,'circle'); ci.setAttribute('cx',g.cx); ci.setAttribute('cy',g.cy); ci.setAttribute('r',11); els.push(ci); }
+  els.forEach(el => {
+    el.setAttribute('class','prov'); if (SHIFT[name]) el.setAttribute('transform', SHIFT[name]); el.style.fill = fillOf(c); el.style.fillOpacity = op;
+    el.setAttribute('tabindex','0'); el.setAttribute('role','button'); el.setAttribute('aria-label', `${name}: ${r.recomendacion==='Indiferente'?'cualquiera':nm(r.recomendacion)}`);
+    el.addEventListener('mouseenter', () => { mark(name, true); showInfo(r); });
+    el.addEventListener('mouseleave', () => { if (name !== SELECTED) mark(name, false); });
+    el.addEventListener('focus', () => showInfo(r));
+    el.addEventListener('click', () => select(name));
+    el.addEventListener('keydown', e => { if (e.key==='Enter' || e.key===' ') { e.preventDefault(); select(name); } });
+    (CANARIAS.has(name) ? gCan : svg).appendChild(el);
+  });
+}
+svg.addEventListener('mouseleave', () => { if (SELECTED) showInfo(byName[SELECTED]); else showDefault(); });
+// Pulsar fuera del mapa y de la ficha (o en "Tu provincia") desmarca la provincia y vuelve al resumen
+function deselect(){ if (SELECTED) mark(SELECTED, false); SELECTED = null; showDefault(); }
+document.addEventListener('click', e => { if (!e.target.closest('#map .prov') && !e.target.closest('#hover')) deselect(); });
+const used = new Set(DATA.prov.map(cat));
+document.getElementById('key').innerHTML = Object.entries(CATS).filter(([k]) => used.has(k)).map(([k,[t]]) => {
+  const bg = COL[k] || `repeating-linear-gradient(45deg, ${k.split('+').map((c,i,a)=>`${COL[c]} ${i*6}px ${(i+1)*6}px`).join(',')})`;
+  return `<span><i class="sw" style="background:${bg}"></i>${t}</span>`;
+}).join('') + `<span class="muted" style="font-size:12px">Rayas: empate entre opciones. Color más intenso: tu voto pesa más.</span>` +
+  [['alto','Impacto alto'],['medio','Medio'],['bajo','Bajo']].map(([k,t]) =>
+    `<span><i class="sw" style="background:linear-gradient(90deg,var(--pp) 50%,var(--vox) 50%);opacity:${OPAC[k]}"></i>${t}</span>`).join('');
+
+const big = DATA.prov.filter(r => r.valor_SALF_vs_mejor > 0.001);
+document.getElementById('salf').textContent = `SALF: votarle tiene impacto nulo en ${52-big.length} de 52 provincias. En ${big.map(r=>r.provincia).join(' y ')} tiene algo, pero entre ` + big.map(r => Math.round(r.v_best/r.valor_SALF_vs_mejor)).sort((a,b)=>a-b).join(' y ') + ` veces menos que la opción recomendada.`;
+
+const st = DATA.sen_tot;   // [con el pacto, antes del pacto, PP y Vox en los mismos tres candidatos]
+document.getElementById('senTot').innerHTML = `Se eligen 4 senadores y cada votante marca hasta 3: salen los 4 candidatos más votados. La izquierda va unida; si la derecha reparte sus cruces, la izquierda puede llevarse 3 de los 4. Con el pacto PP-Vox del 26 de octubre, el bloque de investidura bajaría de ${st.A[1]} a ${st.A[0]} de los 188 senadores de las provincias que eligen 4 (con el CIS, de ${st.C[1]} a ${st.C[0]}); si todos los votantes de PP y Vox marcaran a los mismos tres candidatos, a ${st.A[2]} (${st.C[2]}). Lo que conviene marcar depende de la provincia.`;
+const provs = f => DATA.senado.filter(f).map(r => r.p);
+const yList = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' y ' + a[a.length - 1];
+const vr = g => provs(r => r.grupo === 'vox_un_candidato' && r.regla === g);
+// Leyenda, como la de Congreso: cada situación del pacto con su regla, y cómo leer los números
+const sinpp = g => provs(r => r.grupo === 'sin_pp' && r.regla === g);
+const aPP = ['a_JUNTS', 'a_VOX'].filter(g => sinpp(g).length).map(g => `${NAME[g.slice(2)]} en ${yList(sinpp(g))}`);
+document.getElementById('senPacto').innerHTML = [
+  ['Vox no se presenta', 'las tres cruces a la lista del PP, que lleva un candidato de Vox'],
+  ['Vox, un candidato', 'si votas a Vox, el tuyo y dos del PP, los que quieras' + (vr('concentrar').length ? ` (en ${yList(vr('concentrar'))}, los dos primeros)` : '')],
+  ['El PP no se presenta', aPP.length ? 'si le votabas: ' + aPP.join('; ') : 'no cambia nada'],
+  ['Sin pacto', 'las tres cruces al mismo partido']].map(([p, t]) => `<span><span class="pill">${p}</span> ${t}</span>`).join('');
+// Tabla del Senado, como la del Congreso: todas las provincias, filtros por situación del pacto y buscador
+const GRUPO = {normal: 'Sin pacto', sin_vox: 'Vox no se presenta', vox_un_candidato: 'Vox, un candidato', sin_pp: 'El PP no se presenta'};
+function senWhy(s){
+  if (!s || s.fuera_del_modelo) return 'Se eligen por islas, o en Ceuta y Melilla, con otro sistema: el modelo no lo cubre.';
+  const cis = k => `${n1(s[k][0])} (${n1(s[k][1])} con el CIS)`;
+  if (s.grupo === 'normal') return `PP y Vox van por separado. Si sus votantes marcaran a los mismos tres candidatos, el bloque bajaría a ${cis('max')}.`;
+  if (s.grupo === 'sin_vox') return 'El PP lleva en su lista a un candidato propuesto por Vox; los votantes de Vox suman sus cruces a esa lista.';
+  if (s.grupo === 'vox_un_candidato') return {
+    repartir: `Si todos los de Vox marcan a los dos primeros del PP, a esos les sobran votos y el tercero se queda corto. Si los de Vox repartieran sus cruces, el bloque bajaría a ${cis('reparto_todos')}.`,
+    concentrar: 'Aquí la derecha solo pelea uno o dos senadores: repartir las cruces debilitaría a los del PP que sí pueden entrar.',
+    igual: 'Vox es pequeño aquí: da igual a qué dos del PP marquen sus votantes.'}[s.regla];
+  return s.regla === 'igual' ? 'Los cuatro senadores serán del bloque se vote lo que se vote.' : `${s.porque} En blanco, nulo o sin votar: ${n1(s.blanco[0])}.`;
+}
+const dif = r => r.antes ? 0.7 * (r.antes[0] - r.pacto[0]) + 0.3 * (r.antes[1] - r.pacto[1]) : -1;
+const SROWS = DATA.prov.map(r => ({p: r.provincia, s: SEN[r.provincia]})).sort((a, b) => dif(b.s || {}) - dif(a.s || {}) || a.p.localeCompare(b.p, 'es'));
+let FS = 'all';
+try { FS = localStorage.getItem('fs') || 'all'; } catch(e) {}
+if (!document.querySelector(`#sfil button[data-f="${FS}"]`)) FS = 'all';
+function renderSen(){
+  const q = document.getElementById('qs').value.trim().toLowerCase();
+  const rows = SROWS.filter(({p, s}) => (FS === 'all' || (s && s.grupo === FS)) && p.toLowerCase().includes(q));
+  document.getElementById('sb').innerHTML = rows.map(({p, s}) => {
+    const ok = s && !s.fuera_del_modelo;
+    return `<tr id="srow-${slug(p)}"><td class="c-prov"><strong>${p}</strong></td><td class="c-rec">${s ? `<span class="pill">${GRUPO[s.grupo]}</span>` : ''}</td>
+      <td class="c-wide" data-l="Qué marcar"><span class="rec">${ok ? senRegla(s) : s ? 'Las tres cruces a la lista del PP' : '—'}</span></td>
+      <td class="num c-wide" data-l="Bloque, de 4: sin pacto → con pacto">${ok ? `${n1(s.antes[0])} → ${n1(s.pacto[0])} <span class="muted">(CIS: ${n1(s.antes[1])} → ${n1(s.pacto[1])})</span>` : '—'}</td>
+      <td class="why c-wide" data-l="Por qué">${senWhy(s)}</td></tr>`;
+  }).join('') || `<tr><td colspan="5" class="muted">Ninguna provincia coincide.</td></tr>`;
+  document.querySelectorAll('#sfil button').forEach(b => b.setAttribute('aria-pressed', b.dataset.f === FS));
+}
+document.querySelectorAll('#sfil button').forEach(b => b.addEventListener('click', () => { FS = b.dataset.f; try { localStorage.setItem('fs', FS) } catch(e) {} renderSen(); }));
+document.getElementById('qs').addEventListener('input', renderSen);
+renderSen();
+
+// Pestañas: muestra la sección del #hash; la barra marca dónde estamos
+const TABS = /*__TABS__*/[];
+function showTab(scroll){
+  let t = location.hash.slice(1); if (!TABS.includes(t)) t = TABS[0];
+  document.querySelectorAll('section.tab').forEach(s => s.hidden = s.id !== 't-' + t);  // ids t-*: así el #hash no provoca salto de ancla
+  document.querySelectorAll('.tabs a').forEach(a => a.dataset.tab === t ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+  if (scroll !== false) window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', () => showTab());
+document.querySelector('.minilink').addEventListener('click', e => { e.preventDefault(); document.getElementById('panorama').scrollIntoView({behavior:'smooth'}); });
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+showTab();  // al entrar con #congreso, etc., empieza arriba y no a mitad de sección
+</script>
