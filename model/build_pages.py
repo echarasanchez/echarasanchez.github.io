@@ -138,14 +138,14 @@ PRE_CSS = """
 .precampana p{max-width:1180px;margin:0 auto;padding:7px max(16px,env(safe-area-inset-right,0px)) 7px max(16px,env(safe-area-inset-left,0px))}
 .nota-ley{margin-top:14px;padding:12px 14px;border-left:3px solid var(--accent);background:var(--paper);font-size:15px;line-height:1.5;max-width:70ch}
 """
-PRE_BANDA = ('<div class="precampana" data-modo="precampana"><p><strong>Precampaña:</strong> hasta el 13 de noviembre esta web '
-             'analiza, no pide el voto para nadie (art. 53 de la LOREG).</p></div>')
-PRE_NOTA = ('<p class="nota-ley"><strong>Hasta el 13 de noviembre, análisis; no petición de voto.</strong> La campaña empieza '
-            'el 13 de noviembre y hasta entonces la ley no permite hacer propaganda electoral (art. 53 de la LOREG). Esta web no '
+PRE_BANDA = ('<div class="precampana" data-modo="precampana"><p><strong>Precampaña:</strong> hasta el 12 de noviembre incluido '
+             'esta web analiza, no pide el voto para nadie (art. 53 de la LOREG).</p></div>')
+PRE_NOTA = ('<p class="nota-ley"><strong>Hasta el 12 de noviembre incluido, análisis; no petición de voto.</strong> La campaña '
+            'empieza a las 00:00 del 13 de noviembre y hasta entonces la ley no permite hacer propaganda electoral (art. 53 de la LOREG). Esta web no '
             'pide el voto para ningún partido: calcula qué papeleta le quita más escaños al bloque de investidura en cada '
             'provincia. Qué votar lo decide cada uno.</p>')
 PRE_INFORME = [
-    ('Qué votar en tu provincia el 29-N</title>', 'Qué voto resta más en tu provincia el 29-N</title>'),
+    ('Qué votar en tu provincia el 29-N', 'Qué voto resta más en tu provincia el 29-N'),   # <title> y og:title (vista previa en redes)
     ('content="Qué votar en cada provincia el 29-N para quitar escaños', 'content="Qué papeleta quita más escaños en cada provincia el 29-N'),
     ('Que tu voto le quite un escaño a Sánchez.', 'Dónde un voto le quita un escaño a Sánchez.'),
     ('y verás a qué partido conviene votar para quitarle escaños al bloque que invistió a Sánchez.',
@@ -164,11 +164,24 @@ PRE_INFORME = [
      "a_VOX: 'Sin el PP, resta más Vox', a_JUNTS: 'Sin el PP, resta más Junts'"),
     ('Qué marcar', 'Qué resta más'),
     ('<b>Si votabas al PP, tus tres cruces a los candidatos de ${NAME[k]}.</b>',
-     '<b>Para el votante del PP, lo que más resta: las tres cruces a los candidatos de ${NAME[k]}.</b>')]
+     '<b>Para el votante del PP, lo que más resta: las tres cruces a los candidatos de ${NAME[k]}.</b>'),
+    ('<b>La recomendación.</b>', '<b>Lo que más resta.</b>'),
+    ('La opción que más escaños quita es la recomendada.', 'La opción que más escaños quita es la que señala el mapa.'),
+    ('no decimos «vota X»: decimos «empate»', 'no señalamos una sola: decimos «empate»'),
+    ('retira el mapa, las tablas y las recomendaciones', 'retira el mapa, las tablas y los cálculos por provincia'),
+    ('(Junts se recomienda donde es lo más eficaz)', '(Junts sale donde es lo que más resta)')]
 PRE_ENLACE = [('Ver qué votar en tu provincia', 'Ver qué resta más en tu provincia')]
-PRE_RAZONES = PRE_ENLACE + [('Y vota como si el último escaño de tu provincia fuera el de la investidura. Puede serlo.',
-                             'El último escaño de tu provincia puede ser el de la investidura.')]
-PRE_QUIENES = PRE_ENLACE + [('No te pedimos que te guste a quien votas: a nosotros tampoco nos gusta del todo. Te pedimos que tu voto cuente.',
+PRE_RAZONES = PRE_ENLACE + [
+    ('Y vota como si el último escaño de tu provincia fuera el de la investidura. Puede serlo.',
+     'El último escaño de tu provincia puede ser el de la investidura.'),
+    ('Esto no se rebate con un hilo. Se rebate con un escaño menos.', 'Esto no se rebate con un hilo: se decide en las urnas.'),
+    ('En el Congreso, no partas el voto por debajo del último cociente de tu provincia. En el Senado, que la derecha no disperse '
+     'sus tres cruces: <a href="./#senado">la regla de tu provincia</a> dice cómo,',
+     'En el Congreso, un voto que se parte por debajo del último cociente de la provincia no suma escaños. En el Senado, tres '
+     'cruces dispersas pueden regalar el 3-1: <a href="./#senado">la tabla del Senado</a> calcula qué resta más,'),
+    ('← Volver a qué votar en tu provincia', '← Volver al mapa de tu provincia')]
+PRE_QUIENES = PRE_ENLACE + [('Tampoco a las que esta web recomienda votar.', 'Tampoco a las que salen en el mapa como las que más restan.'),
+                             ('No te pedimos que te guste a quien votas: a nosotros tampoco nos gusta del todo. Te pedimos que tu voto cuente.',
                              'No hace falta que te guste a quien votas: a nosotros tampoco nos gusta del todo. Lo que importa es que el voto cuente.')]
 
 
