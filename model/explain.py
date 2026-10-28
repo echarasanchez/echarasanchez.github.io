@@ -97,7 +97,7 @@ for p in d.index:
         'cis_escanos_centrales': {k: int(cent_c[i]) for i, k in enumerate(PARTIES) if cent_c[i]},
         'explicacion_corta': corto,   # «La aritmética» de la web (model/narrativa.py); la completa, con «Ver más»
         'explicacion': texto,
-        'valor_SALF_vs_mejor': round(float(W_A * A.loc[p, 'v_SALF'] + W_C * C.loc[p, 'v_SALF']), 3),
+        'valor_SALF_vs_mejor': None if np.isnan(A.loc[p, 'v_SALF']) else round(float(W_A * A.loc[p, 'v_SALF'] + W_C * C.loc[p, 'v_SALF']), 3),   # None: no se presenta
         'senado': senado(p),        # pacto PP-Vox: data/senado_pacto_2026.json
         'votos_validos_aprox': int(A.loc[p, 'votos_validos_aprox']),
     })

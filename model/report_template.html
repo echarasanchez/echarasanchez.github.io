@@ -322,7 +322,7 @@ td[data-l]::before{display:none}
       <li>Escaños 2026: Madrid pasa a 38 y Cádiz a 8; el resto como en 2023. Hay que confirmarlo con el anexo del Real Decreto.</li>
       <li>Frente Amplio y Podemos van separados salvo en la Comunitat Valenciana (Compromís-Front Valencià) y Canarias (Unidad del Pueblo Canario); en Cataluña Podemos va con ERC; en Andalucía y Aragón Podemos no se presenta. Se revisará con las candidaturas proclamadas.</li>
       <li>Vox no se presentó en Santa Cruz de Tenerife en 2023: su base se reconstruye al nivel de Las Palmas.</li>
-      <li>SALF se modela con un 1,5% repartido de forma uniforme porque no hay datos fiables de su peso provincial.</li>
+      <li>SALF se modela con un 1,5% repartido de forma uniforme porque no hay datos fiables de su peso provincial. Al Congreso se presenta en 47 provincias (no va en Cantabria, Ciudad Real, Gipuzkoa, Girona ni Lleida); al Senado, en ninguna.</li>
     </ul>
     <ul>
       <li>Cataluña se calibra con el CEO de octubre (PSC 19, ERC 11, PP 6, Vox 6, Junts 4, Comuns 2); es igual en ambos escenarios.</li>
@@ -578,7 +578,8 @@ document.getElementById('key').innerHTML = Object.entries(CATS).filter(([k]) => 
     `<span><i class="sw" style="background:linear-gradient(90deg,var(--pp) 50%,var(--vox) 50%);opacity:${OPAC[k]}"></i>${t}</span>`).join('');
 
 const big = DATA.prov.filter(r => r.valor_SALF_vs_mejor > 0.001);
-document.getElementById('salf').textContent = `SALF: votarle tiene impacto nulo en ${52-big.length} de 52 provincias. En ${big.map(r=>r.provincia).join(' y ')} tiene algo, pero entre ` + big.map(r => Math.round(r.v_best/r.valor_SALF_vs_mejor)).sort((a,b)=>a-b).join(' y ') + ` veces menos que la opción recomendada.`;
+const sinSalf = DATA.prov.filter(r => r.valor_SALF_vs_mejor === null);
+document.getElementById('salf').textContent = `SALF: no se presenta al Congreso en ${sinSalf.map(r=>r.provincia).join(', ').replace(/, ([^,]*)$/, ' ni $1')}; donde sí, votarle tiene impacto nulo en ${52-sinSalf.length-big.length} de ${52-sinSalf.length} provincias. En ${big.map(r=>r.provincia).join(' y ')} tiene algo, pero entre ` + big.map(r => Math.round(r.v_best/r.valor_SALF_vs_mejor)).sort((a,b)=>a-b).join(' y ') + ` veces menos que la opción recomendada.`;
 
 const st = DATA.sen_tot;   // [con el pacto, antes del pacto, PP y Vox en los mismos tres candidatos]
 document.getElementById('senTot').innerHTML = `Se eligen 4 senadores y cada votante marca hasta 3: salen los 4 candidatos más votados. La izquierda va unida; si la derecha reparte sus cruces, la izquierda puede llevarse 3 de los 4. Con el pacto PP-Vox del 26 de octubre, el bloque de investidura bajaría de ${st.A[1]} a ${st.A[0]} de los 188 senadores de las provincias que eligen 4 (con el CIS, de ${st.C[1]} a ${st.C[0]}); si todos los votantes de PP y Vox marcaran a los mismos tres candidatos, a ${st.A[2]} (${st.C[2]}). Lo que conviene marcar depende de la provincia.`;

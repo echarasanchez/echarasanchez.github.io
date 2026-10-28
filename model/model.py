@@ -23,6 +23,7 @@ BLOC_S = ['PSOE', 'FA', 'POD', 'ERC', 'BILDU', 'PNV', 'BNG']      # bloque inves
 NON_S  = ['PP', 'VOX', 'JUNTS', 'UPN', 'SALF', 'CC']
 PARTIES = ['PP', 'PSOE', 'VOX', 'FA', 'POD', 'ERC', 'JUNTS', 'BILDU', 'PNV', 'BNG', 'CC', 'UPN', 'SALF', 'OTH']
 CANDIDATES = ['PP', 'VOX', 'JUNTS', 'UPN', 'SALF']   # opciones que puede recomendar la web
+SALF_NO_VA = ['Cantabria', 'Ciudad Real', 'Gipuzkoa', 'Girona', 'Lleida']   # Congreso: se presenta en 47 (The Objective, 27-oct-2026)
 REGIONAL = ['ERC', 'JUNTS', 'BILDU', 'PNV', 'BNG', 'CC', 'UPN']
 VALID_PER_POP = 0.51   # votos válidos ≈ 0,51 × población (calibrado con Madrid y total nacional 2023)
 
@@ -77,6 +78,7 @@ def base_2026(d):
     B.loc['Santa Cruz de Tenerife', 'VOX'] = 12.0
     B.loc['Santa Cruz de Tenerife', 'PP'] -= 10.0
     B['SALF'] = 1.0   # partido nuevo: reparto uniforme, se escala a la encuesta
+    B.loc[SALF_NO_VA, 'SALF'] = 0.0
     B['OTH'] = (100 - B[PARTIES[:-1]].sum(axis=1)).clip(lower=1.0)
     return B
 

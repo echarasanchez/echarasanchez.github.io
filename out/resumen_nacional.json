@@ -26,7 +26,7 @@
  "B_CIS": {
   "escanos_medios": {
    "PP": 91.4,
-   "PSOE": 152.4,
+   "PSOE": 152.3,
    "VOX": 61.5,
    "FA": 9.6,
    "POD": 4.4,
@@ -38,19 +38,19 @@
    "CC": 1.2,
    "UPN": 1.0
   },
-  "bloque_S_media": 191.2,
+  "bloque_S_media": 191.1,
   "bloque_S_IC90": [
    169,
    215
   ],
   "P_bloque_S_ge_176": 0.864,
-  "P_PP_VOX_UPN_ge_176": 0.06,
+  "P_PP_VOX_UPN_ge_176": 0.061,
   "P_PP_VOX_UPN_JUNTS_ge_176": 0.105
  },
  "C_fallo_como_2023": {
   "escanos_medios": {
    "PP": 124.3,
-   "PSOE": 121.0,
+   "PSOE": 121.1,
    "VOX": 61.8,
    "FA": 10.1,
    "POD": 3.3,
