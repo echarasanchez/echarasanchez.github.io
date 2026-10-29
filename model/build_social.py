@@ -44,7 +44,14 @@ def nivel(r):
 def dato(r):
     """Primera frase de la explicación corta (model/narrativa.py), sin etiquetas. Donde no hay escaño en juego, la
     explicación empieza diciéndolo (ya lo dice la imagen): solo lo que sigue a los dos puntos, si lo hay."""
-    t = re.split(r'(?<=\.)\s+(?=[A-ZÁÉÍÓÚ¿])', re.sub(r'<[^>]+>', '', r['explicacion_corta']))[0]
+    frases = re.split(r'(?<=\.)\s+(?=[A-ZÁÉÍÓÚ¿])', re.sub(r'<[^>]+>', '', r['explicacion_corta']))
+    t = frases[0]
+    if r['recomendacion'] != 'Indiferente' and t.startswith('Ningún escaño'):
+        # Recomienda un partido aunque con la media no haya escaño cerca: su impacto sale del CIS o de que fallen las encuestas.
+        # Sin esto, la imagen diría «lo que más resta es X» y debajo «ningún escaño está cerca», que sin contexto parece una contradicción.
+        cis = [f for f in frases if f.startswith('Si acierta el CIS')]
+        return ('Con la media de encuestas no hay un escaño cerca. ' + cis[0] if cis else
+                f'Con las encuestas de hoy no hay un escaño cerca: {con_articulo(r["recomendacion"])} es lo que más resta si fallan.')
     if r['recomendacion'] == 'Indiferente':
         t = t.split(': ', 1)[1] if ': ' in t else 'Con las encuestas de hoy, ningún escaño está cerca de cambiar de bloque.'
         t = t[0].upper() + t[1:]
