@@ -141,7 +141,9 @@ ul{margin:0;padding-left:20px;display:grid;gap:6px;max-width:70ch}
 .sw{width:18px;height:12px;border-radius:2px;flex:none;border:1px solid var(--rule)}
 .hover{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:12px;display:grid;gap:6px;font-size:13px}
 .hover.sel{position:absolute;top:0;left:0;right:0;z-index:5;padding:14px 16px;box-shadow:0 12px 32px rgba(20,32,46,.18);max-height:100%;overflow-y:auto;overscroll-behavior:contain}  /* ficha flotante sobre el resumen */
-@media (max-width:760px){.hover.sel{position:static;box-shadow:none}}  /* en el móvil la ficha empuja hacia abajo: superpuesta no tapaba del todo */
+@media (max-width:760px){.hover.sel{position:static;box-shadow:none;max-height:none;overflow:visible;overscroll-behavior:auto}}
+/* en el móvil la ficha empuja hacia abajo (superpuesta no tapaba del todo) y no es una zona de scroll: con overflow-y:auto y
+   overscroll-behavior:contain, Chrome y Brave en Android no pasaban el desplazamiento a la página y parecía colgada */
 .hover strong{font-family:var(--display);font-size:34px;font-weight:800;font-stretch:85%;line-height:1.05}
 tr.flash td{background:var(--flash);transition:background .6s}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;border-top:1px solid var(--rule);padding-top:16px}
@@ -232,7 +234,7 @@ details.more .card{background:var(--bg)}
 td[data-l]::before{display:none}
 .tapgos{display:flex;flex-wrap:wrap;gap:8px}
 .tapgo{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;justify-self:start}
-.tapgo.share{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:600}
+.tapgo.share{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:600;display:inline-flex;align-items:center;gap:7px}
 /* Móvil: tablas como tarjetas */
 @media (max-width:640px){
   body{font-size:15px}
@@ -577,17 +579,20 @@ function showInfo(r){
       <span class="why">${why(r)}</span><span class="muted" style="font-size:13px">Impacto ${Math.round(r.v_best*100)}%</span></div>
     <div class="row"><span class="eyebrow">Reparto central</span><div class="seats">${seatsHTML(r)}</div></div>
     <div class="row"><span class="eyebrow">Senado</span><span class="why">${sen}</span></div>
-    <div class="tapgos"><button class="tapgo" type="button" data-t="congreso">Tabla del Congreso</button><button class="tapgo" type="button" data-t="senado">Tabla del Senado</button><button class="tapgo share" type="button">Compartir</button></div>`;
+    <div class="tapgos"><button class="tapgo" type="button" data-t="congreso">Ir a Congreso</button><button class="tapgo" type="button" data-t="senado">Ir a Senado</button><button class="tapgo share" type="button">${SHARE_ICON}<span>Compartir</span></button></div>`;
   hov.querySelectorAll('.tapgo[data-t]').forEach(b => b.addEventListener('click', () => goTo(r.provincia, b.dataset.t)));
   hov.querySelector('.share').addEventListener('click', e => compartir(r.provincia, e.currentTarget));
 }
 // «Compartir»: el enlace de la provincia (echarasanchez.ch/cantabria/, de model/build_social.py), que en WhatsApp o X se ve
 // con su imagen y su dato. En el móvil, el menú de compartir del sistema; si no lo hay, se copia el enlace.
 const SITE = "https://echarasanchez.ch";
+// El símbolo habitual de compartir: tres puntos unidos por dos líneas
+const SHARE_ICON = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/></g><g fill="currentColor"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/></g></svg>';
 function compartir(name, b){
   const url = `${SITE}/${slug(name)}/`;
   if (navigator.share) { navigator.share({title: `${name} · Echar a Sánchez`, url}).catch(() => {}); return; }
-  const ok = () => { b.textContent = 'Enlace copiado'; setTimeout(() => b.textContent = 'Compartir', 2500); };
+  const t = b.querySelector('span');
+  const ok = () => { t.textContent = 'Enlace copiado'; setTimeout(() => t.textContent = 'Compartir', 2500); };
   if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok, () => prompt('Copia el enlace:', url));
   else prompt('Copia el enlace:', url);
 }
@@ -605,7 +610,7 @@ function showDefault(){
   hov.innerHTML = `<span class="why">${TOUCH ? 'Toca' : 'Pulsa'} tu provincia en el mapa para ver qué papeleta resta más en el Congreso y en el Senado.</span>`;
 }
 showDefault();
-// «Tabla del Congreso» / «Tabla del Senado»: abre la pestaña sin filtros y resalta la fila de la provincia
+// «Ir a Congreso» / «Ir a Senado»: abre la pestaña sin filtros y resalta la fila de la provincia
 function goTo(name, tab = 'congreso'){
   if (location.hash !== '#' + tab) { history.pushState(null, '', '#' + tab); showTab(false); }
   if (tab === 'senado') { FS = 'all'; document.getElementById('qs').value = ''; renderSen(); }
