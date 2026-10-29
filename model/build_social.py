@@ -29,6 +29,12 @@ def slug(s):
     return re.sub(r'[^a-z0-9]+', '-', ''.join(c for c in s if not unicodedata.combining(c)).lower())
 
 
+def con_articulo(rec):
+    """'VOX o PP' -> 'Vox o el PP' (para «... es el PP»)."""
+    a = [('el ' if k in ('PP', 'UPN') else '') + NAME[k] for k in rec.split(' o ')]
+    return a[0] if len(a) == 1 else ', '.join(a[:-1]) + ' o ' + a[-1]
+
+
 def nivel(r):
     """Como level() en report_template.html: sobre el porcentaje que se muestra, alto ≥ 8, medio 4-7, bajo < 4."""
     p = round(max(r['valor_mezcla'].values()) * 100)
@@ -139,8 +145,9 @@ def tarjeta(r, s, forma, pre, src):
         fill, defs = '#8a939e', ''
     else:
         ks = rec.split(' o ')
-        lab = ('Lo que más resta' + (', empatados' if len(ks) > 1 else '') if pre else
-               'Vota' + (f' cualquiera de los {"dos" if len(ks) == 2 else "tres"}' if len(ks) > 1 else ''))
+        # A quién se resta, dicho en la imagen: quien la recibe por WhatsApp no sabe de qué va la web
+        lab = ('Lo que más escaños le quita al bloque de Sánchez' + (', empatados' if len(ks) > 1 else '') if pre else
+               'Para quitarle escaños al bloque de Sánchez, vota' + (' uno de estos' if len(ks) > 1 else ''))
         ver = ('<span class="par">' + '<span class="o"> o </span>'.join(f'<span style="color:{COL[k]}">{NAME[k]}</span>' for k in ks)
                + f'</span><span class="seal">{LVL[nivel(r)]}</span>')
         if len(ks) == 1:
@@ -210,8 +217,9 @@ def main():
             f = foto(tarjeta(r, r['senado'], mapa[p]['d'], pre, src), s, img); usadas.add(f)
             rec = r['recomendacion']
             nm = ' o '.join(NAME[k] for k in rec.split(' o ')) if rec != 'Indiferente' else None
-            titulo = (f'{p}: ningún escaño del Congreso en juego' if not nm else
-                      f'{p}: lo que más resta el 29-N es {nm}' if pre else f'{p}: el 29-N, vota {nm}')
+            titulo = (f'{p}, 29-N: el bloque de Sánchez no se juega ningún escaño del Congreso' if not nm else
+                      f'{p}, 29-N: lo que más escaños le quita al bloque de Sánchez es {con_articulo(rec)}' if pre else
+                      f'{p}, 29-N: para quitarle escaños al bloque de Sánchez, vota {nm}')
             sen = senado(r['senado'], pre)
             desc = dato(r) + (f' Senado: {tras_dos_puntos(sen)}' if sen else '')
             os.makedirs(os.path.join(d, s), exist_ok=True)
