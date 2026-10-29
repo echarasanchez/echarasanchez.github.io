@@ -182,6 +182,7 @@ details.more .card{background:var(--bg)}
 td[data-l]::before{display:none}
 .tapgos{display:flex;flex-wrap:wrap;gap:8px}
 .tapgo{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;justify-self:start}
+.tapgo.share{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:600}
 /* Móvil: tablas como tarjetas */
 @media (max-width:640px){
   body{font-size:15px}
@@ -289,7 +290,7 @@ td[data-l]::before{display:none}
   <summary>Cómo funciona, en cuatro pasos</summary>
   <div class="in"><ol class="how">
     <li><b>Los votos de partida.</b> Tomamos lo que votó cada provincia el 23 de julio de 2023.</li>
-    <li><b>Lo que dicen hoy las encuestas.</b> Ajustamos esos votos a la media de 12 encuestas de octubre y, aparte, al CIS. En Cataluña, a la encuesta catalana del CEO.</li>
+    <li><b>Lo que dicen hoy las encuestas.</b> Ajustamos esos votos a la media de /*__N_ENC__*/ encuestas de octubre y, aparte, al CIS. En Cataluña, a la encuesta catalana del CEO.</li>
     <li><b>4.000 elecciones de ensayo.</b> Las encuestas fallan, así que repetimos la elección 4.000 veces con errores realistas y en cada una repartimos los diputados con la ley D'Hondt, como el día de verdad.</li>
     <li><b>La recomendación.</b> En cada provincia probamos: si un 1% de los votantes se pasa al PP, a Vox o a Junts, ¿en cuántas de esas 4.000 elecciones le quita un escaño al bloque de investidura? La opción que más escaños quita es la recomendada. Si dos están casi igual, la web dice «empate» en vez de dar una orden. Ese porcentaje es el impacto: alto si llega al 8%, medio entre el 4% y el 7% y bajo por debajo; en el mapa se ve en la intensidad del color.</li>
   </ol></div>
@@ -334,8 +335,8 @@ td[data-l]::before{display:none}
 </details>
 
 <footer>
-  <span>Base: resultado de 2023 por provincia, reparto de escaños de 2026, media de 12 encuestas de octubre, CIS de octubre y CEO para Cataluña. 4.000 simulaciones por escenario. Fuera del bloque de investidura: PP, Vox, UPN y Junts (Junts se recomienda donde es lo más eficaz); CC cuenta como neutral.</span>
-  <span>Fuentes: Ministerio del Interior vía Wikipedia (resultados 2019 y 2023 por circunscripción); archivo de encuestas de Demócrata (12 sondeos, campo 5–16 oct 2026); CIS barómetro de octubre 2026; CEO octubre 2026 (vía Ara); Diario de León y El Español (calendario y reparto de escaños).</span>
+  <span>Base: resultado de 2023 por provincia, reparto de escaños de 2026, media de /*__N_ENC__*/ encuestas de octubre, CIS de octubre y CEO para Cataluña. 4.000 simulaciones por escenario. Fuera del bloque de investidura: PP, Vox, UPN y Junts (Junts se recomienda donde es lo más eficaz); CC cuenta como neutral.</span>
+  <span>Fuentes: Ministerio del Interior vía Wikipedia (resultados 2019 y 2023 por circunscripción); encuestas privadas, la última de cada empresa (/*__N_ENC__*/ sondeos, campo /*__CAMPO__*/: /*__LISTA_ENC__*/), vía Wikipedia y Demócrata; CIS barómetro de octubre 2026; CEO octubre 2026 (vía Ara); Diario de León y El Español (calendario y reparto de escaños).</span>
   <span>Modelo: swing proporcional con ajuste iterativo a la media nacional, ruido nacional, autonómico y provincial log-normal, D'Hondt con barrera del 3%.</span>
   <span>Código y datos: <a href="https://github.com/echarasanchez/echarasanchez.github.io" rel="noopener">github.com/echarasanchez/echarasanchez.github.io</a> (licencia MIT).</span>
 </footer>
@@ -361,7 +362,7 @@ const nm = s => s.split(' o ').map(k => NAME[k] || k).join(' o ');
 const slug = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');
 
 // escenarios
-const SC = [['A_media_privadas','Media de 12 encuestas privadas','PP 31,6 · PSOE 26,5 · Vox 19,0'],
+const SC = [['A_media_privadas','Media de /*__N_ENC__*/ encuestas privadas','/*__MEDIA_A__*/'],
             ['C_fallo_como_2023','Si fallan como en 2023','PSOE +3,4 · PP −1,3 · Vox −0,6'],
             ['B_CIS','CIS de octubre','PSOE 34,0 · PP 22,2 · Vox 17,1']];
 // Resumen compacto para la portada: los tres escenarios en barras, junto al mapa
@@ -522,8 +523,19 @@ function showInfo(r){
       <span class="why">${why(r)}</span><span class="muted" style="font-size:13px">Impacto ${Math.round(r.v_best*100)}%</span></div>
     <div class="row"><span class="eyebrow">Reparto central</span><div class="seats">${seatsHTML(r)}</div></div>
     <div class="row"><span class="eyebrow">Senado</span><span class="why">${sen}</span></div>
-    <div class="tapgos"><button class="tapgo" type="button" data-t="congreso">Tabla del Congreso</button><button class="tapgo" type="button" data-t="senado">Tabla del Senado</button></div>`;
-  hov.querySelectorAll('.tapgo').forEach(b => b.addEventListener('click', () => goTo(r.provincia, b.dataset.t)));
+    <div class="tapgos"><button class="tapgo" type="button" data-t="congreso">Tabla del Congreso</button><button class="tapgo" type="button" data-t="senado">Tabla del Senado</button><button class="tapgo share" type="button">Compartir</button></div>`;
+  hov.querySelectorAll('.tapgo[data-t]').forEach(b => b.addEventListener('click', () => goTo(r.provincia, b.dataset.t)));
+  hov.querySelector('.share').addEventListener('click', e => compartir(r.provincia, e.currentTarget));
+}
+// «Compartir»: el enlace de la provincia (echarasanchez.ch/cantabria/, de model/build_social.py), que en WhatsApp o X se ve
+// con su imagen y su dato. En el móvil, el menú de compartir del sistema; si no lo hay, se copia el enlace.
+const SITE = /*__SITE__*/'';
+function compartir(name, b){
+  const url = `${SITE}/${slug(name)}/`;
+  if (navigator.share) { navigator.share({title: `${name} · Echar a Sánchez`, url}).catch(() => {}); return; }
+  const ok = () => { b.textContent = 'Enlace copiado'; setTimeout(() => b.textContent = 'Compartir', 2500); };
+  if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok, () => prompt('Copia el enlace:', url));
+  else prompt('Copia el enlace:', url);
 }
 let SELECTED = null; const shapes = {};
 function mark(name, on){ (shapes[name]||[]).forEach(e => e.classList.toggle('on', on)); }
@@ -640,4 +652,7 @@ window.addEventListener('hashchange', () => showTab());
 document.querySelector('.minilink').addEventListener('click', e => { e.preventDefault(); document.getElementById('panorama').scrollIntoView({behavior:'smooth'}); });
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 showTab();  // al entrar con #congreso, etc., empieza arriba y no a mitad de sección
+// Enlace a una provincia: echarasanchez.ch/cantabria/ lleva a ./?p=cantabria#provincia, que la deja elegida en el mapa
+const pq = new URLSearchParams(location.search).get('p'), pr = pq && DATA.prov.find(r => slug(r.provincia) === pq);
+if (pr) select(pr.provincia);
 </script>

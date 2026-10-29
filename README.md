@@ -17,6 +17,7 @@ cuentas y llegar a otra conclusión si los datos la dan.
     .venv/bin/python model/build_report.py        # -> out/informe_modelo_29N.html
     .venv/bin/python model/build_pages.py         # -> out/razones.html, out/quienes.html
     .venv/bin/python model/build_og.py            # -> out/og.png, imagen para redes (necesita Chromium)
+    .venv/bin/python model/build_social.py        # -> out/compartir/: una página e imagen por provincia, para compartir
 
 ## Para actualizar con nuevas encuestas
 

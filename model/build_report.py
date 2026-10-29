@@ -21,8 +21,13 @@ data = {'prov': rows, 'nac': res, 'senado': senado, 'sen_tot': sen_tot, 'map': m
 tpl = open(os.path.join(os.path.dirname(__file__), 'report_template.html'), encoding='utf-8').read()
 html = tpl.replace('/*__DATA__*/null', json.dumps(data, ensure_ascii=False))
 html = (html.replace('/*__TOPBAR_CSS__*/', web.TOPBAR_CSS).replace('/*__TOPBAR__*/', web.topbar())
-        .replace('/*__TABS__*/[]', json.dumps(web.INDEX_TABS)))
+        .replace('/*__TABS__*/[]', json.dumps(web.INDEX_TABS)).replace("/*__SITE__*/''", json.dumps(web.SITE_URL)))
 meta = json.load(open(f'{OUT}/meta.json'))   # run_2026.py: fecha de corte de las encuestas
+coma = lambda x: f'{x:.1f}'.replace('.', ',')
+lista = '; '.join(f"{e['empresa']} ({e['campo']})" for e in meta['encuestas'])
+html = (html.replace('/*__N_ENC__*/', str(meta['n_encuestas'])).replace('/*__CAMPO__*/', meta['campo'].replace('-', '–'))
+        .replace('/*__LISTA_ENC__*/', lista)
+        .replace('/*__MEDIA_A__*/', ' · '.join(f"{n} {coma(meta['media'][k])}" for k, n in (('PP', 'PP'), ('PSOE', 'PSOE'), ('VOX', 'Vox')))))
 html = (html.replace('/*__DATOS_A__*/', web.fecha(meta['datos_a'], corta=True))
         .replace('/*__CUENTA__*/', web.cuenta_atras(dt.date.today())).replace('/*__ELECCION__*/', web.ELECCION))
 # La plantilla es un fragmento (formato artifact); para servirlo fuera de claude.ai necesita doctype, charset y favicon.

@@ -1,1 +1,131 @@
-{"datos_a": "2026-10-25"}
+{
+ "datos_a": "2026-10-26",
+ "campo": "5-25 oct 2026",
+ "n_encuestas": 13,
+ "media": {
+  "PP": 31.5,
+  "PSOE": 26.8,
+  "VOX": 19.1,
+  "FA": 6.4,
+  "POD": 2.8
+ },
+ "encuestas": [
+  {
+   "empresa": "SocioMétrica / El Español",
+   "campo": "1 sep-25 oct",
+   "PP": 32.4,
+   "PSOE": 27.0,
+   "VOX": 18.6,
+   "FA": 5.2,
+   "POD": 1.8
+  },
+  {
+   "empresa": "NC Report / La Razón",
+   "campo": "22-24 oct",
+   "PP": 33.1,
+   "PSOE": 25.8,
+   "VOX": 19.0,
+   "FA": 6.6,
+   "POD": 2.6
+  },
+  {
+   "empresa": "Winston / Artículo14",
+   "campo": "21-23 oct",
+   "PP": 29.4,
+   "PSOE": 27.1,
+   "VOX": 19.2,
+   "FA": 5.6,
+   "POD": null
+  },
+  {
+   "empresa": "Ateneo del Dato / elDiario.es",
+   "campo": "20-22 oct",
+   "PP": 31.1,
+   "PSOE": 27.6,
+   "VOX": 19.8,
+   "FA": 6.8,
+   "POD": 2.7
+  },
+  {
+   "empresa": "Sigma Dos / El Mundo",
+   "campo": "8-22 oct",
+   "PP": 30.6,
+   "PSOE": 26.1,
+   "VOX": 19.9,
+   "FA": 7.4,
+   "POD": 2.8
+  },
+  {
+   "empresa": "IMOP / El Confidencial",
+   "campo": "13-16 oct",
+   "PP": 28.5,
+   "PSOE": 27.1,
+   "VOX": 20.0,
+   "FA": 8.9,
+   "POD": null
+  },
+  {
+   "empresa": "Target Point / El Debate",
+   "campo": "6-9 oct",
+   "PP": 32.0,
+   "PSOE": 25.9,
+   "VOX": 18.7,
+   "FA": 6.9,
+   "POD": 3.4
+  },
+  {
+   "empresa": "40dB / Prisa",
+   "campo": "7-8 oct",
+   "PP": 31.9,
+   "PSOE": 28.1,
+   "VOX": 18.9,
+   "FA": 5.3,
+   "POD": 2.3
+  },
+  {
+   "empresa": "GESOP / Prensa Ibérica",
+   "campo": "6-8 oct",
+   "PP": 28.7,
+   "PSOE": 26.1,
+   "VOX": 18.9,
+   "FA": 8.0,
+   "POD": 2.6
+  },
+  {
+   "empresa": "GAD3 / Vocento",
+   "campo": "6-8 oct",
+   "PP": 31.4,
+   "PSOE": 26.4,
+   "VOX": 18.2,
+   "FA": 7.4,
+   "POD": 2.3
+  },
+  {
+   "empresa": "Hamalgama Métrica / Vozpópuli",
+   "campo": "5-8 oct",
+   "PP": 33.4,
+   "PSOE": 25.3,
+   "VOX": 19.6,
+   "FA": 5.4,
+   "POD": 3.3
+  },
+  {
+   "empresa": "InvyMark / laSexta",
+   "campo": "5-8 oct",
+   "PP": 32.8,
+   "PSOE": 28.0,
+   "VOX": 18.8,
+   "FA": 6.3,
+   "POD": 3.2
+  },
+  {
+   "empresa": "DYM / Henneo",
+   "campo": "5-7 oct",
+   "PP": 34.0,
+   "PSOE": 28.2,
+   "VOX": 18.2,
+   "FA": 3.6,
+   "POD": 3.6
+  }
+ ]
+}
