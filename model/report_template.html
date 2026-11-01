@@ -531,7 +531,9 @@ function showInfo(r){
 }
 // «Compartir»: el enlace de la provincia (echarasanchez.ch/cantabria/, de model/build_social.py), que en WhatsApp o X se ve
 // con su imagen y su dato. En el móvil, el menú de compartir del sistema; si no lo hay, se copia el enlace.
-const SITE = /*__SITE__*/'';
+// El enlace es del sitio donde está la página (en la web de pruebas, a la de pruebas: decisión del usuario, 1-nov), así el
+// fichero es el mismo en las dos; abierto desde el disco (file://), el de la web pública.
+const SITE = location.protocol.startsWith('http') ? new URL('.', location.href).href.replace(/\/$/, '') : /*__SITE__*/'';
 // El símbolo habitual de compartir: tres puntos unidos por dos líneas
 const SHARE_ICON = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/></g><g fill="currentColor"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/></g></svg>';
 function compartir(name, b){

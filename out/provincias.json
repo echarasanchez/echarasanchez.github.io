@@ -28,8 +28,8 @@
    "PSOE": 4,
    "BNG": 1
   },
-  "explicacion_corta": "El PSOE está a unos 9.000 votos de quitarle al PP su quinto escaño. Para impedirlo, cada voto a Vox cuenta entero (pelea su primer escaño); al PP, un quinto (pelea el quinto).",
-  "explicacion": "El PSOE está a unos 9.000 votos de quitarle al PP su quinto escaño (sería el tercero del PSOE). Vox está a unos 3.800 votos de ese escaño (sería su primero). Para que no se lo lleve el PSOE, cada voto a Vox cuenta entero, porque pelea su primer escaño; al PP, un quinto, porque pelea el quinto.",
+  "explicacion_corta": "El PSOE está a unos 9.000 votos de quitarle al PP su quinto escaño. Vox está a unos 3.800 votos de pelearlo él, y entonces cada voto suyo cuenta entero (pelea su primer escaño); al PP, un quinto (pelea el quinto).",
+  "explicacion": "El PSOE está a unos 9.000 votos de quitarle al PP su quinto escaño (sería el tercero del PSOE). Vox está a unos 3.800 votos de pelearlo él (sería su primero): cada voto a Vox cuenta entero, porque pelea su primer escaño; al PP, un quinto, porque pelea el quinto.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -191,8 +191,8 @@
    "VOX": 3,
    "FA": 1
   },
-  "explicacion_corta": "Cada voto al PP defiende su quinto escaño: el PSOE está a unos 17.800 votos de quitárselo. Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
-  "explicacion": "El PSOE está a unos 17.800 votos de quitarle al PP su quinto escaño (sería el cuarto del PSOE). Cada voto al PP lo defiende. Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
+  "explicacion_corta": "En Alicante las encuestas pueden fallar en más de 40.000 votos por partido: el escaño en juego puede ser del PP o de Vox, y los dos restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el PSOE está a unos 17.800 votos de quitárselo, y Vox a unos 37.600 de pelearlo él. Pero en Alicante las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí el PP y Vox restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -511,8 +511,8 @@
    "ERC": 7,
    "JUNTS": 2
   },
-  "explicacion_corta": "El PSOE está a unos 6.700 votos de quitarle al PP su quinto escaño. Para impedirlo, cada voto a Junts cuenta un tercio (pelea su tercer escaño); al PP, un quinto (pelea el quinto). Con unos 128.500 votos más, Vox le quitaría a ERC su séptimo escaño.",
-  "explicacion": "El PSOE está a unos 6.700 votos de quitarle al PP su quinto escaño (sería el 13.º del PSOE). Junts está a unos 24.200 votos de ese escaño (sería su tercero). Para que no se lo lleve el PSOE, cada voto a Junts cuenta un tercio, porque pelea su tercer escaño; al PP, un quinto, porque pelea el quinto. Con unos 72.000 votos más, el PP le quitaría a ERC su séptimo escaño (sería el sexto del PP). Con unos 94.100 votos más, Junts le quitaría a ERC su séptimo escaño (sería el tercero de Junts). Con unos 128.500 votos más, Vox le quitaría a ERC su séptimo escaño (sería el quinto de Vox).",
+  "explicacion_corta": "En Barcelona las encuestas pueden fallar en más de 30.000 votos a Junts y 60.000 a Vox: el escaño en juego puede ser del PP, de Junts o de Vox, y los tres restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el PSOE está a unos 6.700 votos de quitárselo, Junts a unos 24.200 de pelearlo y Vox a unos 56.500. Pero en Barcelona las encuestas pueden fallar en más de 30.000 votos a Junts y 60.000 a Vox, así que el escaño que se decide puede ser de cualquiera de los tres. Por eso aquí el PP, Junts y Vox restan lo mismo.",
   "valor_SALF_vs_mejor": 0.067,
   "senado": {
    "grupo": "normal",
@@ -963,8 +963,8 @@
    "PSOE": 3,
    "VOX": 1
   },
-  "explicacion_corta": "El Frente Amplio está a unos 18.500 votos de quitarle al PP su tercer escaño. Para impedirlo, cada voto a Vox cuenta la mitad (pelea su segundo escaño); al PP, un tercio (pelea el tercero).",
-  "explicacion": "El Frente Amplio está a unos 18.500 votos de quitarle al PP su tercer escaño (sería el primero del Frente Amplio). Vox está a unos 14.000 votos de ese escaño (sería su segundo). Para que no se lo lleve el Frente Amplio, cada voto a Vox cuenta la mitad, porque pelea su segundo escaño; al PP, un tercio, porque pelea el tercero.",
+  "explicacion_corta": "El Frente Amplio está a unos 18.500 votos de quitarle al PP su tercer escaño. Vox está a unos 14.000 votos de pelearlo él, y entonces cada voto suyo cuenta la mitad (pelea su segundo escaño); al PP, un tercio (pelea el tercero).",
+  "explicacion": "El Frente Amplio está a unos 18.500 votos de quitarle al PP su tercer escaño (sería el primero del Frente Amplio). Vox está a unos 14.000 votos de pelearlo él (sería su segundo): cada voto a Vox cuenta la mitad, porque pelea su segundo escaño; al PP, un tercio, porque pelea el tercero.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -1206,8 +1206,8 @@
    "PSOE": 3,
    "VOX": 2
   },
-  "explicacion_corta": "Cada voto al PP defiende su tercer escaño: el Frente Amplio está a unos 25.900 votos de quitárselo. <b>Si acierta el CIS</b>, el Frente Amplio está a unos 21.400 votos de quitarle a Vox su segundo escaño. Para impedirlo, cada voto a Vox cuenta la mitad (pelea su segundo escaño); al PP, un tercio (pelea el tercero).",
-  "explicacion": "El Frente Amplio está a unos 25.900 votos de quitarle al PP su tercer escaño (sería el primero del Frente Amplio). Cada voto al PP lo defiende. <b>Si acierta el CIS</b> (PSOE 3, PP 2, Vox 2): el Frente Amplio está a unos 21.400 votos de quitarle a Vox su segundo escaño (sería el primero del Frente Amplio). El PP está a unos 36.000 votos de ese escaño (sería su tercero). Para que no se lo lleve el Frente Amplio, cada voto a Vox cuenta la mitad, porque pelea su segundo escaño; al PP, un tercio, porque pelea el tercero.",
+  "explicacion_corta": "Cada voto al PP defiende su tercer escaño: el Frente Amplio está a unos 25.900 votos de quitárselo. <b>Si acierta el CIS</b>, el Frente Amplio está a unos 21.400 votos de quitarle a Vox su segundo escaño. Cada voto a Vox lo defiende directamente.",
+  "explicacion": "El Frente Amplio está a unos 25.900 votos de quitarle al PP su tercer escaño (sería el primero del Frente Amplio). Cada voto al PP lo defiende. <b>Si acierta el CIS</b> (PSOE 3, PP 2, Vox 2): el Frente Amplio está a unos 21.400 votos de quitarle a Vox su segundo escaño (sería el primero del Frente Amplio). Cada voto a Vox lo defiende directamente. El PP está a unos 36.000 votos de pelearlo él (sería su tercero).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -1732,8 +1732,8 @@
    "FA": 3,
    "POD": 3
   },
-  "explicacion_corta": "El Frente Amplio está a unos 4.900 votos de quitarle al PP su 16.º escaño. Para impedirlo, cada voto a Vox cuenta 1/9 (pelea su noveno escaño); al PP, 1/16 (pelea el 16.º).",
-  "explicacion": "El Frente Amplio está a unos 4.900 votos de quitarle al PP su 16.º escaño (sería el tercero del Frente Amplio). Vox está a unos 32.200 votos de ese escaño (sería su noveno). Para que no se lo lleve el Frente Amplio, cada voto a Vox cuenta 1/9, porque pelea su noveno escaño; al PP, 1/16, porque pelea el 16.º.",
+  "explicacion_corta": "En Madrid las encuestas pueden fallar en más de 100.000 votos por partido: el escaño en juego puede ser del PP o de Vox, y los dos restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el Frente Amplio está a unos 4.900 votos de quitárselo, y Vox a unos 32.200 de pelearlo él. Pero en Madrid las encuestas pueden fallar en más de 100.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí el PP y Vox restan lo mismo.",
   "valor_SALF_vs_mejor": 0.036,
   "senado": {
    "grupo": "normal",
@@ -1784,8 +1784,8 @@
    "PSOE": 5,
    "VOX": 3
   },
-  "explicacion_corta": "Cada voto al PP defiende su quinto escaño: el Frente Amplio está a unos 4.800 votos de quitárselo. <b>Si acierta el CIS</b>, con unos 42.200 votos más, Vox le quitaría al PSOE su quinto escaño.",
-  "explicacion": "El Frente Amplio está a unos 4.800 votos de quitarle al PP su quinto escaño (sería el primero del Frente Amplio). Cada voto al PP lo defiende. <b>Si acierta el CIS</b> (PSOE 5, PP 3, Vox 3): con unos 12.500 votos más, el PP le quitaría al PSOE su quinto escaño (sería el cuarto del PP). Con unos 42.200 votos más, Vox le quitaría al PSOE su quinto escaño (sería el cuarto de Vox).",
+  "explicacion_corta": "En Málaga las encuestas pueden fallar en más de 43.000 votos por partido: el escaño en juego puede ser del PP o de Vox, y los dos restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el Frente Amplio está a unos 4.800 votos de quitárselo, y Vox a unos 42.100 de pelearlo él. Pero en Málaga las encuestas pueden fallar en más de 43.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí el PP y Vox restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -1867,8 +1867,8 @@
    "PSOE": 3,
    "VOX": 4
   },
-  "explicacion_corta": "Podemos está a unos 25.800 votos de quitarle a Vox su cuarto escaño. Para impedirlo, cada voto a Vox cuenta un cuarto (pelea su cuarto escaño); al PP, un quinto (pelea el quinto).",
-  "explicacion": "Podemos está a unos 25.800 votos de quitarle a Vox su cuarto escaño (sería el primero de Podemos). El PP está a unos 9.900 votos de ese escaño (sería su quinto). Para que no se lo lleve Podemos, cada voto a Vox cuenta un cuarto, porque pelea su cuarto escaño; al PP, un quinto, porque pelea el quinto.",
+  "explicacion_corta": "En Murcia las encuestas pueden fallar en más de 40.000 votos por partido: el escaño en juego puede ser de Vox o del PP, y los dos restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es de Vox: Podemos está a unos 25.800 votos de quitárselo, y el PP a unos 9.900 de pelearlo él. Pero en Murcia las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí Vox y el PP restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -2281,8 +2281,8 @@
    "VOX": 2,
    "FA": 1
   },
-  "explicacion_corta": "El PSOE está a unos 31.700 votos de quitarle a Vox su tercer escaño. Para impedirlo, cada voto a Vox cuenta un tercio (pelea su tercer escaño); al PP, un quinto (pelea el quinto).",
-  "explicacion": "El PSOE está a unos 31.700 votos de quitarle a Vox su tercer escaño (sería el quinto del PSOE). El PP está a unos 11.900 votos de ese escaño (sería su quinto). Para que no se lo lleve el PSOE, cada voto a Vox cuenta un tercio, porque pelea su tercer escaño; al PP, un quinto, porque pelea el quinto.",
+  "explicacion_corta": "En Sevilla las encuestas pueden fallar en más de 40.000 votos por partido: el escaño en juego puede ser de Vox o del PP, y los dos restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es de Vox: el PSOE está a unos 31.700 votos de quitárselo, y el PP a unos 11.900 de pelearlo él. Pero en Sevilla las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí Vox y el PP restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -2566,8 +2566,8 @@
    "VOX": 4,
    "FA": 2
   },
-  "explicacion_corta": "Cada voto al PP defiende su sexto escaño: el PSOE está a unos 7.000 votos de quitárselo. <b>Si acierta el CIS</b>, cada voto a Vox defiende su cuarto escaño: el PSOE está a unos 1.900 votos de quitárselo.",
-  "explicacion": "El PSOE está a unos 7.000 votos de quitarle al PP su sexto escaño (sería el quinto del PSOE). Cada voto al PP lo defiende. <b>Si acierta el CIS</b> (PSOE 6, PP 4, Vox 4, Frente Amplio 2): el PSOE está a unos 1.900 votos de quitarle a Vox su cuarto escaño (sería el séptimo del PSOE). Cada voto a Vox lo defiende.",
+  "explicacion_corta": "En Valencia las encuestas pueden fallar en más de 60.000 votos por partido: el escaño en juego puede ser del PP o de Vox, y los dos restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el PSOE está a unos 7.000 votos de quitárselo, y Vox a unos 56.300 de pelearlo él. Pero en Valencia las encuestas pueden fallar en más de 60.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí el PP y Vox restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "sin_vox",

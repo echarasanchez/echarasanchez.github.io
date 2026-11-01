@@ -97,6 +97,7 @@ h1.largo{font-size:64px}
 .par.nada{font-size:52px;color:#5b6674}
 .seal{font-size:20px;font-weight:600;border-radius:99px;padding:4px 14px;background:#e6eef8;color:#1f4f8a;align-self:center}
 .dato{font-size:27px;line-height:1.3;margin:18px 0 0}
+.dato.largo{font-size:24px}   /* más de 165 caracteres (empate a tres, Barcelona; Cuenca, Segovia y Teruel, con 158, caben): sin esto, cuatro líneas y el Senado contra el pie */
 .sen{font-size:22px;line-height:1.35;margin:16px 0 0;padding-top:14px;border-top:2px solid #dfe3e8;color:#14202e}
 .sil{position:absolute;right:56px;top:70px;width:330px;height:400px}
 .pie{position:absolute;left:0;right:0;bottom:0;height:78px;background:#14202e;color:#e7ecf2;display:flex;align-items:center;gap:18px;padding:0 64px}
@@ -167,7 +168,7 @@ def tarjeta(r, s, forma, pre, src):
     sen = senado(s, pre)
     body = (f'<div class="main"><div class="eye">Elecciones del 29-N · Congreso · {r["escanos"]} escaños</div>'
             f'<h1{" class=largo" if len(p) > 14 else ""}>{escape(p)}</h1><div class="lab">{lab}</div><div class="ver">{ver}</div>'
-            f'<p class="dato">{escape(dato(r))}</p>'
+            f'<p class="dato{" largo" if len(dato(r)) > 165 else ""}">{escape(dato(r))}</p>'
             + (f'<p class="sen"><b>Senado:</b> {escape(tras_dos_puntos(sen))}</p>' if sen else '') + '</div>'
             f'<svg class="sil" id="sil">{defs}<path d="{forma}" fill="{fill}" stroke="#14202e" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>'
             + pie(url, src))

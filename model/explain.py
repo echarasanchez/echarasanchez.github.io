@@ -84,7 +84,9 @@ for p in d.index:
     sc[PARTIES.index('OTH')] = max(0.0, 100 - sc.sum() + sc[PARTIES.index('OTH')])
     cent_c = dhondt(sc.copy(), seats); vpp_c = float(C.loc[p, 'votos_por_punto'])
     rep_c = ', '.join(f'{narrativa.NAME[PARTIES[i]]} {int(cent_c[i])}' for i in np.argsort(-cent_c, kind='stable') if cent_c[i])
-    corto, texto = narrativa.explicar([] if rec == 'Indiferente' else rec.split(' o '), shares, sc, seats, vpp, vpp_c, rep_c, round(vb * 100))
+    err_a, err_c = json.loads(A.loc[p, 'error90']), json.loads(C.loc[p, 'error90'])
+    corto, texto = narrativa.explicar([] if rec == 'Indiferente' else rec.split(' o '), shares, sc, seats, vpp, vpp_c, rep_c, round(vb * 100),
+                                      err_a, err_c, p)
     lose = points_to_lose(shares, seats)
     rows.append({
         'provincia': p, 'escanos': seats, 'recomendacion': rec, 'ventaja': nivel,

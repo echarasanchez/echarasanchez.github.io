@@ -29,12 +29,24 @@ def de(k): return f'del {NAME[k]}' if k in CON_ART else f'de {NAME[k]}'
 def ordn(n): return ORD[n] if n < len(ORD) else f'{n}.º'
 def ordadj(n): return ORD_ADJ[n] if n < len(ORD_ADJ) else f'{n}.º'
 def peso(d): return PESO.get(d, f'1/{d}')
+def redondo(x):
+    """Hacia abajo, a una cifra significativa (146.000 -> 100.000; 38.000 -> 30.000): «más de» nunca exagera."""
+    m = 10 ** (len(str(int(x))) - 1); return int(x) // m * m
+def cota(e, dist):
+    """El error redondeado hacia abajo pero sin quedar por debajo de la distancia que se compara con él (63.000 -> 60.000;
+    58.000 con 56.500 de distancia -> 58.000 y no 50.000, que parecería contradecir la frase)."""
+    for m in (redondo(e), int(e) // 10 ** (len(str(int(e))) - 2) * 10 ** (len(str(int(e))) - 2), int(e) // 1000 * 1000):
+        if m >= dist: return m
+    return int(e)
+NUM = {2: 'dos', 3: 'tres', 4: 'cuatro'}
+def lista_y(xs): return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' y ' + xs[-1]
+def miles(x): return f'{x:,}'.replace(',', '.')
 def cap(t): return t[0].upper() + t[1:]
 def lista(xs): return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' o ' + xs[-1]
 def votos(pts, vpp): return f'{max(int(round(pts * vpp, -2)), 100):,}'.replace(',', '.')
 
 
-def situacion(shares, seats, vpp, opciones):
+def situacion(shares, seats, vpp, opciones, err={}, prov=''):
     """Frases sobre una estimación central y las opciones que quedan explicadas en ellas.
     Devuelve (frases, opciones explicadas, versión corta: [(opciones que explica, frase)])."""
     base = dhondt(shares.copy(), seats)
@@ -58,12 +70,15 @@ def situacion(shares, seats, vpp, opciones):
     if pT is not None and pT <= CERCA:
         fr = [f'{cap(el(B))} está a unos {votos(pT, vpp)} votos de quitarle {al(L)} su {ordadj(n(L))} escaño (sería el {ordn(n(B) + 1)} {de(B)}).']
         defs = [(L, n(L))] if L in ALTERNATIVAS else []
+        dist = {}
         for k in opciones:
             if k == L: continue
             pk, _ = points_to_gain(shares, seats, k, max_pts=MAX)
-            if pk is not None and pk <= max(2 * pT, 1.0):     # su próximo escaño está a la altura del que se disputa
+            # Su próximo escaño está a la altura del que se disputa: cerca en puntos o a menos de lo que pueden fallar las
+            # encuestas con él (sin esto, en Barcelona quedaba fuera Vox, a 56.500 votos con un error de ±63.000; 1-nov)
+            if pk is not None and (pk <= max(2 * pT, 1.0) or pk * vpp <= err.get(k, 0)):
                 fr.append(f'{cap(el(k))} está a unos {votos(pk, vpp)} votos de ese escaño (sería su {ordn(n(k) + 1)}).')
-                defs.append((k, n(k) + 1))
+                defs.append((k, n(k) + 1)); dist[k] = pk
         amenaza = f'{cap(el(B))} está a unos {votos(pT, vpp)} votos de quitarle {al(L)} su {ordadj(n(L))} escaño.'
         if len(defs) == 1:
             fr.append(f'Cada voto {al(defs[0][0])} lo defiende.')
@@ -73,6 +88,49 @@ def situacion(shares, seats, vpp, opciones):
             todos = 'los dos' if len(defs) == 2 else 'todos'
             fr.append(f'Cada voto {lista([al(k) for k, _ in defs])} lo defiende: {todos} pelean su {ordadj(defs[0][1])} escaño.')
             c = f'{amenaza} Cada voto {lista([al(k) for k, _ in defs])} lo defiende igual: {todos} pelean su {ordadj(defs[0][1])} escaño.'
+        elif (len(defs) >= 3 and defs[0][0] == L and L in opciones and err.get(L)
+              and all(k in opciones and dist[k] * vpp <= err.get(k, 0) for k, _ in defs[1:])):
+            # Empate a tres (Barcelona): como el de dos, pero con el error de cada uno, porque son distintos (Junts ±38.000,
+            # Vox ±63.000) y uno solo «por partido» quedaría por debajo de alguna distancia
+            ks = sorted((k for k, _ in defs[1:]), key=lambda k: dist[k])
+            dd = [f'{el(k)} a unos {votos(dist[k], vpp)}' for k in ks]
+            ee = [f'{miles(cota(err[k], dist[k] * vpp))} {al(k)}' for k in ks]
+            nn = NUM[len(defs)]
+            t = (f'Con la media de encuestas, el escaño en juego es {de(L)}: {el(B)} está a unos {votos(pT, vpp)} votos de '
+                 f'quitárselo, {lista_y([dd[0] + " de pelearlo"] + dd[1:])}. '
+                 f'Pero en {prov} las encuestas pueden fallar en más de {lista_y([ee[0].replace(" ", " votos ", 1)] + ee[1:])}, '
+                 f'así que el escaño que se decide puede ser de cualquiera de los {nn}. '
+                 f'Por eso aquí {lista_y([el(k) for k, _ in defs])} restan lo mismo.')
+            fr[:] = [t]
+            c = (f'En {prov} las encuestas pueden fallar en más de {lista_y([ee[0].replace(" ", " votos ", 1)] + ee[1:])}: el '
+                 f'escaño en juego puede ser {lista([de(k) for k, _ in defs])}, y los {nn} restan lo mismo.')
+        elif len(defs) == 2 and defs[0][0] == L:
+            # Dos partidos de la derecha pueden defender el escaño: L, que hoy lo pelea, y k, a dist[k] de pelearlo él.
+            # No comparar solo «1/9 frente a 1/16» (confunde: parece contradecir las distancias, decisión del 1-nov).
+            (_, dL), (k, dk) = defs
+            del fr[1:]                                              # la distancia de k va en la frase de abajo
+            vk = votos(dist[k], vpp)
+            e = min(err.get(L, 0), err.get(k, 0))                   # lo que pueden fallar las encuestas (90%), el menor
+            if k in opciones and L in opciones and e and dist[k] * vpp <= e:
+                # Empate: la distancia es menor que el error, así que el escaño que se decide puede ser de cualquiera
+                t = (f'Con la media de encuestas, el escaño en juego es {de(L)}: {el(B)} está a unos {votos(pT, vpp)} votos '
+                     f'de quitárselo, y {el(k)} a unos {vk} de pelearlo{" él" if k != "JUNTS" else ""}. Pero en {prov} las '
+                     f'encuestas pueden fallar en más de {miles(cota(e, dist[k] * vpp))} votos por partido, así que el escaño que se decide '
+                     f'puede ser de cualquiera de los dos. Por eso aquí {el(L)} y {el(k)} restan lo mismo.')
+                fr[:] = [t]
+                # Versión corta = la frase de la imagen para compartir (build_social toma la primera frase): un solo resumen
+                c = (f'En {prov} las encuestas pueden fallar en más de {miles(cota(e, dist[k] * vpp))} votos por partido: el escaño en juego '
+                     f'puede ser {de(L)} o {de(k)}, y los dos restan lo mismo.')
+            elif k in opciones and dk < dL:
+                # Solo k (o k por delante): pesa más porque pelea un escaño de número más bajo; es la idea de D'Hondt de la web
+                fr.append(f'{cap(el(k))} está a unos {vk} votos de pelearlo él (sería su {ordn(dk)}): cada voto {al(k)} cuenta '
+                          f'{peso(dk)}, porque pelea su {ordadj(dk)} escaño; {al(L)}, {peso(dL)}, porque pelea el {ordn(dL)}.')
+                c = (f'{amenaza} {cap(el(k))} está a unos {vk} votos de pelearlo él, y entonces cada voto suyo cuenta {peso(dk)} '
+                     f'(pelea su {ordadj(dk)} escaño); {al(L)}, {peso(dL)} (pelea el {ordn(dL)}).')
+            else:
+                fr.append(f'Cada voto {al(L)} lo defiende directamente. {cap(el(k))} está a unos {vk} votos de pelearlo él '
+                          f'(sería su {ordn(dk)}).')
+                c = f'{amenaza} Cada voto {al(L)} lo defiende directamente.'
         elif defs:
             defs.sort(key=lambda x: x[1])
             (k0, d0), resto = defs[0], defs[1:]
@@ -106,16 +164,16 @@ def situacion(shares, seats, vpp, opciones):
     return frases, hechas, cortos
 
 
-def explicar(opciones, sh_a, sh_c, seats, vpp_a, vpp_c, rep_cis, impacto):
+def explicar(opciones, sh_a, sh_c, seats, vpp_a, vpp_c, rep_cis, impacto, err_a={}, err_c={}, prov=''):
     """Texto de «La aritmética» (HTML sencillo): (versión corta, versión completa).
     opciones: partidos recomendados ([] si es indiferente)."""
-    fa, ha, ca = situacion(sh_a, seats, vpp_a, opciones)
+    fa, ha, ca = situacion(sh_a, seats, vpp_a, opciones, err_a, prov)
     texto, corto = ' '.join(fa), [c for _, c in ca]
     if opciones and not corto:      # la media de privadas no explica ninguna opción: decirlo antes de ir al CIS
         corto = [f'Con la media de encuestas no hay un escaño cerca para {lista([el(k) for k in opciones])}.']
     falta = [k for k in opciones if k not in ha]
     if falta:
-        fc, hc, cc = situacion(sh_c, seats, vpp_c, opciones)
+        fc, hc, cc = situacion(sh_c, seats, vpp_c, opciones, err_c, prov)
         if any(k in hc for k in falta) and fc != fa:       # en Cataluña los dos escenarios coinciden
             t = ' '.join(fc)
             texto += f' <b>Si acierta el CIS</b> ({rep_cis}): {t[0].lower()}{t[1:]}'

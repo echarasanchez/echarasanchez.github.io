@@ -69,6 +69,11 @@ for name, tg in SCENARIOS.items():
     T['votos_validos_aprox'] = valid_votes
     T['votos_por_punto'] = (valid_votes / 100).round(-2)
     T['shares'] = [json.dumps({k: round(float(v), 1) for k, v in S.loc[p, PARTIES].items() if v >= 0.5}) for p in d.index]
+    # Cuánto pueden fallar las encuestas en votos de cada partido (mitad del intervalo del 90% de las simulaciones):
+    # la explicación lo usa para decir si un escaño que hoy pelea uno puede acabar peleándolo otro
+    T['error90'] = [json.dumps({k: int(round((np.percentile(X[:, j, i], 95) - np.percentile(X[:, j, i], 5)) / 2 * valid_votes[p] / 100, -3))
+                                for i, k in enumerate(PARTIES) if k in ('PP', 'VOX', 'JUNTS', 'UPN') and np.median(X[:, j, i]) >= 0.3})
+                    for j, p in enumerate(d.index)]
     SEN = senate(X, d)
     results[name] = (summary, T, SEN)
     T.to_csv(os.path.join(OUT, f'tactico_{name}.csv'))
