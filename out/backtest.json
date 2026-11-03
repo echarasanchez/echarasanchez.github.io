@@ -1,0 +1,20 @@
+{
+ "encuestas_finales": {
+  "escanos_bien": 324,
+  "provincias_exactas": 30,
+  "bloque_real": 171,
+  "bloque_IC90": [
+   144,
+   186
+  ]
+ },
+ "resultado_real": {
+  "escanos_bien": 328,
+  "provincias_exactas": 32,
+  "bloque_real": 171,
+  "bloque_IC90": [
+   153,
+   198
+  ]
+ }
+}

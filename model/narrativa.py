@@ -13,7 +13,7 @@ con la comparación con el otro partido grande de la derecha, el número de esca
 from model import PARTIES, BLOC_S, dhondt, points_to_flip, points_to_gain, points_to_lose
 
 NAME = {'PP': 'PP', 'PSOE': 'PSOE', 'VOX': 'Vox', 'FA': 'Frente Amplio', 'POD': 'Podemos', 'ERC': 'ERC',
-        'JUNTS': 'Junts', 'BILDU': 'EH Bildu', 'PNV': 'PNV', 'BNG': 'BNG', 'CC': 'CC', 'UPN': 'UPN', 'SALF': 'SALF'}
+        'JUNTS': 'Junts', 'BILDU': 'EH Bildu', 'PNV': 'PNV', 'BNG': 'BNG', 'CC': 'CC', 'UPN': 'UPN-PP', 'SALF': 'SALF'}   # UPN: en 2026, coalición UPN-PP (Navarra)
 CON_ART = {'PP', 'PSOE', 'FA', 'BNG', 'PNV'}           # «el PP», «al PSOE», «del BNG»; «Vox», «a ERC», «de Junts»
 ORD = ['', 'primero', 'segundo', 'tercero', 'cuarto', 'quinto', 'sexto', 'séptimo', 'octavo', 'noveno', 'décimo']
 ORD_ADJ = ['', 'primer', 'segundo', 'tercer'] + ORD[4:]                       # «su primer escaño»
@@ -184,8 +184,8 @@ def explicar(opciones, sh_a, sh_c, seats, vpp_a, vpp_c, rep_cis, impacto, err_a=
             fin = (' Tampoco con el CIS' if texto.startswith('Ningún') else ' Ni con la media de encuestas ni con el CIS hay un escaño cerca') \
                   + f': el impacto ({impacto}%) viene de los casos en que las encuestas fallan.'
         else:
-            fin = (f' Para {lista([NAME[k] for k in falta])} no hay un escaño cerca ni con la media de encuestas ni con el CIS: '
-                   f'su impacto viene de los casos en que las encuestas fallan.')
+            fin = (f' Para {lista_y([el(k) for k in falta])} no hay un escaño cerca ni con la media de encuestas ni con el CIS: '
+                   f'{"su impacto viene" if len(falta) == 1 else "el impacto de los dos viene"} de los casos en que las encuestas fallan.')
         texto += fin
         corto.append(fin.strip())
     return ' '.join(corto), texto

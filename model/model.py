@@ -23,7 +23,7 @@ BLOC_S = ['PSOE', 'FA', 'POD', 'ERC', 'BILDU', 'PNV', 'BNG']      # bloque inves
 NON_S  = ['PP', 'VOX', 'JUNTS', 'UPN', 'SALF', 'CC']
 PARTIES = ['PP', 'PSOE', 'VOX', 'FA', 'POD', 'ERC', 'JUNTS', 'BILDU', 'PNV', 'BNG', 'CC', 'UPN', 'SALF', 'OTH']
 CANDIDATES = ['PP', 'VOX', 'JUNTS', 'UPN', 'SALF']   # opciones que puede recomendar la web
-SALF_NO_VA = ['Cantabria', 'Ciudad Real', 'Gipuzkoa', 'Girona', 'Lleida']   # Congreso: se presenta en 47 (The Objective, 27-oct-2026)
+SALF_NO_VA = ['Bizkaia', 'Cantabria', 'Ciudad Real', 'Gipuzkoa', 'Girona', 'Lleida']   # Congreso: se presenta en 46 (BOE, 28-oct-2026)
 REGIONAL = ['ERC', 'JUNTS', 'BILDU', 'PNV', 'BNG', 'CC', 'UPN']
 VALID_PER_POP = 0.51   # votos válidos ≈ 0,51 × población (calibrado con Madrid y total nacional 2023)
 
@@ -70,13 +70,15 @@ def base_2026(d):
             B.loc[p, 'FA'] = L
         elif cc == 'CAN':          # Unidad del Pueblo Canario (Podemos+IU+Sumar+NC)
             B.loc[p, 'FA'] = L + d.loc[p, 'NC']
-        elif cc in ('AND', 'ARA'): # Podemos no se presenta; la mitad de su voto va a FA
-            B.loc[p, 'FA'] = 0.70 * L + 0.15 * L
-        else:                      # listas separadas
+        elif p == 'Teruel':        # (BOE, 28-oct) Podemos, sí; ni FA ni CHA: el resto de ese voto, a «otros»
+            B.loc[p, 'POD'] = 0.30 * L
+        else:                      # listas separadas (también Andalucía y Aragón: Podemos se presenta, BOE 28-oct)
             B.loc[p, 'FA'] = 0.70 * L; B.loc[p, 'POD'] = 0.30 * L
     # Vox no se presentó en S/C de Tenerife en 2023: lo reconstruimos (≈ nivel Las Palmas)
     B.loc['Santa Cruz de Tenerife', 'VOX'] = 12.0
     B.loc['Santa Cruz de Tenerife', 'PP'] -= 10.0
+    # Navarra: UPN y PP van en coalición (BOE, 28-oct), Congreso y Senado. La lista está en la columna UPN («UPN-PP» en la web)
+    B.loc['Navarra', 'UPN'] += B.loc['Navarra', 'PP']; B.loc['Navarra', 'PP'] = 0.0
     B['SALF'] = 1.0   # partido nuevo: reparto uniforme, se escala a la encuesta
     B.loc[SALF_NO_VA, 'SALF'] = 0.0
     B['OTH'] = (100 - B[PARTIES[:-1]].sum(axis=1)).clip(lower=1.0)
@@ -184,6 +186,7 @@ def recommend(T, eps=0.02):
 
 # ---------------------------------------------------------------- Senado
 SENADO_PACTO = json.load(open(os.path.join(DATA, 'senado_pacto_2026.json'), encoding='utf-8'))
+SENADO_SIN_COMUNS = {'Girona', 'Lleida', 'Tarragona'}   # su voto, al PSC (pacto PSC-Comuns, 28-oct)
 
 def senate_seats(lists, s_names):
     """Senado a nivel de candidato: salen los 4 candidatos más votados. lists: {lista: [votos de cada candidato]}
@@ -205,16 +208,19 @@ def senate(X, d, left_joint=True, pacto=SENADO_PACTO):
       sin_pp: E_si_a_VOX / E_si_a_JUNTS: el voto del PP va a esa lista; E_si_no_vota: en blanco, nulo o abstención
         (en el Senado no cuentan para nada).
     E_antes_pacto: cada partido con sus tres candidatos. E_max_derecha: toda la derecha (PP+Vox) en tres candidatos."""
-    S_names = {'IZQ', 'ERC', 'BILDU', 'PNV', 'BNG'}
+    S_names = {'IZQ', 'FA', 'ERC', 'BILDU', 'PNV', 'BNG'}
     rows = []
     for j, p in enumerate(d.index):
         if d.loc[p, 'ccaa'] in ('BAL', 'CAN', 'CEU', 'MEL'): continue
         Xp = X[:, j, :]
         g = lambda k: Xp[:, PARTIES.index(k)]
-        L = g('PSOE') + (g('FA') if left_joint else 0)
-        P, V = g('PP'), g('VOX')
+        # En Cataluña PSC y Comuns van por separado (BOE, 28-oct); en el resto, PSOE y FA en Senado de Progreso.
+        # Comuns solo va en Barcelona: en Girona, Lleida y Tarragona retiró sus listas tras pactar con el PSC (BOE, 3-nov)
+        cat = d.loc[p, 'ccaa'] == 'CAT' and p not in SENADO_SIN_COMUNS
+        L = g('PSOE') + (g('FA') if left_joint and not cat else 0)
+        P, V = g('PP') + g('UPN'), g('VOX')     # Navarra: la lista de la derecha es UPN-PP
         base = {'IZQ': [L] * 3}
-        for k in ('ERC', 'JUNTS', 'BILDU', 'PNV', 'BNG', 'UPN'):
+        for k in ('ERC', 'JUNTS', 'BILDU', 'PNV', 'BNG') + (('FA',) if cat else ()):
             if np.median(g(k)) > 0.3: base[k] = [g(k)] * 3
         E = lambda **ls: senate_seats({**base, **{k: v for k, v in ls.items() if v}}, S_names)
         antes = E(PP=[P] * 3, VOX=[V] * 3)

@@ -15,12 +15,15 @@ def porque_sin_pp(p, dests, best):
     """Por qué el voto del PP resta más en una lista que en otra donde el PP no se presenta (estimación central, media
     de privadas): con listas de tres candidatos, la primera se lleva 3 senadores y la segunda, 1."""
     sh = json.loads(A.loc[p, 'shares'])
-    izq = 'PSC y Comuns' if d.loc[p, 'ccaa'] == 'CAT' else 'PSOE y Frente Amplio'
-    ls = {'IZQ': sh.get('PSOE', 0) + sh.get('FA', 0), **{k: sh.get(k, 0) for k in ('ERC', 'JUNTS', 'VOX', 'BILDU', 'PNV')}}
+    cat = d.loc[p, 'ccaa'] == 'CAT' and p not in SENADO_SIN_COMUNS   # en Cataluña, PSC y Comuns por separado (BOE, 28-oct)
+    izq = ('El PSC' if cat else 'El PSC (con el voto de Comuns, que no se presenta)' if d.loc[p, 'ccaa'] == 'CAT'
+           else 'La izquierda (PSOE y Frente Amplio)')
+    ls = {'IZQ': sh.get('PSOE', 0) + (0 if cat else sh.get('FA', 0)),
+          **{k: sh.get(k, 0) for k in ('ERC', 'JUNTS', 'VOX', 'BILDU', 'PNV') + (('FA',) if cat else ())}}
     orden = sorted(ls, key=ls.get, reverse=True)
     if orden[0] != 'IZQ' or orden[1] not in BLOC_S: return '', ''
     seg = orden[1]; pp = sh.get('PP', 0)
-    t = (f'La izquierda ({izq}) se lleva 3 senadores; el cuarto es para la segunda lista más votada, hoy {narrativa.NAME[seg]} '
+    t = (f'{izq} se lleva 3 senadores; el cuarto es para la segunda lista más votada, hoy {narrativa.NAME[seg]} '
          f'({pct(ls[seg])}).')
     corto = 'Con el voto del PP, '
     for i, k in enumerate(sorted(dests, key=lambda k: k != best)):
@@ -57,6 +60,7 @@ def senado(p):
     out = {'grupo': g, 'regla': regla, 'a': round(float(a.P_izq_1a), 2), 'c': round(float(c.P_izq_1a), 2),
            'antes': r2('E_antes_pacto'), 'pacto': r2('E_senadores_bloqueS'), 'max': r2('E_max_derecha')}
     if g == 'vox_un_candidato': out['reparto_todos'] = r2('E_reparto_todos')
+    if p == 'Navarra': out['pp'] = 'UPN-PP'        # coalición UPN-PP (BOE, 28-oct)
     if g == 'sin_pp':
         out['dest'] = {k[7:]: r2(k) for k in SA.columns if k.startswith('E_si_a_') and not np.isnan(a[k])}
         out['blanco'] = r2('E_si_no_vota')

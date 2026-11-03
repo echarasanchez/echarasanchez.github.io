@@ -18,7 +18,7 @@ import web
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '..', 'out')
 DEST = os.path.join(OUT, 'compartir')
-NAME = {'PP': 'PP', 'VOX': 'Vox', 'JUNTS': 'Junts', 'UPN': 'UPN'}
+NAME = {'PP': 'PP', 'VOX': 'Vox', 'JUNTS': 'Junts', 'UPN': 'UPN-PP'}   # UPN: coalición UPN-PP (Navarra)
 COL = {'PP': '#2a6fcb', 'VOX': '#5e9e2e', 'JUNTS': '#15a197', 'UPN': '#2a6fcb'}
 LVL = {'alto': 'impacto alto', 'medio': 'impacto medio', 'bajo': 'impacto bajo'}
 
@@ -72,8 +72,9 @@ def senado(s, pre):
         return ('Vox no se presenta y el PP lleva a un candidato suyo: lo que más resta, las tres cruces a esa lista.' if pre
                 else 'Vox no se presenta y el PP lleva a un candidato suyo: las tres cruces a la lista del PP.')
     if g == 'vox_un_candidato':
-        dos = {'repartir': 'dos del PP, los que quieras', 'concentrar': 'los dos primeros del PP', 'igual': 'dos del PP'}[k]
-        return f'Vox lleva un candidato y el PP, tres. Votantes del PP: sus tres. Votantes de Vox: el suyo y {dos}.'
+        pp = s.get('pp', 'PP'); de = 'del PP' if pp == 'PP' else 'de ' + pp     # Navarra: UPN-PP
+        dos = {'repartir': f'dos {de}, los que quieras', 'concentrar': f'los dos primeros {de}', 'igual': f'dos {de}'}[k]
+        return f'Vox lleva un candidato y {"el PP" if pp == "PP" else pp}, tres. Votantes {de}: sus tres. Votantes de Vox: el suyo y {dos}.'
     if g == 'sin_pp':
         if k == 'igual':
             return 'El PP no se presenta y los cuatro senadores serán del bloque: aquí el Senado no cambia.'

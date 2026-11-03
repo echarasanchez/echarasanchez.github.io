@@ -50,7 +50,10 @@ def run(targets, label):
     print(f'Bloque investidura real={realS}  simulado: media {bS.mean():.1f}, IC90% [{np.percentile(bS,5):.0f}, {np.percentile(bS,95):.0f}]')
     print(f'P media de acertar el nº exacto de escaños de PP/PSOE/Vox/Sumar por provincia: {hit:.2f}')
     print('Provincias con error:', {p: int(e) for p, e in err.items() if e > 0})
-    return point, sims
+    return {'escanos_bien': 350 - int(err.sum()), 'provincias_exactas': int((err == 0).sum()), 'bloque_real': int(realS),
+            'bloque_IC90': [int(np.percentile(bS, 5)), int(np.percentile(bS, 95))]}
 
-run(polls23, 'Backtest con encuestas finales 2023')
-run(result23, 'Backtest con el resultado nacional real (aisla el error del modelo provincial)')
+# Lo que cita el dosier de prensa (build_prensa.py)
+json.dump({'encuestas_finales': run(polls23, 'Backtest con encuestas finales 2023'),
+           'resultado_real': run(result23, 'Backtest con el resultado nacional real (aisla el error del modelo provincial)')},
+          open(os.path.join(os.path.dirname(__file__), '..', 'out', 'backtest.json'), 'w'), indent=1)

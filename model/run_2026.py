@@ -13,27 +13,24 @@ cat = (d.ccaa == 'CAT').values
 CAT_TARGETS = {'PSOE': 32, 'ERC': 19, 'PP': 12.5, 'VOX': 11, 'JUNTS': 8, 'FA': 5.5}
 
 # Fecha de corte de las encuestas de ENCUESTAS y CAT_TARGETS: es la que sale en la web («Datos a ...»). Cambiarla con ellas.
-DATOS_A = '2026-10-26'
+DATOS_A = '2026-11-01'
 
-# Media de encuestas privadas: la más reciente de cada empresa con campo terminado en las tres semanas anteriores a DATOS_A.
-# Sin el CIS (escenario B) ni los paneles de agregadores (EM-Analytics). Fuente: Wikipedia, «Opinion polling for the next Spanish
-# general election», contrastada con Demócrata, Infobae y los medios (29-oct). Donde no coinciden, Wikipedia/Demócrata: NC Report
-# PP 33,1 (Infobae: 32,9); SocioMétrica PP 32,4 y FA 5,2 (Electomanía: 32,0 y 4,8). None: no lo publica; la media es de las que sí.
+# Media de encuestas privadas: la más reciente de cada empresa con campo terminado en las tres semanas anteriores a DATOS_A
+# (2-nov: desde el 11-oct; salen 40dB, GESOP, GAD3, InvyMark y DYM, con campo del 5 al 8-oct). Sin el CIS (escenario B), los
+# paneles de agregadores (EM-Analytics) ni los sondeos de partidos (PSOE, 25-oct; el de Vox que publicó The Objective, 27-oct).
+# Fuente: Wikipedia, «Opinion polling for the 2026 Spanish general election» (2-nov), contrastada con Demócrata y los medios.
+# Frente Amplio con Compromís cuando la encuesta los da juntos. None: no lo publica; la media es de las que sí.
 #            empresa / medio                         campo               PP    PSOE  Vox   FA    Podemos
-ENCUESTAS = [('SocioMétrica / El Español',           '1 sep-25 oct',     32.4, 27.0, 18.6, 5.2, 1.8),
-             ('NC Report / La Razón',                '22-24 oct',        33.1, 25.8, 19.0, 6.6, 2.6),
+ENCUESTAS = [('SocioMétrica / El Español',           '1 sep-1 nov',      32.7, 26.6, 19.1, 5.2, 1.7),
+             ('Sigma Dos / El Mundo',                '29-30 oct',        31.1, 24.6, 19.3, 7.1, 1.9),
+             ('Target Point / El Debate',            '28-30 oct',        31.8, 25.5, 19.9, 6.6, 2.4),
+             ('NC Report / La Razón',                '26-29 oct',        33.0, 25.6, 19.3, 6.9, 2.4),
+             ('Sondaxe / La Voz de Galicia',         '26-28 oct',        29.2, 26.9, 19.2, 7.2, 2.0),
+             ('Hamalgama Métrica / Vozpópuli',       '22-28 oct',        32.4, 26.4, 19.9, 5.4, 2.2),
              ('Winston / Artículo14',                '21-23 oct',        29.4, 27.1, 19.2, 5.6, None),
              ('Ateneo del Dato / elDiario.es',       '20-22 oct',        31.1, 27.6, 19.8, 6.8, 2.7),
-             ('Sigma Dos / El Mundo',                '8-22 oct',         30.6, 26.1, 19.9, 7.4, 2.8),
-             ('IMOP / El Confidencial',              '13-16 oct',        28.5, 27.1, 20.0, 8.9, None),
-             ('Target Point / El Debate',            '6-9 oct',          32.0, 25.9, 18.7, 6.9, 3.4),
-             ('40dB / Prisa',                        '7-8 oct',          31.9, 28.1, 18.9, 5.3, 2.3),
-             ('GESOP / Prensa Ibérica',              '6-8 oct',          28.7, 26.1, 18.9, 8.0, 2.6),
-             ('GAD3 / Vocento',                      '6-8 oct',          31.4, 26.4, 18.2, 7.4, 2.3),
-             ('Hamalgama Métrica / Vozpópuli',       '5-8 oct',          33.4, 25.3, 19.6, 5.4, 3.3),
-             ('InvyMark / laSexta',                  '5-8 oct',          32.8, 28.0, 18.8, 6.3, 3.2),
-             ('DYM / Henneo',                        '5-7 oct',          34.0, 28.2, 18.2, 3.6, 3.6)]
-CAMPO = '5-25 oct 2026'   # trabajo de campo, de la primera a la última (sale en la web)
+             ('IMOP / El Confidencial',              '13-16 oct',        28.5, 27.1, 20.0, 8.9, None)]
+CAMPO = '13 oct-1 nov 2026'   # trabajo de campo, de la última que termina antes a la última (sale en la web)
 media = {k: round(float(np.mean([e[i + 2] for e in ENCUESTAS if e[i + 2] is not None])), 1)
          for i, k in enumerate(['PP', 'PSOE', 'VOX', 'FA', 'POD'])}
 ERROR_2023 = {'PSOE': 3.4, 'PP': -1.3, 'VOX': -0.6}   # error medio de las encuestas finales de 2023

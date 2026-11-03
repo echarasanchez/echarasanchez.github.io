@@ -322,10 +322,10 @@ td[data-l]::before{display:none}
   <summary>Supuestos que conviene revisar</summary>
   <div class="in"><div class="cols">
     <ul>
-      <li>Escaños 2026: Madrid pasa a 38 y Cádiz a 8; el resto como en 2023. Hay que confirmarlo con el anexo del Real Decreto.</li>
-      <li>Frente Amplio y Podemos van separados salvo en la Comunitat Valenciana (Compromís-Front Valencià) y Canarias (Unidad del Pueblo Canario); en Cataluña Podemos va con ERC; en Andalucía y Aragón Podemos no se presenta. Se revisará con las candidaturas proclamadas.</li>
+      <li>Escaños 2026: Madrid pasa a 38 y Cádiz a 8; el resto como en 2023 (coincide con el número de candidatos de cada lista).</li>
+      <li>Frente Amplio y Podemos van separados salvo en la Comunitat Valenciana (Compromís-Front Valencià) y Canarias (Unidad del Pueblo Canario); en Cataluña Podemos va con ERC; en Navarra, UPN y PP van juntos. En el Senado, PSOE y Frente Amplio van juntos (Senado de Progreso) salvo en Cataluña, donde Comuns solo se presenta en Barcelona (en Girona, Lleida y Tarragona se retiró tras pactar con el PSC: su voto se cuenta para el PSC). Según las candidaturas proclamadas (BOE, 3-nov).</li>
       <li>Vox no se presentó en Santa Cruz de Tenerife en 2023: su base se reconstruye al nivel de Las Palmas.</li>
-      <li>SALF se modela con un 1,5% repartido de forma uniforme porque no hay datos fiables de su peso provincial. Al Congreso se presenta en 47 provincias (no va en Cantabria, Ciudad Real, Gipuzkoa, Girona ni Lleida); al Senado, en ninguna.</li>
+      <li>SALF se modela con un 1,5% repartido de forma uniforme porque no hay datos fiables de su peso provincial. Al Congreso se presenta en 46 provincias (no va en Bizkaia, Cantabria, Ciudad Real, Gipuzkoa, Girona ni Lleida); al Senado, en ninguna.</li>
     </ul>
     <ul>
       <li>Cataluña se calibra con el CEO de octubre (PSC 19, ERC 11, PP 6, Vox 6, Junts 4, Comuns 2); es igual en ambos escenarios.</li>
@@ -356,7 +356,7 @@ const DATA = /*__DATA__*/null;
   if (!isNaN(n)) document.getElementById('cuenta').textContent =
     n > 1 ? `${n} días para el 29-N` : n === 1 ? 'Mañana se vota' : n === 0 ? 'Hoy se vota' : 'Elecciones del 29-N';
 })();
-const NAME = {PP:'PP',PSOE:'PSOE',VOX:'Vox',FA:'Frente Amplio',POD:'Podemos',ERC:'ERC',JUNTS:'Junts',BILDU:'EH Bildu',PNV:'PNV',BNG:'BNG',CC:'CC',UPN:'UPN',SALF:'SALF'};
+const NAME = {PP:'PP',PSOE:'PSOE',VOX:'Vox',FA:'Frente Amplio',POD:'Podemos',ERC:'ERC',JUNTS:'Junts',BILDU:'EH Bildu',PNV:'PNV',BNG:'BNG',CC:'CC',UPN:'UPN-PP',SALF:'SALF'};   // UPN: en 2026, coalición UPN-PP (Navarra)
 const SBLOC = new Set(['PSOE','FA','POD','ERC','BILDU','PNV','BNG']);
 const SDER = new Set(['PP','VOX','UPN']);
 const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -451,8 +451,8 @@ svg.style.aspectRatio = `${x1-x0+12} / ${y1-y0+12}`;
 const SHIFT = {Melilla: 'translate(0 -52)'};  // Melilla, más cerca de la costa: el mapa es más bajo
 const byName = Object.fromEntries(DATA.prov.map(r => [r.provincia, r]));
 function cat(r){ if (r.recomendacion==='Indiferente') return 'INDIF'; return r.recomendacion.split(' o ').sort().join('+'); }
-const CATS = {PP:['PP'],VOX:['Vox'],JUNTS:['Junts'],'PP+VOX':['PP o Vox'],'JUNTS+PP':['Junts o PP'],'JUNTS+PP+VOX':['Junts, PP o Vox'],INDIF:['Cualquiera (sin escaño en juego)']};
-const COL = {PP:'var(--pp)',VOX:'var(--vox)',JUNTS:'var(--junts)',INDIF:'var(--indif)'};
+const CATS = {PP:['PP'],VOX:['Vox'],JUNTS:['Junts'],UPN:['UPN-PP'],'PP+VOX':['PP o Vox'],'JUNTS+PP':['Junts o PP'],'JUNTS+PP+VOX':['Junts, PP o Vox'],INDIF:['Cualquiera (sin escaño en juego)']};
+const COL = {PP:'var(--pp)',VOX:'var(--vox)',JUNTS:'var(--junts)',UPN:'var(--pp)',INDIF:'var(--indif)'};   // UPN-PP (Navarra): color del PP
 const defs = document.createElementNS(NS,'defs');
 function stripes(id, cols){
   const w = 9*cols.length;
@@ -471,12 +471,15 @@ const SEN = Object.fromEntries(DATA.senado.map(r => [r.p, r]));
 function seatsHTML(r){ return Object.entries(r.escanos_centrales).sort((a,b)=>b[1]-a[1]).map(([k,v]) => `<span class="seat ${SBLOC.has(k)?'s':SDER.has(k)?'d':''}">${NAME[k]} ${v}</span>`).join(''); }
 // Senado de una provincia: qué marcar según el pacto PP-Vox (data/senado_pacto_2026.json) y senadores del bloque, de 4
 const n1 = x => x.toFixed(1).replace('.', ',');
-const VOXREGLA = {repartir: 'tu candidato y dos del PP, los que quieras: no hace falta que sean los dos primeros',
-  concentrar: 'tu candidato y los dos primeros del PP', igual: 'tu candidato y dos del PP, da igual cuáles'};
+// s.pp: en Navarra la lista de la derecha es UPN-PP
+const dePP = pp => pp === 'PP' ? 'del PP' : 'de ' + pp;
+const VOXREGLA = (r, pp = 'PP') => ({repartir: `tu candidato y dos ${dePP(pp)}, los que quieras: no hace falta que sean los dos primeros`,
+  concentrar: `tu candidato y los dos primeros ${dePP(pp)}`, igual: `tu candidato y dos ${dePP(pp)}, da igual cuáles`})[r];
 function senRegla(s){
+  const pp = s.pp || 'PP';
   return {mismo_partido: 'Las tres cruces al mismo partido', lista_pp: 'Las tres cruces a la lista del PP',
-    repartir: 'PP: sus tres. Vox: el suyo y dos del PP, los que quieras', concentrar: 'PP: sus tres. Vox: el suyo y los dos primeros del PP',
-    igual: s.grupo === 'sin_pp' ? 'Da igual: los 4 serán del bloque' : 'PP: sus tres. Vox: el suyo y dos del PP, da igual cuáles',
+    repartir: `${pp}: sus tres. Vox: el suyo y dos ${dePP(pp)}, los que quieras`, concentrar: `${pp}: sus tres. Vox: el suyo y los dos primeros ${dePP(pp)}`,
+    igual: s.grupo === 'sin_pp' ? 'Da igual: los 4 serán del bloque' : `${pp}: sus tres. Vox: el suyo y dos ${dePP(pp)}, da igual cuáles`,
     a_VOX: 'Si votabas al PP: Vox', a_JUNTS: 'Si votabas al PP: Junts'}[s.regla];
 }
 function senText(s){
@@ -485,11 +488,13 @@ function senText(s){
   const bloq = k => `${n1(s[k][0])} (${n1(s[k][1])} con el CIS)`;
   if (s.grupo === 'sin_vox') return `Vox no se presenta al Senado: el PP lleva en su lista a un independiente propuesto por Vox. <b>Las tres cruces, a la lista del PP.</b> Si la votan también los votantes de Vox, el bloque pasa de ${bloq('antes')} a ${bloq('pacto')} senadores de 4.`;
   if (s.grupo === 'vox_un_candidato') {
-    const why = {repartir: ', porque la mayoría marcará a los dos primeros y a esos les sobrarán votos: el que se queda corto es el tercero del PP',
-      concentrar: '. Aquí la derecha solo pelea uno o dos senadores: repartir debilitaría a los del PP que sí pueden entrar', igual: ''}[s.regla];
-    const lab = ['antes del pacto', 'con él', 'si los de Vox repartieran sus cruces del PP'];
+    const pp = s.pp || 'PP';
+    const why = {repartir: `, porque la mayoría marcará a los dos primeros y a esos les sobrarán votos: el que se queda corto es el tercero ${dePP(pp)}`,
+      concentrar: `. Aquí la derecha solo pelea uno o dos senadores: repartir debilitaría a los ${dePP(pp)} que sí pueden entrar`, igual: ''}[s.regla];
+    // Navarra: sin pacto anunciado, pero en la papeleta es lo mismo (Vox, un candidato)
+    const lab = [pp === 'PP' ? 'antes del pacto' : 'si Vox llevara tres', pp === 'PP' ? 'con él' : 'así', `si los de Vox repartieran sus cruces ${dePP(pp)}`];
     const ks = s.regla === 'repartir' ? ['antes', 'pacto', 'reparto_todos'] : ['antes', 'pacto'];
-    return `Vox presenta un solo candidato y el PP, tres. <b>Si votas al PP: sus tres candidatos. Si votas a Vox: ${VOXREGLA[s.regla]}</b>${why}. ` +
+    return `Vox presenta un solo candidato y ${pp === 'PP' ? 'el PP' : pp}, tres. <b>Si votas ${pp === 'PP' ? 'al PP' : 'a ' + pp}: sus tres candidatos. Si votas a Vox: ${VOXREGLA(s.regla, pp)}</b>${why}. ` +
       `Senadores del bloque, de 4: ${ks.map((k, i) => `${n1(s[k][0])} ${lab[i]}`).join('; ')}. Con el CIS: ${ks.map(k => n1(s[k][1])).join('; ')}.`;
   }
   if (s.grupo === 'sin_pp') {
@@ -502,7 +507,7 @@ function senText(s){
   }
 
 
-  return `Las tres cruces al mismo partido. Senadores del bloque, de 4: ${bloq('pacto')}. Si los votantes de PP y Vox dieran sus cruces a los mismos tres candidatos: ${bloq('max')}.`;
+  return `Las tres cruces al mismo partido. Senadores del bloque, de 4: ${bloq('pacto')}. Si los votantes de ${s.pp || 'PP'} y Vox dieran sus cruces a los mismos tres candidatos: ${bloq('max')}.`;
 }
 // En la ficha, como en Congreso: a la vista la situación y la regla (hasta el final de la negrita); el porqué y los
 // números, tras «Ver más», solo si son largos
@@ -618,12 +623,12 @@ const GRUPO = {normal: 'Sin pacto', sin_vox: 'Vox no se presenta', vox_un_candid
 function senWhy(s){
   if (!s || s.fuera_del_modelo) return 'Se eligen por islas, o en Ceuta y Melilla, con otro sistema: el modelo no lo cubre.';
   const cis = k => `${n1(s[k][0])} (${n1(s[k][1])} con el CIS)`;
-  if (s.grupo === 'normal') return `PP y Vox van por separado. Si sus votantes marcaran a los mismos tres candidatos, el bloque bajaría a ${cis('max')}.`;
+  if (s.grupo === 'normal') return `${s.pp || 'PP'} y Vox van por separado. Si sus votantes marcaran a los mismos tres candidatos, el bloque bajaría a ${cis('max')}.`;
   if (s.grupo === 'sin_vox') return 'El PP lleva en su lista a un candidato propuesto por Vox; los votantes de Vox suman sus cruces a esa lista.';
-  if (s.grupo === 'vox_un_candidato') return {
-    repartir: `Si todos los de Vox marcan a los dos primeros del PP, a esos les sobran votos y el tercero se queda corto. Si los de Vox repartieran sus cruces, el bloque bajaría a ${cis('reparto_todos')}.`,
-    concentrar: 'Aquí la derecha solo pelea uno o dos senadores: repartir las cruces debilitaría a los del PP que sí pueden entrar.',
-    igual: 'Vox es pequeño aquí: da igual a qué dos del PP marquen sus votantes.'}[s.regla];
+  if (s.grupo === 'vox_un_candidato') { const pp = s.pp || 'PP'; return {
+    repartir: `Si todos los de Vox marcan a los dos primeros ${dePP(pp)}, a esos les sobran votos y el tercero se queda corto. Si los de Vox repartieran sus cruces, el bloque bajaría a ${cis('reparto_todos')}.`,
+    concentrar: `Aquí la derecha solo pelea uno o dos senadores: repartir las cruces debilitaría a los ${dePP(pp)} que sí pueden entrar.`,
+    igual: `Vox es pequeño aquí: da igual a qué dos ${dePP(pp)} marquen sus votantes.`}[s.regla]; }
   return s.regla === 'igual' ? 'Los cuatro senadores serán del bloque se vote lo que se vote.' : `${s.porque} En blanco, nulo o sin votar: ${n1(s.blanco[0])}.`;
 }
 const dif = r => r.antes ? 0.7 * (r.antes[0] - r.pacto[0]) + 0.3 * (r.antes[1] - r.pacto[1]) : -1;
