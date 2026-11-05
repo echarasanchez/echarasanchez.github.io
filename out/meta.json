@@ -1,12 +1,12 @@
 {
- "datos_a": "2026-11-01",
+ "datos_a": "2026-11-04",
  "campo": "13 oct-1 nov 2026",
- "n_encuestas": 9,
+ "n_encuestas": 10,
  "media": {
-  "PP": 31.0,
-  "PSOE": 26.4,
-  "VOX": 19.5,
-  "FA": 6.6,
+  "PP": 30.8,
+  "PSOE": 26.5,
+  "VOX": 19.6,
+  "FA": 6.8,
   "POD": 2.2
  },
  "encuestas": [
@@ -63,6 +63,15 @@
    "VOX": 19.9,
    "FA": 5.4,
    "POD": 2.2
+  },
+  {
+   "empresa": "More in Common",
+   "campo": "21-25 oct",
+   "PP": 28.3,
+   "PSOE": 27.6,
+   "VOX": 20.8,
+   "FA": 7.8,
+   "POD": 2.6
   },
   {
    "empresa": "Winston / Artículo14",
