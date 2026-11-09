@@ -1,31 +1,112 @@
 {
- "datos_a": "2026-11-04",
- "campo": "13 oct-1 nov 2026",
- "n_encuestas": 10,
+ "datos_a": "2026-11-08",
+ "campo": "21 oct-8 nov 2026",
+ "n_encuestas": 15,
  "media": {
-  "PP": 30.8,
-  "PSOE": 26.5,
-  "VOX": 19.6,
-  "FA": 6.8,
-  "POD": 2.2
+  "PP": 30.9,
+  "PSOE": 26.9,
+  "VOX": 19.2,
+  "FA": 6.5,
+  "POD": 1.9
  },
  "encuestas": [
   {
    "empresa": "SocioMétrica / El Español",
-   "campo": "1 sep-1 nov",
-   "PP": 32.7,
-   "PSOE": 26.6,
-   "VOX": 19.1,
-   "FA": 5.2,
+   "campo": "1 sep-8 nov",
+   "PP": 32.0,
+   "PSOE": 27.7,
+   "VOX": 18.9,
+   "FA": 5.0,
+   "POD": 1.2
+  },
+  {
+   "empresa": "SW Demoscopia / La Séptima",
+   "campo": "26 oct-7 nov",
+   "PP": 28.5,
+   "PSOE": 31.0,
+   "VOX": 17.3,
+   "FA": 7.6,
    "POD": 1.7
   },
   {
+   "empresa": "IMOP / El Confidencial",
+   "campo": "2-6 nov",
+   "PP": 29.8,
+   "PSOE": 25.9,
+   "VOX": 19.9,
+   "FA": 8.1,
+   "POD": 1.2
+  },
+  {
    "empresa": "Sigma Dos / El Mundo",
-   "campo": "29-30 oct",
-   "PP": 31.1,
-   "PSOE": 24.6,
+   "campo": "30 oct-6 nov",
+   "PP": 31.0,
+   "PSOE": 25.2,
+   "VOX": 19.4,
+   "FA": 6.9,
+   "POD": 1.6
+  },
+  {
+   "empresa": "GAD3 / ABC",
+   "campo": "3-5 nov",
+   "PP": 31.9,
+   "PSOE": 25.9,
+   "VOX": 18.6,
+   "FA": 7.5,
+   "POD": 1.4
+  },
+  {
+   "empresa": "Ateneo del Dato / elDiario.es",
+   "campo": "2-5 nov",
+   "PP": 31.5,
+   "PSOE": 28.6,
+   "VOX": 18.6,
+   "FA": 6.1,
+   "POD": 1.5
+  },
+  {
+   "empresa": "NC Report / La Razón",
+   "campo": "2-5 nov",
+   "PP": 32.6,
+   "PSOE": 25.6,
    "VOX": 19.3,
+   "FA": 6.9,
+   "POD": 2.4
+  },
+  {
+   "empresa": "40dB / Prisa",
+   "campo": "2-4 nov",
+   "PP": 31.9,
+   "PSOE": 29.9,
+   "VOX": 18.0,
+   "FA": 3.9,
+   "POD": 1.2
+  },
+  {
+   "empresa": "Sondaxe / La Voz de Galicia",
+   "campo": "2-4 nov",
+   "PP": 29.7,
+   "PSOE": 27.3,
+   "VOX": 18.6,
    "FA": 7.1,
+   "POD": 2.2
+  },
+  {
+   "empresa": "Data10 / OKDiario",
+   "campo": "2-3 nov",
+   "PP": 32.4,
+   "PSOE": 24.7,
+   "VOX": 19.8,
+   "FA": 6.9,
+   "POD": 3.1
+  },
+  {
+   "empresa": "Celeste-Tel / Onda Cero",
+   "campo": "29 oct-3 nov",
+   "PP": 31.4,
+   "PSOE": 25.7,
+   "VOX": 19.2,
+   "FA": 6.8,
    "POD": 1.9
   },
   {
@@ -38,27 +119,9 @@
    "POD": 2.4
   },
   {
-   "empresa": "NC Report / La Razón",
-   "campo": "26-29 oct",
-   "PP": 33.0,
-   "PSOE": 25.6,
-   "VOX": 19.3,
-   "FA": 6.9,
-   "POD": 2.4
-  },
-  {
-   "empresa": "Sondaxe / La Voz de Galicia",
-   "campo": "26-28 oct",
-   "PP": 29.2,
-   "PSOE": 26.9,
-   "VOX": 19.2,
-   "FA": 7.2,
-   "POD": 2.0
-  },
-  {
    "empresa": "Hamalgama Métrica / Vozpópuli",
    "campo": "22-28 oct",
-   "PP": 32.4,
+   "PP": 32.0,
    "PSOE": 26.4,
    "VOX": 19.9,
    "FA": 5.4,
@@ -80,24 +143,6 @@
    "PSOE": 27.1,
    "VOX": 19.2,
    "FA": 5.6,
-   "POD": null
-  },
-  {
-   "empresa": "Ateneo del Dato / elDiario.es",
-   "campo": "20-22 oct",
-   "PP": 31.1,
-   "PSOE": 27.6,
-   "VOX": 19.8,
-   "FA": 6.8,
-   "POD": 2.7
-  },
-  {
-   "empresa": "IMOP / El Confidencial",
-   "campo": "13-16 oct",
-   "PP": 28.5,
-   "PSOE": 27.1,
-   "VOX": 20.0,
-   "FA": 8.9,
    "POD": null
   }
  ]
