@@ -5,8 +5,8 @@
   "recomendacion": "VOX",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.05,
-   "VOX": 0.148
+   "PP": 0.047,
+   "VOX": 0.143
   },
   "escanos_centrales": {
    "PP": 5,
@@ -21,15 +21,15 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 6200,
+  "votos_para_que_el_bloque_gane_uno": 6700,
   "quien_lo_ganaria_y_a_quien": "PSOE a PP",
   "cis_escanos_centrales": {
    "PP": 3,
    "PSOE": 4,
    "BNG": 1
   },
-  "explicacion_corta": "El PSOE está a unos 6.200 votos de quitarle al PP su quinto escaño. Vox está a unos 2.600 votos de pelearlo él, y entonces cada voto suyo cuenta entero (pelea su primer escaño); al PP, un quinto (pelea el quinto).",
-  "explicacion": "El PSOE está a unos 6.200 votos de quitarle al PP su quinto escaño (sería el tercero del PSOE). Vox está a unos 2.600 votos de pelearlo él (sería su primero): cada voto a Vox cuenta entero, porque pelea su primer escaño; al PP, un quinto, porque pelea el quinto.",
+  "explicacion_corta": "El PSOE está a unos 6.700 votos de quitarle al PP su quinto escaño. Vox está a unos 3.500 votos de pelearlo él, y entonces cada voto suyo cuenta entero (pelea su primer escaño); al PP, un quinto (pelea el quinto).",
+  "explicacion": "El PSOE está a unos 6.700 votos de quitarle al PP su quinto escaño (sería el tercero del PSOE). Vox está a unos 3.500 votos de pelearlo él (sería su primero): cada voto a Vox cuenta entero, porque pelea su primer escaño; al PP, un quinto, porque pelea el quinto.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -57,7 +57,7 @@
   "recomendacion": "PP",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.041,
+   "PP": 0.04,
    "VOX": 0.0
   },
   "escanos_centrales": {
@@ -90,19 +90,19 @@
    "a": 0.93,
    "c": 1.0,
    "antes": [
-    3.78,
+    3.77,
     4.0
    ],
    "pacto": [
-    3.11,
+    3.1,
     3.8
    ],
    "max": [
-    3.05,
+    3.04,
     3.8
    ],
    "reparto_todos": [
-    3.31,
+    3.3,
     3.92
    ]
   },
@@ -137,8 +137,8 @@
    "PSOE": 2,
    "VOX": 1
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 18.400 votos más para quitarle un escaño al PP.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 18.400 votos más para quitarle un escaño al PP.",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 18.800 votos más para quitarle un escaño al PP.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 18.800 votos más para quitarle un escaño al PP.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -166,8 +166,8 @@
   "recomendacion": "PP o VOX",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.061,
-   "VOX": 0.054
+   "PP": 0.062,
+   "VOX": 0.056
   },
   "escanos_centrales": {
    "PP": 5,
@@ -183,7 +183,7 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 13700,
+  "votos_para_que_el_bloque_gane_uno": 13100,
   "quien_lo_ganaria_y_a_quien": "PSOE a PP",
   "cis_escanos_centrales": {
    "PP": 3,
@@ -192,7 +192,7 @@
    "FA": 1
   },
   "explicacion_corta": "En Alicante las encuestas pueden fallar en más de 40.000 votos por partido: el escaño en juego puede ser del PP o de Vox, y los dos restan lo mismo.",
-  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el PSOE está a unos 13.700 votos de quitárselo, y Vox a unos 33.300 de pelearlo él. Pero en Alicante las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí el PP y Vox restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el PSOE está a unos 13.100 votos de quitárselo, y Vox a unos 35.900 de pelearlo él. Pero en Alicante las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí el PP y Vox restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -200,11 +200,11 @@
    "a": 0.0,
    "c": 0.36,
    "antes": [
-    2.09,
+    2.08,
     3.0
    ],
    "pacto": [
-    1.54,
+    1.53,
     2.36
    ],
    "max": [
@@ -222,10 +222,10 @@
   "provincia": "Almería",
   "escanos": 6,
   "recomendacion": "PP",
-  "ventaja": "clara",
+  "ventaja": "ligera",
   "valor_mezcla": {
-   "PP": 0.035,
-   "VOX": 0.016
+   "PP": 0.033,
+   "VOX": 0.017
   },
   "escanos_centrales": {
    "PP": 3,
@@ -240,15 +240,15 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 7000,
+  "votos_para_que_el_bloque_gane_uno": 7100,
   "quien_lo_ganaria_y_a_quien": "PSOE a PP",
   "cis_escanos_centrales": {
    "PP": 2,
    "PSOE": 2,
    "VOX": 2
   },
-  "explicacion_corta": "Cada voto al PP defiende su tercer escaño: el PSOE está a unos 7.000 votos de quitárselo.",
-  "explicacion": "El PSOE está a unos 7.000 votos de quitarle al PP su tercer escaño (sería el segundo del PSOE). Cada voto al PP lo defiende.",
+  "explicacion_corta": "Cada voto al PP defiende su tercer escaño: el PSOE está a unos 7.100 votos de quitárselo.",
+  "explicacion": "El PSOE está a unos 7.100 votos de quitarle al PP su tercer escaño (sería el segundo del PSOE). Cada voto al PP lo defiende.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -256,11 +256,11 @@
    "a": 0.02,
    "c": 0.81,
    "antes": [
-    0.25,
+    0.27,
     2.58
    ],
    "pacto": [
-    0.25,
+    0.27,
     2.58
    ],
    "max": [
@@ -277,7 +277,7 @@
   "ventaja": "ligera",
   "valor_mezcla": {
    "PP": 0.039,
-   "VOX": 0.068
+   "VOX": 0.07
   },
   "escanos_centrales": {
    "PP": 3,
@@ -285,8 +285,8 @@
    "VOX": 1
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 21900,
-   "VOX": 1100
+   "PP": 21100,
+   "VOX": 1900
   },
   "escano_que_cambiaria": {
    "PP": "PSOE",
@@ -299,8 +299,8 @@
    "PSOE": 4,
    "VOX": 1
   },
-  "explicacion_corta": "Con unos 1.100 votos más, Vox le quitaría al PSOE su tercer escaño.",
-  "explicacion": "Con unos 1.100 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox). Con unos 21.900 votos más, el PP le quitaría al PSOE su tercer escaño (sería el cuarto del PP).",
+  "explicacion_corta": "Con unos 1.900 votos más, Vox le quitaría al PSOE su tercer escaño.",
+  "explicacion": "Con unos 1.900 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox). Con unos 21.100 votos más, el PP le quitaría al PSOE su tercer escaño (sería el cuarto del PP).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -308,11 +308,11 @@
    "a": 0.01,
    "c": 0.72,
    "antes": [
-    2.25,
+    2.23,
     3.0
    ],
    "pacto": [
-    1.64,
+    1.63,
     2.72
    ],
    "max": [
@@ -341,7 +341,7 @@
    "VOX": 1
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 3600,
+   "PP": 3500,
    "VOX": null
   },
   "escano_que_cambiaria": {
@@ -355,8 +355,8 @@
    "PSOE": 1,
    "VOX": 1
   },
-  "explicacion_corta": "Con unos 3.600 votos más, el PP le quitaría al PSOE su primer escaño. Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
-  "explicacion": "Con unos 3.600 votos más, el PP le quitaría al PSOE su primer escaño (sería el segundo del PP). Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
+  "explicacion_corta": "Con unos 3.500 votos más, el PP le quitaría al PSOE su primer escaño. Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
+  "explicacion": "Con unos 3.500 votos más, el PP le quitaría al PSOE su primer escaño (sería el segundo del PP). Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -364,11 +364,11 @@
    "a": 0.01,
    "c": 0.73,
    "antes": [
-    0.7,
+    0.72,
     2.46
    ],
    "pacto": [
-    0.7,
+    0.72,
     2.46
    ],
    "max": [
@@ -407,8 +407,8 @@
    "PSOE": 3,
    "VOX": 1
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 40.900 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b>, con unos 12.200 votos más, el PP le quitaría al PSOE su tercer escaño.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 40.900 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b> (PSOE 3, PP 1, Vox 1): con unos 12.200 votos más, el PP le quitaría al PSOE su tercer escaño (sería el segundo del PP). Con unos 36.000 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox).",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 41.500 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b>, con unos 12.200 votos más, el PP le quitaría al PSOE su tercer escaño.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 41.500 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b> (PSOE 3, PP 1, Vox 1): con unos 12.200 votos más, el PP le quitaría al PSOE su tercer escaño (sería el segundo del PP). Con unos 36.000 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -416,11 +416,11 @@
    "a": 0.01,
    "c": 0.65,
    "antes": [
-    2.03,
+    2.02,
     3.0
    ],
    "pacto": [
-    1.52,
+    1.51,
     2.65
    ],
    "max": [
@@ -441,7 +441,7 @@
   "ventaja": "ligera",
   "valor_mezcla": {
    "PP": 0.06,
-   "VOX": 0.04
+   "VOX": 0.038
   },
   "escanos_centrales": {
    "PP": 4,
@@ -456,15 +456,15 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 1700,
+  "votos_para_que_el_bloque_gane_uno": 2600,
   "quien_lo_ganaria_y_a_quien": "PSOE a PP",
   "cis_escanos_centrales": {
    "PP": 2,
    "PSOE": 4,
    "VOX": 2
   },
-  "explicacion_corta": "Cada voto al PP defiende su cuarto escaño: el PSOE está a unos 1.700 votos de quitárselo.",
-  "explicacion": "El PSOE está a unos 1.700 votos de quitarle al PP su cuarto escaño (sería el tercero del PSOE). Cada voto al PP lo defiende.",
+  "explicacion_corta": "Cada voto al PP defiende su cuarto escaño: el PSOE está a unos 2.600 votos de quitárselo.",
+  "explicacion": "El PSOE está a unos 2.600 votos de quitarle al PP su cuarto escaño (sería el tercero del PSOE). Cada voto al PP lo defiende.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "sin_vox",
@@ -550,7 +550,7 @@
   },
   "votos_para_quitar_escano_al_bloque": {
    "PP": null,
-   "VOX": 29500
+   "VOX": 30100
   },
   "escano_que_cambiaria": {
    "PP": null,
@@ -564,12 +564,12 @@
    "PNV": 3
   },
   "explicacion_corta": "Con la media de encuestas no hay un escaño cerca para el PP. <b>Si acierta el CIS</b>, con unos 7.700 votos más, el PP le quitaría al PNV su tercer escaño.",
-  "explicacion": "Con unos 29.500 votos más, Vox le quitaría al PNV su tercer escaño (sería el primero de Vox). Con unos 41.300 votos más, el PP le quitaría al PNV su tercer escaño (sería el segundo del PP). <b>Si acierta el CIS</b> (PSOE 3, PNV 3, EH Bildu 2): con unos 7.700 votos más, el PP le quitaría al PNV su tercer escaño (sería el primero del PP). Con unos 32.400 votos más, Vox le quitaría al PNV su tercer escaño (sería el primero de Vox).",
+  "explicacion": "Con unos 30.100 votos más, Vox le quitaría al PNV su tercer escaño (sería el primero de Vox). Con unos 40.700 votos más, el PP le quitaría al PNV su tercer escaño (sería el segundo del PP). <b>Si acierta el CIS</b> (PSOE 3, PNV 3, EH Bildu 2): con unos 7.700 votos más, el PP le quitaría al PNV su tercer escaño (sería el primero del PP). Con unos 32.400 votos más, Vox le quitaría al PNV su tercer escaño (sería el primero de Vox).",
   "valor_SALF_vs_mejor": null,
   "senado": {
    "grupo": "vox_un_candidato",
    "regla": "igual",
-   "a": 0.5,
+   "a": 0.51,
    "c": 0.9,
    "antes": [
     4.0,
@@ -594,10 +594,10 @@
   "provincia": "Burgos",
   "escanos": 4,
   "recomendacion": "VOX",
-  "ventaja": "ligera",
+  "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.015,
-   "VOX": 0.027
+   "PP": 0.014,
+   "VOX": 0.028
   },
   "escanos_centrales": {
    "PP": 2,
@@ -619,8 +619,8 @@
    "PSOE": 2,
    "VOX": 1
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 18.000 votos más para quitarle un escaño al PP. Tampoco con el CIS: el impacto (3%) viene de los casos en que las encuestas fallan.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 18.000 votos más para quitarle un escaño al PP. Tampoco con el CIS: el impacto (3%) viene de los casos en que las encuestas fallan.",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 17.600 votos más para quitarle un escaño a Vox. Tampoco con el CIS: el impacto (3%) viene de los casos en que las encuestas fallan.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 17.600 votos más para quitarle un escaño a Vox. Tampoco con el CIS: el impacto (3%) viene de los casos en que las encuestas fallan.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -628,11 +628,11 @@
    "a": 0.2,
    "c": 0.99,
    "antes": [
-    1.4,
+    1.39,
     2.97
    ],
    "pacto": [
-    1.4,
+    1.39,
     2.97
    ],
    "max": [
@@ -648,8 +648,8 @@
   "recomendacion": "PP o VOX",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.037,
-   "VOX": 0.029
+   "PP": 0.034,
+   "VOX": 0.031
   },
   "escanos_centrales": {
    "PP": 2,
@@ -664,15 +664,15 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 7800,
+  "votos_para_que_el_bloque_gane_uno": 8000,
   "quien_lo_ganaria_y_a_quien": "PSOE a PP",
   "cis_escanos_centrales": {
    "PP": 1,
    "PSOE": 2,
    "VOX": 1
   },
-  "explicacion_corta": "Cada voto al PP defiende su segundo escaño: el PSOE está a unos 7.800 votos de quitárselo. Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
-  "explicacion": "El PSOE está a unos 7.800 votos de quitarle al PP su segundo escaño (sería el segundo del PSOE). Cada voto al PP lo defiende. Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
+  "explicacion_corta": "Cada voto al PP defiende su segundo escaño: el PSOE está a unos 8.000 votos de quitárselo. Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
+  "explicacion": "El PSOE está a unos 8.000 votos de quitarle al PP su segundo escaño (sería el segundo del PSOE). Cada voto al PP lo defiende. Para Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: su impacto viene de los casos en que las encuestas fallan.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -680,11 +680,11 @@
    "a": 0.0,
    "c": 0.63,
    "antes": [
-    1.97,
+    1.96,
     3.0
    ],
    "pacto": [
-    1.49,
+    1.48,
     2.63
    ],
    "max": [
@@ -701,11 +701,11 @@
  {
   "provincia": "Cádiz",
   "escanos": 8,
-  "recomendacion": "PP o VOX",
-  "ventaja": "empate técnico",
+  "recomendacion": "PP",
+  "ventaja": "ligera",
   "valor_mezcla": {
    "PP": 0.05,
-   "VOX": 0.04
+   "VOX": 0.039
   },
   "escanos_centrales": {
    "PP": 3,
@@ -713,8 +713,8 @@
    "VOX": 2
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 23600,
-   "VOX": 30200
+   "PP": 23900,
+   "VOX": 32100
   },
   "escano_que_cambiaria": {
    "PP": "PSOE",
@@ -727,8 +727,8 @@
    "PSOE": 4,
    "VOX": 2
   },
-  "explicacion_corta": "Con unos 23.600 votos más, el PP le quitaría al PSOE su tercer escaño. Con unos 30.200 votos más, Vox le quitaría al PSOE su tercer escaño.",
-  "explicacion": "Con unos 23.600 votos más, el PP le quitaría al PSOE su tercer escaño (sería el cuarto del PP). Con unos 30.200 votos más, Vox le quitaría al PSOE su tercer escaño (sería el tercero de Vox).",
+  "explicacion_corta": "Con unos 23.900 votos más, el PP le quitaría al PSOE su tercer escaño.",
+  "explicacion": "Con unos 23.900 votos más, el PP le quitaría al PSOE su tercer escaño (sería el cuarto del PP). Con unos 32.100 votos más, Vox le quitaría al PSOE su tercer escaño (sería el tercero de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "sin_vox",
@@ -736,7 +736,7 @@
    "a": 0.0,
    "c": 0.44,
    "antes": [
-    2.1,
+    2.09,
     3.0
    ],
    "pacto": [
@@ -756,7 +756,7 @@
   "recomendacion": "PP",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.046,
+   "PP": 0.047,
    "VOX": 0.008
   },
   "escanos_centrales": {
@@ -780,7 +780,7 @@
    "VOX": 1
   },
   "explicacion_corta": "Con unos 4.400 votos más, el PP le quitaría al PSOE su segundo escaño.",
-  "explicacion": "Con unos 4.400 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP). Con unos 19.300 votos más, Vox le quitaría al PSOE su segundo escaño (sería el segundo de Vox).",
+  "explicacion": "Con unos 4.400 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP). Con unos 20.200 votos más, Vox le quitaría al PSOE su segundo escaño (sería el segundo de Vox).",
   "valor_SALF_vs_mejor": null,
   "senado": {
    "grupo": "normal",
@@ -808,8 +808,8 @@
   "recomendacion": "VOX o PP",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.036,
-   "VOX": 0.039
+   "PP": 0.037,
+   "VOX": 0.04
   },
   "escanos_centrales": {
    "PP": 2,
@@ -818,7 +818,7 @@
   },
   "votos_para_quitar_escano_al_bloque": {
    "PP": null,
-   "VOX": 9400
+   "VOX": 10300
   },
   "escano_que_cambiaria": {
    "PP": null,
@@ -831,8 +831,8 @@
    "PSOE": 3,
    "VOX": 1
   },
-  "explicacion_corta": "Con unos 9.400 votos más, Vox le quitaría al PSOE su segundo escaño. <b>Si acierta el CIS</b>, con unos 1.300 votos más, el PP le quitaría al PSOE su tercer escaño.",
-  "explicacion": "Con unos 9.400 votos más, Vox le quitaría al PSOE su segundo escaño (sería el segundo de Vox). Con unos 21.500 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP). <b>Si acierta el CIS</b> (PSOE 3, PP 1, Vox 1): con unos 1.300 votos más, el PP le quitaría al PSOE su tercer escaño (sería el segundo del PP). Con unos 8.500 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox).",
+  "explicacion_corta": "Con unos 10.300 votos más, Vox le quitaría al PSOE su segundo escaño. <b>Si acierta el CIS</b>, con unos 1.300 votos más, el PP le quitaría al PSOE su tercer escaño.",
+  "explicacion": "Con unos 10.300 votos más, Vox le quitaría al PSOE su segundo escaño (sería el segundo de Vox). Con unos 21.800 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP). <b>Si acierta el CIS</b> (PSOE 3, PP 1, Vox 1): con unos 1.300 votos más, el PP le quitaría al PSOE su tercer escaño (sería el segundo del PP). Con unos 8.500 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "sin_vox",
@@ -840,7 +840,7 @@
    "a": 0.0,
    "c": 0.54,
    "antes": [
-    2.44,
+    2.43,
     3.0
    ],
    "pacto": [
@@ -889,10 +889,10 @@
   "provincia": "Ciudad Real",
   "escanos": 5,
   "recomendacion": "PP",
-  "ventaja": "ligera",
+  "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.042,
-   "VOX": 0.025
+   "PP": 0.043,
+   "VOX": 0.021
   },
   "escanos_centrales": {
    "PP": 2,
@@ -900,8 +900,8 @@
    "VOX": 1
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 14400,
-   "VOX": 12300
+   "PP": 14000,
+   "VOX": 12800
   },
   "escano_que_cambiaria": {
    "PP": "PSOE",
@@ -914,13 +914,13 @@
    "PSOE": 2,
    "VOX": 1
   },
-  "explicacion_corta": "Con unos 14.400 votos más, el PP le quitaría al PSOE su segundo escaño.",
-  "explicacion": "Con unos 12.300 votos más, Vox le quitaría al PSOE su segundo escaño (sería el segundo de Vox). Con unos 14.400 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP).",
+  "explicacion_corta": "Con unos 14.000 votos más, el PP le quitaría al PSOE su segundo escaño.",
+  "explicacion": "Con unos 12.800 votos más, Vox le quitaría al PSOE su segundo escaño (sería el segundo de Vox). Con unos 14.000 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP).",
   "valor_SALF_vs_mejor": null,
   "senado": {
    "grupo": "normal",
    "regla": "mismo_partido",
-   "a": 0.19,
+   "a": 0.18,
    "c": 0.99,
    "antes": [
     1.31,
@@ -944,7 +944,7 @@
   "ventaja": "ligera",
   "valor_mezcla": {
    "PP": 0.02,
-   "VOX": 0.036
+   "VOX": 0.035
   },
   "escanos_centrales": {
    "PP": 3,
@@ -959,15 +959,15 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 21300,
+  "votos_para_que_el_bloque_gane_uno": 21700,
   "quien_lo_ganaria_y_a_quien": "FA a PP",
   "cis_escanos_centrales": {
    "PP": 2,
    "PSOE": 3,
    "VOX": 1
   },
-  "explicacion_corta": "El Frente Amplio está a unos 21.300 votos de quitarle al PP su tercer escaño. Vox está a unos 12.000 votos de pelearlo él, y entonces cada voto suyo cuenta la mitad (pelea su segundo escaño); al PP, un tercio (pelea el tercero).",
-  "explicacion": "El Frente Amplio está a unos 21.300 votos de quitarle al PP su tercer escaño (sería el primero del Frente Amplio). Vox está a unos 12.000 votos de pelearlo él (sería su segundo): cada voto a Vox cuenta la mitad, porque pelea su segundo escaño; al PP, un tercio, porque pelea el tercero.",
+  "explicacion_corta": "El Frente Amplio está a unos 21.700 votos de quitarle al PP su tercer escaño. Vox está a unos 13.200 votos de pelearlo él, y entonces cada voto suyo cuenta la mitad (pelea su segundo escaño); al PP, un tercio (pelea el tercero).",
+  "explicacion": "El Frente Amplio está a unos 21.700 votos de quitarle al PP su tercer escaño (sería el primero del Frente Amplio). Vox está a unos 13.200 votos de pelearlo él (sería su segundo): cada voto a Vox cuenta la mitad, porque pelea su segundo escaño; al PP, un tercio, porque pelea el tercero.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -975,11 +975,11 @@
    "a": 0.34,
    "c": 1.0,
    "antes": [
-    1.68,
+    1.67,
     2.99
    ],
    "pacto": [
-    1.68,
+    1.67,
     2.99
    ],
    "max": [
@@ -1027,7 +1027,7 @@
    "a": 0.0,
    "c": 0.31,
    "antes": [
-    1.54,
+    1.53,
     2.99
    ],
    "pacto": [
@@ -1051,7 +1051,7 @@
   "recomendacion": "PP",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.102,
+   "PP": 0.104,
    "VOX": 0.0
   },
   "escanos_centrales": {
@@ -1060,7 +1060,7 @@
    "PNV": 2
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 7800,
+   "PP": 7400,
    "VOX": null
   },
   "escano_que_cambiaria": {
@@ -1074,13 +1074,13 @@
    "BILDU": 2,
    "PNV": 2
   },
-  "explicacion_corta": "Con unos 7.800 votos más, el PP le quitaría a EH Bildu su tercer escaño.",
-  "explicacion": "Con unos 7.800 votos más, el PP le quitaría a EH Bildu su tercer escaño (sería el primero del PP). Con unos 26.600 votos más, Vox le quitaría a EH Bildu su tercer escaño (sería el primero de Vox).",
+  "explicacion_corta": "Con unos 7.400 votos más, el PP le quitaría a EH Bildu su tercer escaño.",
+  "explicacion": "Con unos 7.400 votos más, el PP le quitaría a EH Bildu su tercer escaño (sería el primero del PP). Con unos 26.600 votos más, Vox le quitaría a EH Bildu su tercer escaño (sería el primero de Vox).",
   "valor_SALF_vs_mejor": null,
   "senado": {
    "grupo": "sin_pp",
    "regla": "igual",
-   "a": 0.08,
+   "a": 0.09,
    "c": 0.46,
    "antes": [
     4.0,
@@ -1187,7 +1187,7 @@
   "ventaja": "empate técnico",
   "valor_mezcla": {
    "PP": 0.028,
-   "VOX": 0.033
+   "VOX": 0.032
   },
   "escanos_centrales": {
    "PP": 3,
@@ -1209,8 +1209,8 @@
    "PSOE": 3,
    "VOX": 2
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al Frente Amplio le harían falta unos 28.400 votos más para quitarle un escaño al PP. <b>Si acierta el CIS</b>, el Frente Amplio está a unos 25.700 votos de quitarle a Vox su segundo escaño. Cada voto a Vox lo defiende directamente.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al Frente Amplio le harían falta unos 28.400 votos más para quitarle un escaño al PP. <b>Si acierta el CIS</b> (PSOE 3, PP 2, Vox 2): el Frente Amplio está a unos 25.700 votos de quitarle a Vox su segundo escaño (sería el primero del Frente Amplio). Cada voto a Vox lo defiende directamente. El PP está a unos 35.100 votos de pelearlo él (sería su tercero).",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al Frente Amplio le harían falta unos 28.800 votos más para quitarle un escaño al PP. <b>Si acierta el CIS</b>, el Frente Amplio está a unos 25.700 votos de quitarle a Vox su segundo escaño. Cada voto a Vox lo defiende directamente.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al Frente Amplio le harían falta unos 28.800 votos más para quitarle un escaño al PP. <b>Si acierta el CIS</b> (PSOE 3, PP 2, Vox 2): el Frente Amplio está a unos 25.700 votos de quitarle a Vox su segundo escaño (sería el primero del Frente Amplio). Cada voto a Vox lo defiende directamente. El PP está a unos 35.100 votos de pelearlo él (sería su tercero).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -1218,7 +1218,7 @@
    "a": 0.0,
    "c": 0.27,
    "antes": [
-    1.73,
+    1.72,
     2.99
    ],
    "pacto": [
@@ -1243,7 +1243,7 @@
   "ventaja": "sin escaño en juego entre bloques",
   "valor_mezcla": {
    "PP": 0.01,
-   "VOX": 0.004
+   "VOX": 0.003
   },
   "escanos_centrales": {
    "PP": 1,
@@ -1274,11 +1274,11 @@
    "a": 0.3,
    "c": 0.99,
    "antes": [
-    1.35,
+    1.36,
     2.98
    ],
    "pacto": [
-    1.35,
+    1.36,
     2.98
    ],
    "max": [
@@ -1295,7 +1295,7 @@
   "ventaja": "clara",
   "valor_mezcla": {
    "PP": 0.037,
-   "VOX": 0.017
+   "VOX": 0.015
   },
   "escanos_centrales": {
    "PP": 2,
@@ -1317,8 +1317,8 @@
    "PSOE": 3,
    "VOX": 1
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 21.700 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b>, con unos 5.800 votos más, el PP le quitaría al PSOE su tercer escaño.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 21.700 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b> (PSOE 3, PP 1, Vox 1): con unos 5.800 votos más, el PP le quitaría al PSOE su tercer escaño (sería el segundo del PP). Con unos 19.000 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox).",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 22.200 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b>, con unos 5.800 votos más, el PP le quitaría al PSOE su tercer escaño.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 22.200 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b> (PSOE 3, PP 1, Vox 1): con unos 5.800 votos más, el PP le quitaría al PSOE su tercer escaño (sería el segundo del PP). Con unos 19.000 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -1326,7 +1326,7 @@
    "a": 0.0,
    "c": 0.53,
    "antes": [
-    2.06,
+    2.05,
     3.0
    ],
    "pacto": [
@@ -1351,7 +1351,7 @@
   "ventaja": "clara",
   "valor_mezcla": {
    "PP": 0.005,
-   "VOX": 0.037
+   "VOX": 0.038
   },
   "escanos_centrales": {
    "PP": 1,
@@ -1372,8 +1372,8 @@
    "PP": 1,
    "PSOE": 2
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 12.200 votos más para quitarle un escaño a Vox. <b>Si acierta el CIS</b>, con unos 2.100 votos más, Vox le quitaría al PSOE su segundo escaño.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 12.200 votos más para quitarle un escaño a Vox. <b>Si acierta el CIS</b> (PSOE 2, PP 1): con unos 2.100 votos más, Vox le quitaría al PSOE su segundo escaño (sería el primero de Vox). Con unos 13.800 votos más, el PP le quitaría al PSOE su segundo escaño (sería el segundo del PP).",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 11.900 votos más para quitarle un escaño a Vox. <b>Si acierta el CIS</b>, con unos 2.100 votos más, Vox le quitaría al PSOE su segundo escaño.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 11.900 votos más para quitarle un escaño a Vox. <b>Si acierta el CIS</b> (PSOE 2, PP 1): con unos 2.100 votos más, Vox le quitaría al PSOE su segundo escaño (sería el primero de Vox). Con unos 13.800 votos más, el PP le quitaría al PSOE su segundo escaño (sería el segundo del PP).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -1381,11 +1381,11 @@
    "a": 0.0,
    "c": 0.49,
    "antes": [
-    1.68,
+    1.66,
     2.99
    ],
    "pacto": [
-    1.34,
+    1.33,
     2.49
    ],
    "max": [
@@ -1405,7 +1405,7 @@
   "recomendacion": "PP",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.038,
+   "PP": 0.039,
    "VOX": 0.017
   },
   "escanos_centrales": {
@@ -1428,8 +1428,8 @@
    "PSOE": 3,
    "VOX": 1
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 25.300 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b>, con unos 5.600 votos más, el PP le quitaría al PSOE su tercer escaño.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 25.300 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b> (PSOE 3, PP 1, Vox 1): con unos 5.600 votos más, el PP le quitaría al PSOE su tercer escaño (sería el segundo del PP). Con unos 22.200 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox).",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 26.300 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b>, con unos 5.600 votos más, el PP le quitaría al PSOE su tercer escaño.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: Vox necesitaría unos 26.300 votos más para quitarle un escaño al PSOE. <b>Si acierta el CIS</b> (PSOE 3, PP 1, Vox 1): con unos 5.600 votos más, el PP le quitaría al PSOE su tercer escaño (sería el segundo del PP). Con unos 22.200 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -1437,7 +1437,7 @@
    "a": 0.0,
    "c": 0.46,
    "antes": [
-    1.84,
+    1.83,
     3.0
    ],
    "pacto": [
@@ -1461,8 +1461,8 @@
   "recomendacion": "VOX",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.03,
-   "VOX": 0.067
+   "PP": 0.031,
+   "VOX": 0.064
   },
   "escanos_centrales": {
    "PP": 2,
@@ -1470,7 +1470,7 @@
   },
   "votos_para_quitar_escano_al_bloque": {
    "PP": 1900,
-   "VOX": 100
+   "VOX": 400
   },
   "escano_que_cambiaria": {
    "PP": "PSOE",
@@ -1482,8 +1482,8 @@
    "PP": 2,
    "PSOE": 2
   },
-  "explicacion_corta": "Con unos 100 votos más, Vox le quitaría al PSOE su segundo escaño.",
-  "explicacion": "Con unos 100 votos más, Vox le quitaría al PSOE su segundo escaño (sería el primero de Vox). Con unos 1.900 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP).",
+  "explicacion_corta": "Con unos 400 votos más, Vox le quitaría al PSOE su segundo escaño.",
+  "explicacion": "Con unos 400 votos más, Vox le quitaría al PSOE su segundo escaño (sería el primero de Vox). Con unos 1.900 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -1511,7 +1511,7 @@
   "recomendacion": "PP",
   "ventaja": "ligera",
   "valor_mezcla": {
-   "PP": 0.065,
+   "PP": 0.066,
    "VOX": 0.041
   },
   "escanos_centrales": {
@@ -1522,7 +1522,7 @@
   },
   "votos_para_quitar_escano_al_bloque": {
    "PP": 17400,
-   "VOX": 32600
+   "VOX": 34300
   },
   "escano_que_cambiaria": {
    "PP": "PSOE",
@@ -1537,7 +1537,7 @@
    "FA": 1
   },
   "explicacion_corta": "Con unos 17.400 votos más, el PP le quitaría al PSOE su tercer escaño.",
-  "explicacion": "Con unos 17.400 votos más, el PP le quitaría al PSOE su tercer escaño (sería el tercero del PP). Con unos 32.600 votos más, Vox le quitaría al PSOE su tercer escaño (sería el tercero de Vox).",
+  "explicacion": "Con unos 17.400 votos más, el PP le quitaría al PSOE su tercer escaño (sería el tercero del PP). Con unos 34.300 votos más, Vox le quitaría al PSOE su tercer escaño (sería el tercero de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "sin_vox",
@@ -1552,7 +1552,7 @@
   "ventaja": "empate técnico",
   "valor_mezcla": {
    "PP": 0.021,
-   "VOX": 0.016
+   "VOX": 0.019
   },
   "escanos_centrales": {
    "PP": 2,
@@ -1574,20 +1574,20 @@
    "PSOE": 2,
    "VOX": 1
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 16.600 votos más para quitarle un escaño al PP. Para el PP y Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: el impacto de los dos viene de los casos en que las encuestas fallan.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 16.600 votos más para quitarle un escaño al PP. Para el PP y Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: el impacto de los dos viene de los casos en que las encuestas fallan.",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 16.800 votos más para quitarle un escaño al PP. Para el PP y Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: el impacto de los dos viene de los casos en que las encuestas fallan.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 16.800 votos más para quitarle un escaño al PP. Para el PP y Vox no hay un escaño cerca ni con la media de encuestas ni con el CIS: el impacto de los dos viene de los casos en que las encuestas fallan.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
    "regla": "mismo_partido",
-   "a": 0.28,
+   "a": 0.27,
    "c": 1.0,
    "antes": [
-    1.55,
+    1.54,
     2.99
    ],
    "pacto": [
-    1.55,
+    1.54,
     2.99
    ],
    "max": [
@@ -1655,10 +1655,10 @@
  {
   "provincia": "Lugo",
   "escanos": 4,
-  "recomendacion": "Indiferente",
-  "ventaja": "sin escaño en juego entre bloques",
+  "recomendacion": "PP",
+  "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.02,
+   "PP": 0.021,
    "VOX": 0.0
   },
   "escanos_centrales": {
@@ -1679,8 +1679,8 @@
    "PP": 2,
    "PSOE": 2
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 11.400 votos más para quitarle un escaño al PP.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 11.400 votos más para quitarle un escaño al PP.",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 11.600 votos más para quitarle un escaño al PP. Tampoco con el CIS: el impacto (2%) viene de los casos en que las encuestas fallan.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 11.600 votos más para quitarle un escaño al PP. Tampoco con el CIS: el impacto (2%) viene de los casos en que las encuestas fallan.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -1705,11 +1705,11 @@
  {
   "provincia": "Madrid",
   "escanos": 38,
-  "recomendacion": "PP o VOX",
+  "recomendacion": "VOX o PP",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.182,
-   "VOX": 0.18
+   "PP": 0.179,
+   "VOX": 0.179
   },
   "escanos_centrales": {
    "PP": 16,
@@ -1726,7 +1726,7 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 13300,
+  "votos_para_que_el_bloque_gane_uno": 5600,
   "quien_lo_ganaria_y_a_quien": "PSOE a VOX",
   "cis_escanos_centrales": {
    "PP": 12,
@@ -1736,19 +1736,19 @@
    "POD": 2
   },
   "explicacion_corta": "En Madrid las encuestas pueden fallar en más de 100.000 votos por partido: el escaño en juego puede ser de Vox o del PP, y los dos restan lo mismo.",
-  "explicacion": "Con la media de encuestas, el escaño en juego es de Vox: el PSOE está a unos 13.300 votos de quitárselo, y el PP a unos 50.400 de pelearlo él. Pero en Madrid las encuestas pueden fallar en más de 100.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí Vox y el PP restan lo mismo.",
-  "valor_SALF_vs_mejor": 0.052,
+  "explicacion": "Con la media de encuestas, el escaño en juego es de Vox: el PSOE está a unos 5.600 votos de quitárselo, y el PP a unos 32.900 de pelearlo él. Pero en Madrid las encuestas pueden fallar en más de 100.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí Vox y el PP restan lo mismo.",
+  "valor_SALF_vs_mejor": 0.054,
   "senado": {
    "grupo": "normal",
    "regla": "mismo_partido",
    "a": 0.11,
    "c": 0.97,
    "antes": [
-    1.21,
+    1.2,
     2.93
    ],
    "pacto": [
-    1.21,
+    1.2,
     2.93
    ],
    "max": [
@@ -1764,8 +1764,8 @@
   "recomendacion": "PP o VOX",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.058,
-   "VOX": 0.052
+   "PP": 0.057,
+   "VOX": 0.049
   },
   "escanos_centrales": {
    "PP": 5,
@@ -1780,15 +1780,15 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 11100,
+  "votos_para_que_el_bloque_gane_uno": 11600,
   "quien_lo_ganaria_y_a_quien": "FA a PP",
   "cis_escanos_centrales": {
    "PP": 3,
    "PSOE": 5,
    "VOX": 3
   },
-  "explicacion_corta": "En Málaga las encuestas pueden fallar en más de 40.000 votos por partido: el escaño en juego puede ser del PP o de Vox, y los dos restan lo mismo.",
-  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el Frente Amplio está a unos 11.100 votos de quitárselo, y Vox a unos 37.500 de pelearlo él. Pero en Málaga las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí el PP y Vox restan lo mismo.",
+  "explicacion_corta": "En Málaga las encuestas pueden fallar en más de 42.000 votos por partido: el escaño en juego puede ser del PP o de Vox, y los dos restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es del PP: el Frente Amplio está a unos 11.600 votos de quitárselo, y Vox a unos 40.600 de pelearlo él. Pero en Málaga las encuestas pueden fallar en más de 42.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí el PP y Vox restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -1796,11 +1796,11 @@
    "a": 0.21,
    "c": 0.99,
    "antes": [
-    1.32,
+    1.33,
     2.98
    ],
    "pacto": [
-    1.32,
+    1.33,
     2.98
    ],
    "max": [
@@ -1847,8 +1847,8 @@
   "recomendacion": "VOX o PP",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.028,
-   "VOX": 0.032
+   "PP": 0.03,
+   "VOX": 0.033
   },
   "escanos_centrales": {
    "PP": 4,
@@ -1863,15 +1863,15 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 26700,
-  "quien_lo_ganaria_y_a_quien": "FA a VOX",
+  "votos_para_que_el_bloque_gane_uno": 26100,
+  "quien_lo_ganaria_y_a_quien": "PSOE a VOX",
   "cis_escanos_centrales": {
    "PP": 3,
    "PSOE": 3,
    "VOX": 4
   },
   "explicacion_corta": "En Murcia las encuestas pueden fallar en más de 40.000 votos por partido: el escaño en juego puede ser de Vox o del PP, y los dos restan lo mismo.",
-  "explicacion": "Con la media de encuestas, el escaño en juego es de Vox: el Frente Amplio está a unos 26.700 votos de quitárselo, y el PP a unos 15.600 de pelearlo él. Pero en Murcia las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí Vox y el PP restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es de Vox: el PSOE está a unos 26.100 votos de quitárselo, y el PP a unos 11.100 de pelearlo él. Pero en Murcia las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí Vox y el PP restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -1879,11 +1879,11 @@
    "a": 0.01,
    "c": 0.63,
    "antes": [
-    0.12,
+    0.13,
     2.14
    ],
    "pacto": [
-    0.12,
+    0.13,
     2.14
    ],
    "max": [
@@ -1897,10 +1897,10 @@
   "provincia": "Navarra",
   "escanos": 5,
   "recomendacion": "UPN",
-  "ventaja": "ligera",
+  "ventaja": "clara",
   "valor_mezcla": {
-   "VOX": 0.025,
-   "UPN": 0.047
+   "VOX": 0.024,
+   "UPN": 0.049
   },
   "escanos_centrales": {
    "PSOE": 2,
@@ -1908,8 +1908,8 @@
    "UPN": 2
   },
   "votos_para_quitar_escano_al_bloque": {
-   "VOX": 9600,
-   "UPN": 8600
+   "VOX": 10100,
+   "UPN": 9000
   },
   "escano_que_cambiaria": {
    "VOX": "PSOE",
@@ -1922,8 +1922,8 @@
    "BILDU": 1,
    "UPN": 2
   },
-  "explicacion_corta": "Con unos 8.600 votos más, UPN-PP le quitaría al PSOE su segundo escaño.",
-  "explicacion": "Con unos 8.600 votos más, UPN-PP le quitaría al PSOE su segundo escaño (sería el tercero de UPN-PP). Con unos 9.600 votos más, Vox le quitaría al PSOE su segundo escaño (sería el primero de Vox).",
+  "explicacion_corta": "Con unos 9.000 votos más, UPN-PP le quitaría al PSOE su segundo escaño.",
+  "explicacion": "Con unos 9.000 votos más, UPN-PP le quitaría al PSOE su segundo escaño (sería el tercero de UPN-PP). Con unos 10.100 votos más, Vox le quitaría al PSOE su segundo escaño (sería el primero de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -1931,11 +1931,11 @@
    "a": 0.03,
    "c": 0.29,
    "antes": [
-    1.64,
+    1.65,
     2.48
    ],
    "pacto": [
-    1.34,
+    1.35,
     2.03
    ],
    "max": [
@@ -1943,7 +1943,7 @@
     1.58
    ],
    "reparto_todos": [
-    1.14,
+    1.15,
     1.87
    ],
    "pp": "UPN-PP"
@@ -1977,8 +1977,8 @@
    "PP": 2,
    "PSOE": 2
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 10.800 votos más para quitarle un escaño al PP. Tampoco con el CIS: el impacto (2%) viene de los casos en que las encuestas fallan.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 10.800 votos más para quitarle un escaño al PP. Tampoco con el CIS: el impacto (2%) viene de los casos en que las encuestas fallan.",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 10.900 votos más para quitarle un escaño al PP. Tampoco con el CIS: el impacto (2%) viene de los casos en que las encuestas fallan.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 10.900 votos más para quitarle un escaño al PP. Tampoco con el CIS: el impacto (2%) viene de los casos en que las encuestas fallan.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -2006,7 +2006,7 @@
   "recomendacion": "VOX",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.005,
+   "PP": 0.006,
    "VOX": 0.033
   },
   "escanos_centrales": {
@@ -2027,20 +2027,20 @@
    "PP": 1,
    "PSOE": 2
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 9.000 votos más para quitarle un escaño al PP. <b>Si acierta el CIS</b>, con unos 1.600 votos más, Vox le quitaría al PSOE su segundo escaño.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 9.000 votos más para quitarle un escaño al PP. <b>Si acierta el CIS</b> (PSOE 2, PP 1): con unos 1.600 votos más, Vox le quitaría al PSOE su segundo escaño (sería el primero de Vox). Con unos 8.200 votos más, el PP le quitaría al PSOE su segundo escaño (sería el segundo del PP).",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 9.100 votos más para quitarle un escaño al PP. <b>Si acierta el CIS</b>, con unos 1.600 votos más, Vox le quitaría al PSOE su segundo escaño.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 9.100 votos más para quitarle un escaño al PP. <b>Si acierta el CIS</b> (PSOE 2, PP 1): con unos 1.600 votos más, Vox le quitaría al PSOE su segundo escaño (sería el primero de Vox). Con unos 8.200 votos más, el PP le quitaría al PSOE su segundo escaño (sería el segundo del PP).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
    "regla": "mismo_partido",
-   "a": 0.13,
+   "a": 0.12,
    "c": 0.98,
    "antes": [
-    1.25,
+    1.24,
     2.95
    ],
    "pacto": [
-    1.25,
+    1.24,
     2.95
    ],
    "max": [
@@ -2056,8 +2056,8 @@
   "recomendacion": "PP o VOX",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.077,
-   "VOX": 0.076
+   "PP": 0.079,
+   "VOX": 0.07
   },
   "escanos_centrales": {
    "PP": 4,
@@ -2066,7 +2066,7 @@
   },
   "votos_para_quitar_escano_al_bloque": {
    "PP": null,
-   "VOX": 10600
+   "VOX": 11000
   },
   "escano_que_cambiaria": {
    "PP": null,
@@ -2079,16 +2079,16 @@
    "PSOE": 3,
    "BNG": 1
   },
-  "explicacion_corta": "Con unos 10.600 votos más, Vox le quitaría al BNG su primer escaño. <b>Si acierta el CIS</b>, cada voto al PP defiende su tercer escaño: el PSOE está a unos 3.100 votos de quitárselo.",
-  "explicacion": "Con unos 10.600 votos más, Vox le quitaría al BNG su primer escaño (sería el primero de Vox). Con unos 43.200 votos más, el PP le quitaría al BNG su primer escaño (sería el quinto del PP). <b>Si acierta el CIS</b> (PP 3, PSOE 3, BNG 1): el PSOE está a unos 3.100 votos de quitarle al PP su tercer escaño (sería el cuarto del PSOE). Cada voto al PP lo defiende.",
+  "explicacion_corta": "Con unos 11.000 votos más, Vox le quitaría al BNG su primer escaño. <b>Si acierta el CIS</b>, cada voto al PP defiende su tercer escaño: el PSOE está a unos 3.100 votos de quitárselo.",
+  "explicacion": "Con unos 11.000 votos más, Vox le quitaría al BNG su primer escaño (sería el primero de Vox). Con unos 42.200 votos más, el PP le quitaría al BNG su primer escaño (sería el quinto del PP). <b>Si acierta el CIS</b> (PP 3, PSOE 3, BNG 1): el PSOE está a unos 3.100 votos de quitarle al PP su tercer escaño (sería el cuarto del PSOE). Cada voto al PP lo defiende.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
-   "regla": "repartir",
+   "regla": "igual",
    "a": 0.03,
    "c": 0.89,
    "antes": [
-    1.46,
+    1.45,
     2.98
    ],
    "pacto": [
@@ -2164,8 +2164,8 @@
   "recomendacion": "VOX",
   "ventaja": "ligera",
   "valor_mezcla": {
-   "PP": 0.043,
-   "VOX": 0.066
+   "PP": 0.044,
+   "VOX": 0.063
   },
   "escanos_centrales": {
    "PP": 2,
@@ -2174,8 +2174,8 @@
    "CC": 1
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 20500,
-   "VOX": 2400
+   "PP": 20000,
+   "VOX": 3200
   },
   "escano_que_cambiaria": {
    "PP": "PSOE",
@@ -2189,8 +2189,8 @@
    "VOX": 1,
    "CC": 1
   },
-  "explicacion_corta": "Con unos 2.400 votos más, Vox le quitaría al PSOE su tercer escaño.",
-  "explicacion": "Con unos 2.400 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox). Con unos 20.500 votos más, el PP le quitaría al PSOE su tercer escaño (sería el tercero del PP).",
+  "explicacion_corta": "Con unos 3.200 votos más, Vox le quitaría al PSOE su tercer escaño.",
+  "explicacion": "Con unos 3.200 votos más, Vox le quitaría al PSOE su tercer escaño (sería el segundo de Vox). Con unos 20.000 votos más, el PP le quitaría al PSOE su tercer escaño (sería el tercero del PP).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "sin_vox",
@@ -2204,8 +2204,8 @@
   "recomendacion": "VOX",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.01,
-   "VOX": 0.039
+   "PP": 0.009,
+   "VOX": 0.038
   },
   "escanos_centrales": {
    "PP": 2,
@@ -2252,11 +2252,11 @@
  {
   "provincia": "Sevilla",
   "escanos": 12,
-  "recomendacion": "VOX o PP",
+  "recomendacion": "PP o VOX",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.084,
-   "VOX": 0.085
+   "PP": 0.083,
+   "VOX": 0.081
   },
   "escanos_centrales": {
    "PP": 4,
@@ -2272,7 +2272,7 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 31100,
+  "votos_para_que_el_bloque_gane_uno": 26700,
   "quien_lo_ganaria_y_a_quien": "PSOE a VOX",
   "cis_escanos_centrales": {
    "PP": 3,
@@ -2281,7 +2281,7 @@
    "FA": 1
   },
   "explicacion_corta": "En Sevilla las encuestas pueden fallar en más de 40.000 votos por partido: el escaño en juego puede ser de Vox o del PP, y los dos restan lo mismo.",
-  "explicacion": "Con la media de encuestas, el escaño en juego es de Vox: el PSOE está a unos 31.100 votos de quitárselo, y el PP a unos 18.200 de pelearlo él. Pero en Sevilla las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí Vox y el PP restan lo mismo.",
+  "explicacion": "Con la media de encuestas, el escaño en juego es de Vox: el PSOE está a unos 26.700 votos de quitárselo, y el PP a unos 11.900 de pelearlo él. Pero en Sevilla las encuestas pueden fallar en más de 40.000 votos por partido, así que el escaño que se decide puede ser de cualquiera de los dos. Por eso aquí Vox y el PP restan lo mismo.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -2289,7 +2289,7 @@
    "a": 0.03,
    "c": 0.82,
    "antes": [
-    2.63,
+    2.62,
     3.0
    ],
    "pacto": [
@@ -2313,7 +2313,7 @@
   "recomendacion": "Indiferente",
   "ventaja": "sin escaño en juego entre bloques",
   "valor_mezcla": {
-   "PP": 0.012,
+   "PP": 0.011,
    "VOX": 0.001
   },
   "escanos_centrales": {
@@ -2334,8 +2334,8 @@
    "PP": 1,
    "PSOE": 1
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: el PP necesitaría unos 5.500 votos más para quitarle un escaño al PSOE.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque: el PP necesitaría unos 5.500 votos más para quitarle un escaño al PSOE.",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: el PP necesitaría unos 5.600 votos más para quitarle un escaño al PSOE.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: el PP necesitaría unos 5.600 votos más para quitarle un escaño al PSOE.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -2436,7 +2436,7 @@
   "recomendacion": "VOX",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.005,
+   "PP": 0.004,
    "VOX": 0.034
   },
   "escanos_centrales": {
@@ -2459,8 +2459,8 @@
    "PSOE": 1,
    "VOX": 1
   },
-  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque. <b>Si acierta el CIS</b>, cada voto a Vox defiende su primer escaño: el PSOE está a unos 1.800 votos de quitárselo.",
-  "explicacion": "Ningún escaño está cerca de cambiar de bloque. <b>Si acierta el CIS</b> (PP 1, PSOE 1, Vox 1): el PSOE está a unos 1.800 votos de quitarle a Vox su primer escaño (sería el segundo del PSOE). Cada voto a Vox lo defiende.",
+  "explicacion_corta": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 10.400 votos más para quitarle un escaño a Vox. <b>Si acierta el CIS</b>, cada voto a Vox defiende su primer escaño: el PSOE está a unos 1.800 votos de quitárselo.",
+  "explicacion": "Ningún escaño está cerca de cambiar de bloque: al PSOE le harían falta unos 10.400 votos más para quitarle un escaño a Vox. <b>Si acierta el CIS</b> (PP 1, PSOE 1, Vox 1): el PSOE está a unos 1.800 votos de quitarle a Vox su primer escaño (sería el segundo del PSOE). Cada voto a Vox lo defiende.",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -2468,11 +2468,11 @@
    "a": 0.06,
    "c": 0.95,
    "antes": [
-    0.97,
+    0.98,
     2.9
    ],
    "pacto": [
-    0.97,
+    0.98,
     2.9
    ],
    "max": [
@@ -2488,7 +2488,7 @@
   "recomendacion": "PP",
   "ventaja": "ligera",
   "valor_mezcla": {
-   "PP": 0.037,
+   "PP": 0.038,
    "VOX": 0.024
   },
   "escanos_centrales": {
@@ -2497,7 +2497,7 @@
    "VOX": 2
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 16600,
+   "PP": 16400,
    "VOX": null
   },
   "escano_que_cambiaria": {
@@ -2511,8 +2511,8 @@
    "PSOE": 2,
    "VOX": 2
   },
-  "explicacion_corta": "Con unos 16.600 votos más, el PP le quitaría al PSOE su segundo escaño.",
-  "explicacion": "Con unos 16.600 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP). Con unos 39.000 votos más, Vox le quitaría al PSOE su segundo escaño (sería el tercero de Vox).",
+  "explicacion_corta": "Con unos 16.400 votos más, el PP le quitaría al PSOE su segundo escaño.",
+  "explicacion": "Con unos 16.400 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP). Con unos 40.200 votos más, Vox le quitaría al PSOE su segundo escaño (sería el tercero de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
@@ -2520,11 +2520,11 @@
    "a": 0.2,
    "c": 0.98,
    "antes": [
-    1.06,
+    1.07,
     2.96
    ],
    "pacto": [
-    1.06,
+    1.07,
     2.96
    ],
    "max": [
@@ -2540,8 +2540,8 @@
   "recomendacion": "VOX o PP",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.084,
-   "VOX": 0.087
+   "PP": 0.086,
+   "VOX": 0.088
   },
   "escanos_centrales": {
    "PP": 5,
@@ -2550,8 +2550,8 @@
    "FA": 2
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 1300,
-   "VOX": 50900
+   "PP": 1900,
+   "VOX": 55200
   },
   "escano_que_cambiaria": {
    "PP": "PSOE",
@@ -2565,8 +2565,8 @@
    "VOX": 4,
    "FA": 2
   },
-  "explicacion_corta": "Con unos 1.300 votos más, el PP le quitaría al PSOE su quinto escaño. Con unos 50.900 votos más, Vox le quitaría al PSOE su quinto escaño.",
-  "explicacion": "Con unos 1.300 votos más, el PP le quitaría al PSOE su quinto escaño (sería el sexto del PP). Con unos 50.900 votos más, Vox le quitaría al PSOE su quinto escaño (sería el quinto de Vox).",
+  "explicacion_corta": "Con unos 1.900 votos más, el PP le quitaría al PSOE su quinto escaño. Con unos 55.200 votos más, Vox le quitaría al PSOE su quinto escaño.",
+  "explicacion": "Con unos 1.900 votos más, el PP le quitaría al PSOE su quinto escaño (sería el sexto del PP). Con unos 55.200 votos más, Vox le quitaría al PSOE su quinto escaño (sería el quinto de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "sin_vox",
@@ -2574,15 +2574,15 @@
    "a": 0.02,
    "c": 0.7,
    "antes": [
-    2.7,
+    2.69,
     3.0
    ],
    "pacto": [
-    1.03,
+    1.04,
     2.41
    ],
    "max": [
-    1.03,
+    1.04,
     2.41
    ]
   },
@@ -2594,8 +2594,8 @@
   "recomendacion": "PP",
   "ventaja": "clara",
   "valor_mezcla": {
-   "PP": 0.049,
-   "VOX": 0.02
+   "PP": 0.05,
+   "VOX": 0.018
   },
   "escanos_centrales": {
    "PP": 2,
@@ -2603,8 +2603,8 @@
    "VOX": 1
   },
   "votos_para_quitar_escano_al_bloque": {
-   "PP": 5600,
-   "VOX": 11500
+   "PP": 5300,
+   "VOX": 12000
   },
   "escano_que_cambiaria": {
    "PP": "PSOE",
@@ -2617,20 +2617,20 @@
    "PSOE": 2,
    "VOX": 1
   },
-  "explicacion_corta": "Con unos 5.600 votos más, el PP le quitaría al PSOE su segundo escaño.",
-  "explicacion": "Con unos 5.600 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP). Con unos 11.500 votos más, Vox le quitaría al PSOE su segundo escaño (sería el segundo de Vox).",
+  "explicacion_corta": "Con unos 5.300 votos más, el PP le quitaría al PSOE su segundo escaño.",
+  "explicacion": "Con unos 5.300 votos más, el PP le quitaría al PSOE su segundo escaño (sería el tercero del PP). Con unos 12.000 votos más, Vox le quitaría al PSOE su segundo escaño (sería el segundo de Vox).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "normal",
    "regla": "mismo_partido",
-   "a": 0.15,
+   "a": 0.14,
    "c": 0.98,
    "antes": [
-    1.25,
+    1.24,
     2.96
    ],
    "pacto": [
-    1.25,
+    1.24,
     2.96
    ],
    "max": [
@@ -2696,7 +2696,7 @@
   "recomendacion": "VOX o PP",
   "ventaja": "empate técnico",
   "valor_mezcla": {
-   "PP": 0.023,
+   "PP": 0.022,
    "VOX": 0.032
   },
   "escanos_centrales": {
@@ -2712,15 +2712,15 @@
    "PP": null,
    "VOX": null
   },
-  "votos_para_que_el_bloque_gane_uno": 24100,
+  "votos_para_que_el_bloque_gane_uno": 24600,
   "quien_lo_ganaria_y_a_quien": "FA a PP",
   "cis_escanos_centrales": {
    "PP": 2,
    "PSOE": 3,
    "VOX": 2
   },
-  "explicacion_corta": "Cada voto al PP defiende su tercer escaño: el Frente Amplio está a unos 24.100 votos de quitárselo. <b>Si acierta el CIS</b>, el Frente Amplio está a unos 20.100 votos de quitarle a Vox su segundo escaño. Cada voto a Vox lo defiende directamente.",
-  "explicacion": "El Frente Amplio está a unos 24.100 votos de quitarle al PP su tercer escaño (sería el primero del Frente Amplio). Cada voto al PP lo defiende. <b>Si acierta el CIS</b> (PSOE 3, PP 2, Vox 2): el Frente Amplio está a unos 20.100 votos de quitarle a Vox su segundo escaño (sería el primero del Frente Amplio). Cada voto a Vox lo defiende directamente. El PP está a unos 32.500 votos de pelearlo él (sería su tercero).",
+  "explicacion_corta": "Cada voto al PP defiende su tercer escaño: el Frente Amplio está a unos 24.600 votos de quitárselo. <b>Si acierta el CIS</b>, el Frente Amplio está a unos 20.100 votos de quitarle a Vox su segundo escaño. Cada voto a Vox lo defiende directamente.",
+  "explicacion": "El Frente Amplio está a unos 24.600 votos de quitarle al PP su tercer escaño (sería el primero del Frente Amplio). Cada voto al PP lo defiende. <b>Si acierta el CIS</b> (PSOE 3, PP 2, Vox 2): el Frente Amplio está a unos 20.100 votos de quitarle a Vox su segundo escaño (sería el primero del Frente Amplio). Cada voto a Vox lo defiende directamente. El PP está a unos 32.500 votos de pelearlo él (sería su tercero).",
   "valor_SALF_vs_mejor": 0.0,
   "senado": {
    "grupo": "vox_un_candidato",
@@ -2728,7 +2728,7 @@
    "a": 0.0,
    "c": 0.26,
    "antes": [
-    1.73,
+    1.72,
     2.99
    ],
    "pacto": [
@@ -2740,7 +2740,7 @@
     1.52
    ],
    "reparto_todos": [
-    0.98,
+    0.99,
     2.32
    ]
   },
