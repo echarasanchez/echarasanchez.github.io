@@ -1,22 +1,22 @@
 {
  "A_media_privadas": {
   "escanos_medios": {
-   "PP": 131.0,
-   "PSOE": 109.3,
-   "VOX": 66.4,
-   "FA": 10.0,
+   "PP": 130.9,
+   "PSOE": 108.2,
+   "VOX": 66.5,
+   "FA": 11.1,
    "POD": 0.9,
    "ERC": 11.2,
    "JUNTS": 3.8,
    "BILDU": 6.7,
    "PNV": 5.7,
-   "BNG": 1.6,
+   "BNG": 1.5,
    "CC": 1.1,
    "UPN": 2.3
   },
-  "bloque_S_media": 145.3,
+  "bloque_S_media": 145.4,
   "bloque_S_IC90": [
-   125,
+   126,
    166
   ],
   "P_bloque_S_ge_176": 0.009,
@@ -25,50 +25,49 @@
  },
  "B_CIS": {
   "escanos_medios": {
-   "PP": 91.9,
-   "PSOE": 152.6,
-   "VOX": 61.8,
-   "FA": 9.6,
-   "POD": 2.4,
+   "PP": 103.0,
+   "PSOE": 140.5,
+   "VOX": 64.1,
+   "FA": 11.2,
    "ERC": 11.2,
    "JUNTS": 3.8,
-   "BILDU": 6.4,
-   "PNV": 5.4,
-   "BNG": 1.7,
-   "CC": 1.2,
+   "BILDU": 6.3,
+   "PNV": 5.3,
+   "BNG": 1.6,
+   "CC": 1.1,
    "UPN": 2.0
   },
-  "bloque_S_media": 189.3,
+  "bloque_S_media": 176.0,
   "bloque_S_IC90": [
-   167,
-   213
+   154,
+   199
   ],
-  "P_bloque_S_ge_176": 0.837,
-  "P_PP_VOX_UPN_ge_176": 0.08,
-  "P_PP_VOX_UPN_JUNTS_ge_176": 0.129
+  "P_bloque_S_ge_176": 0.494,
+  "P_PP_VOX_UPN_ge_176": 0.327,
+  "P_PP_VOX_UPN_JUNTS_ge_176": 0.436
  },
  "C_fallo_como_2023": {
   "escanos_medios": {
    "PP": 122.0,
-   "PSOE": 123.5,
-   "VOX": 62.6,
-   "FA": 9.6,
+   "PSOE": 122.6,
+   "VOX": 62.9,
+   "FA": 10.6,
    "POD": 0.9,
    "ERC": 11.2,
    "JUNTS": 3.8,
    "BILDU": 6.4,
-   "PNV": 5.3,
-   "BNG": 1.4,
-   "CC": 1.1,
+   "PNV": 5.2,
+   "BNG": 1.3,
+   "CC": 1.0,
    "UPN": 2.1
   },
-  "bloque_S_media": 158.4,
+  "bloque_S_media": 158.2,
   "bloque_S_IC90": [
    138,
-   180
+   179
   ],
-  "P_bloque_S_ge_176": 0.088,
-  "P_PP_VOX_UPN_ge_176": 0.827,
-  "P_PP_VOX_UPN_JUNTS_ge_176": 0.886
+  "P_bloque_S_ge_176": 0.087,
+  "P_PP_VOX_UPN_ge_176": 0.831,
+  "P_PP_VOX_UPN_JUNTS_ge_176": 0.888
  }
 }

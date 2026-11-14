@@ -1,23 +1,50 @@
 {
- "datos_a": "2026-11-10",
- "campo": "21 oct-10 nov 2026",
+ "datos_a": "2026-11-12",
+ "campo": "21 oct-12 nov 2026",
  "n_encuestas": 16,
  "media": {
-  "PP": 31.1,
-  "PSOE": 27.0,
-  "VOX": 19.1,
-  "FA": 6.5,
+  "PP": 31.2,
+  "PSOE": 26.9,
+  "VOX": 19.2,
+  "FA": 6.9,
   "POD": 1.9
  },
  "encuestas": [
   {
+   "empresa": "40dB / Prisa",
+   "campo": "10-12 nov",
+   "PP": 31.5,
+   "PSOE": 29.4,
+   "VOX": 18.8,
+   "FA": 5.1,
+   "POD": 1.3
+  },
+  {
+   "empresa": "Sigma Dos / El Mundo",
+   "campo": "3-12 nov",
+   "PP": 31.0,
+   "PSOE": 25.4,
+   "VOX": 19.7,
+   "FA": 7.3,
+   "POD": 1.4
+  },
+  {
    "empresa": "SW Demoscopia / La Séptima",
-   "campo": "26 oct-10 nov",
-   "PP": 28.1,
-   "PSOE": 31.4,
-   "VOX": 17.5,
-   "FA": 7.4,
+   "campo": "26 oct-12 nov",
+   "PP": 28.5,
+   "PSOE": 31.6,
+   "VOX": 17.1,
+   "FA": 7.3,
    "POD": 1.7
+  },
+  {
+   "empresa": "Winston / Artículo14",
+   "campo": "5-8 nov",
+   "PP": 31.1,
+   "PSOE": 26.4,
+   "VOX": 18.7,
+   "FA": 8.4,
+   "POD": 1.6
   },
   {
    "empresa": "SocioMétrica / El Español",
@@ -25,7 +52,7 @@
    "PP": 32.0,
    "PSOE": 27.7,
    "VOX": 18.9,
-   "FA": 5.0,
+   "FA": 5.9,
    "POD": 1.2
   },
   {
@@ -36,15 +63,6 @@
    "VOX": 19.9,
    "FA": 8.1,
    "POD": 1.2
-  },
-  {
-   "empresa": "Sigma Dos / El Mundo",
-   "campo": "30 oct-6 nov",
-   "PP": 31.0,
-   "PSOE": 25.2,
-   "VOX": 19.4,
-   "FA": 6.9,
-   "POD": 1.6
   },
   {
    "empresa": "DYM / Henneo",
@@ -83,15 +101,6 @@
    "POD": 2.4
   },
   {
-   "empresa": "40dB / Prisa",
-   "campo": "2-4 nov",
-   "PP": 31.9,
-   "PSOE": 29.9,
-   "VOX": 18.0,
-   "FA": 3.9,
-   "POD": 1.2
-  },
-  {
    "empresa": "Sondaxe / La Voz de Galicia",
    "campo": "2-4 nov",
    "PP": 29.7,
@@ -115,7 +124,7 @@
    "PP": 31.4,
    "PSOE": 25.7,
    "VOX": 19.2,
-   "FA": 6.8,
+   "FA": 8.0,
    "POD": 1.9
   },
   {
@@ -144,15 +153,6 @@
    "VOX": 20.8,
    "FA": 7.8,
    "POD": 2.6
-  },
-  {
-   "empresa": "Winston / Artículo14",
-   "campo": "21-23 oct",
-   "PP": 29.4,
-   "PSOE": 27.1,
-   "VOX": 19.2,
-   "FA": 5.6,
-   "POD": null
   }
  ]
 }

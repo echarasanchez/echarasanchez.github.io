@@ -337,8 +337,8 @@ td[data-l]::before{display:none}
 </details>
 
 <footer>
-  <span>Base: resultado de 2023 por provincia, reparto de escaños de 2026, media de /*__N_ENC__*/ encuestas privadas recientes, CIS de octubre y CEO para Cataluña. 4.000 simulaciones por escenario. Fuera del bloque de investidura: PP, Vox, UPN y Junts (Junts se recomienda donde es lo más eficaz); CC cuenta como neutral.</span>
-  <span>Fuentes: Ministerio del Interior vía Wikipedia (resultados 2019 y 2023 por circunscripción); encuestas privadas, la última de cada empresa (/*__N_ENC__*/ sondeos, campo /*__CAMPO__*/: /*__LISTA_ENC__*/), vía Wikipedia y Demócrata; CIS barómetro de octubre 2026; CEO octubre 2026 (vía Ara); Diario de León y El Español (calendario y reparto de escaños).</span>
+  <span>Base: resultado de 2023 por provincia, reparto de escaños de 2026, media de /*__N_ENC__*/ encuestas privadas recientes, CIS preelectoral y CEO para Cataluña. 4.000 simulaciones por escenario. Fuera del bloque de investidura: PP, Vox, UPN y Junts (Junts se recomienda donde es lo más eficaz); CC cuenta como neutral.</span>
+  <span>Fuentes: Ministerio del Interior vía Wikipedia (resultados 2019 y 2023 por circunscripción); encuestas privadas, la última de cada empresa (/*__N_ENC__*/ sondeos, campo /*__CAMPO__*/: /*__LISTA_ENC__*/), vía Wikipedia y Demócrata; CIS preelectoral (estudio 3584, campo 7-30 oct 2026, publicado el 12-nov); CEO octubre 2026 (vía Ara); Diario de León y El Español (calendario y reparto de escaños).</span>
   <span>Modelo: swing proporcional con ajuste iterativo a la media nacional, ruido nacional, autonómico y provincial log-normal, D'Hondt con barrera del 3%.</span>
   <span>Código y datos: <a href="https://github.com/echarasanchez/echarasanchez.github.io" rel="noopener">github.com/echarasanchez/echarasanchez.github.io</a> (licencia MIT).</span>
 </footer>
@@ -366,7 +366,7 @@ const slug = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(
 // escenarios
 const SC = [['A_media_privadas','Media de /*__N_ENC__*/ encuestas privadas','/*__MEDIA_A__*/'],
             ['C_fallo_como_2023','Si fallan como en 2023','PSOE +3,4 · PP −1,3 · Vox −0,6'],
-            ['B_CIS','CIS de octubre','PSOE 34,0 · PP 22,2 · Vox 17,1']];
+            ['B_CIS','CIS preelectoral','PSOE 33,3 · PP 25,5 · Vox 18,4']];
 // Resumen compacto para la portada: los tres escenarios en barras, junto al mapa
 document.getElementById('mini').innerHTML = `<div class="minihead"><strong>España: escaños por bloque</strong><a href="#panorama" class="minilink">Detalle</a></div>` +
   SC.filter(([k]) => DATA.nac[k]).map(([k,t]) => {

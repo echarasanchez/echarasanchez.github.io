@@ -13,42 +13,45 @@ cat = (d.ccaa == 'CAT').values
 CAT_TARGETS = {'PSOE': 32, 'ERC': 19, 'PP': 12.5, 'VOX': 11, 'JUNTS': 8, 'FA': 5.5}
 
 # Fecha de corte de las encuestas de ENCUESTAS y CAT_TARGETS: es la que sale en la web («Datos a ...»). Cambiarla con ellas.
-DATOS_A = '2026-11-10'
+DATOS_A = '2026-11-12'
 
 # Media de encuestas privadas: la más reciente de cada empresa con campo terminado en las tres semanas anteriores a DATOS_A
-# (12-nov: desde el 20-oct; 16 sondeos: entra DYM/Henneo y la oleada de SW Demoscopia hasta el 10-nov. 9-nov: 15 sondeos: entran SW Demoscopia, GAD3, 40dB, Data10 y Celeste-Tel, y oleadas nuevas de SocioMétrica,
+# (14-nov: desde el 22-oct; 16 sondeos: oleadas nuevas de 40dB, Sigma Dos, SW Demoscopia y Winston. 12-nov: 16 sondeos: entra DYM/Henneo y la oleada de SW Demoscopia hasta el 10-nov. 9-nov: 15 sondeos: entran SW Demoscopia, GAD3, 40dB, Data10 y Celeste-Tel, y oleadas nuevas de SocioMétrica,
 # Sigma Dos, NC Report, Sondaxe, Ateneo del Dato e IMOP). Sin el CIS (escenario B), los paneles de agregadores (EM-Analytics) ni
 # los sondeos de partidos (PSOE, 25-oct; el de Vox que publicó The Objective, 27-oct).
-# Fuente: Wikipedia, «Opinion polling for the 2026 Spanish general election» (12-nov), contrastada con Demócrata y los medios.
+# Fuente: Wikipedia, «Opinion polling for the 2026 Spanish general election» (14-nov), contrastada con Demócrata y los medios.
 # PP sin UPN (9-nov): en Navarra la lista UPN-PP está en la columna UPN del modelo, así que donde Wikipedia da «PP + UPN» en sus
 # notas se toma solo el PP (SocioMétrica, SW, NC Report, Celeste-Tel, Hamalgama; ~0,3 puntos); donde no lo desglosa, la cifra publicada.
-# Frente Amplio con Compromís cuando la encuesta los da juntos. None: no lo publica; la media es de las que sí.
+# Frente Amplio siempre con Compromís (en el modelo, la lista de Compromís va en la columna FA): sumados cuando la encuesta los da
+# aparte (14-nov: SocioMétrica, 40dB y Celeste-Tel; antes solo FA en esas tres; GAD3 ya iba sumado). None: no lo publica; la media es de las que sí.
 #            empresa / medio                         campo               PP    PSOE  Vox   FA    Podemos
-ENCUESTAS = [('SW Demoscopia / La Séptima',          '26 oct-10 nov',    28.1, 31.4, 17.5, 7.4, 1.7),
-             ('SocioMétrica / El Español',           '1 sep-8 nov',      32.0, 27.7, 18.9, 5.0, 1.2),
+ENCUESTAS = [('40dB / Prisa',                        '10-12 nov',        31.5, 29.4, 18.8, 5.1, 1.3),
+             ('Sigma Dos / El Mundo',                '3-12 nov',         31.0, 25.4, 19.7, 7.3, 1.4),
+             ('SW Demoscopia / La Séptima',          '26 oct-12 nov',    28.5, 31.6, 17.1, 7.3, 1.7),
+             ('Winston / Artículo14',                '5-8 nov',          31.1, 26.4, 18.7, 8.4, 1.6),
+             ('SocioMétrica / El Español',           '1 sep-8 nov',      32.0, 27.7, 18.9, 5.9, 1.2),
              ('IMOP / El Confidencial',              '2-6 nov',          29.8, 25.9, 19.9, 8.1, 1.2),
-             ('Sigma Dos / El Mundo',                '30 oct-6 nov',     31.0, 25.2, 19.4, 6.9, 1.6),
              ('DYM / Henneo',                        '4-6 nov',          33.1, 27.3, 18.6, 5.6, 1.9),
              ('GAD3 / ABC',                          '3-5 nov',          31.9, 25.9, 18.6, 7.5, 1.4),
              ('Ateneo del Dato / elDiario.es',       '2-5 nov',          31.5, 28.6, 18.6, 6.1, 1.5),
              ('NC Report / La Razón',                '2-5 nov',          32.6, 25.6, 19.3, 6.9, 2.4),
-             ('40dB / Prisa',                        '2-4 nov',          31.9, 29.9, 18.0, 3.9, 1.2),
              ('Sondaxe / La Voz de Galicia',         '2-4 nov',          29.7, 27.3, 18.6, 7.1, 2.2),
              ('Data10 / OKDiario',                   '2-3 nov',          32.4, 24.7, 19.8, 6.9, 3.1),
-             ('Celeste-Tel / Onda Cero',             '29 oct-3 nov',     31.4, 25.7, 19.2, 6.8, 1.9),
+             ('Celeste-Tel / Onda Cero',             '29 oct-3 nov',     31.4, 25.7, 19.2, 8.0, 1.9),
              ('Target Point / El Debate',            '28-30 oct',        31.8, 25.5, 19.9, 6.6, 2.4),
              ('Hamalgama Métrica / Vozpópuli',       '22-28 oct',        32.0, 26.4, 19.9, 5.4, 2.2),
-             ('More in Common',                      '21-25 oct',        28.3, 27.6, 20.8, 7.8, 2.6),
-             ('Winston / Artículo14',                '21-23 oct',        29.4, 27.1, 19.2, 5.6, None)]
-CAMPO = '21 oct-10 nov 2026'   # trabajo de campo, de la última que termina antes a la última (sale en la web)
+             ('More in Common',                      '21-25 oct',        28.3, 27.6, 20.8, 7.8, 2.6)]
+CAMPO = '21 oct-12 nov 2026'   # trabajo de campo, de la última que termina antes a la última (sale en la web)
 media = {k: round(float(np.mean([e[i + 2] for e in ENCUESTAS if e[i + 2] is not None])), 1)
          for i, k in enumerate(['PP', 'PSOE', 'VOX', 'FA', 'POD'])}
 ERROR_2023 = {'PSOE': 3.4, 'PP': -1.3, 'VOX': -0.6}   # error medio de las encuestas finales de 2023
 
 SCENARIOS = {
     'A_media_privadas': {**media, 'SALF': 1.5},
-    # CIS octubre 2026 (campo 1-6 oct)
-    'B_CIS': {'PP': 22.2, 'PSOE': 34.0, 'VOX': 17.1, 'FA': 6.1, 'POD': 3.1, 'SALF': 1.5},
+    # CIS preelectoral (estudio 3584, campo 7-30 oct, N=45.074, publicado el 12-nov). FA = Frente Amplio 4,7 + Compromís 1,6
+    # + UPC 0,4 + Ara Més 0,2 (en el modelo van en la columna FA); Podemos, donde va solo (ERC-Podemos, 3,1, cuenta como ERC).
+    # Antes, el barómetro de octubre (3582, campo 1-6 oct): PP 22,2 · PSOE 34,0 · Vox 17,1 · FA 6,1 · Podemos 3,1.
+    'B_CIS': {'PP': 25.5, 'PSOE': 33.3, 'VOX': 18.4, 'FA': 6.9, 'POD': 1.1, 'SALF': 1.4},
     # A con el error medio de las encuestas finales de 2023. Solo para el panorama nacional.
     'C_fallo_como_2023': {**{k: round(v + ERROR_2023.get(k, 0), 1) for k, v in media.items()}, 'SALF': 1.5},
 }
