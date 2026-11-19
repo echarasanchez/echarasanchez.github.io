@@ -13,37 +13,39 @@ cat = (d.ccaa == 'CAT').values
 CAT_TARGETS = {'PSOE': 32, 'ERC': 19, 'PP': 12.5, 'VOX': 11, 'JUNTS': 8, 'FA': 5.5}
 
 # Fecha de corte de las encuestas de ENCUESTAS y CAT_TARGETS: es la que sale en la web («Datos a ...»). Cambiarla con ellas.
-DATOS_A = '2026-11-15'
+DATOS_A = '2026-11-18'
 
 # Media de encuestas privadas: la más reciente de cada empresa con campo terminado en las tres semanas anteriores a DATOS_A
-# (16-nov: desde el 25-oct; 17 sondeos: oleadas nuevas de 40dB, SocioMétrica, Sondaxe, SW, IMOP, Sigma Dos, Target Point, Data10 y
+# (19-nov: desde el 28-oct; 18 sondeos: oleadas nuevas de 40dB, Sondaxe, Sigma Dos y SW; entran Public First/Politico (15-17 nov)
+# e InvyMark/laSexta (9-13 nov); sale More in Common (21-25 oct). 16-nov: desde el 25-oct; 17 sondeos: oleadas nuevas de 40dB, SocioMétrica, Sondaxe, SW, IMOP, Sigma Dos, Target Point, Data10 y
 # NC Report (SW hasta el 15-nov; Sigma Dos, 11-14 nov), y entra YouGov/Ara (26 oct-2 nov, publicada el 14-nov). 14-nov: desde el 22-oct; 16 sondeos: oleadas nuevas de 40dB, Sigma Dos, SW Demoscopia y Winston. 12-nov: 16 sondeos: entra DYM/Henneo y la oleada de SW Demoscopia hasta el 10-nov. 9-nov: 15 sondeos: entran SW Demoscopia, GAD3, 40dB, Data10 y Celeste-Tel, y oleadas nuevas de SocioMétrica,
 # Sigma Dos, NC Report, Sondaxe, Ateneo del Dato e IMOP). Sin el CIS (escenario B), los paneles de agregadores (EM-Analytics) ni
 # los sondeos de partidos (PSOE, 25-oct; el de Vox que publicó The Objective, 27-oct).
-# Fuente: Wikipedia, «Opinion polling for the 2026 Spanish general election» (16-nov), contrastada con Demócrata y los medios.
+# Fuente: Wikipedia, «Opinion polling for the 2026 Spanish general election» (19-nov), contrastada con Demócrata y los medios.
 # PP sin UPN (9-nov): en Navarra la lista UPN-PP está en la columna UPN del modelo, así que donde Wikipedia da «PP + UPN» en sus
 # notas se toma solo el PP (SocioMétrica, SW, NC Report, Celeste-Tel, Hamalgama; ~0,3 puntos); donde no lo desglosa, la cifra publicada.
 # Frente Amplio siempre con Compromís (en el modelo, la lista de Compromís va en la columna FA): sumados cuando la encuesta los da
 # aparte (14-nov: SocioMétrica, 40dB y Celeste-Tel; antes solo FA en esas tres; GAD3 ya iba sumado). None: no lo publica; la media es de las que sí.
 #            empresa / medio                         campo               PP    PSOE  Vox   FA    Podemos
-ENCUESTAS = [('40dB / Prisa',                        '10-15 nov',        31.5, 30.3, 18.0, 5.4, 1.1),
-             ('SocioMétrica / El Español',           '1 sep-15 nov',     31.6, 27.8, 19.1, 6.0, 1.2),
-             ('Sondaxe / La Voz de Galicia',         '10-14 nov',        30.2, 26.7, 17.6, 7.9, 2.2),
-             ('SW Demoscopia / La Séptima',          '26 oct-15 nov',    28.6, 31.8, 16.8, 7.4, 1.7),
-             ('IMOP / El Confidencial',              '10-13 nov',        31.5, 26.9, 19.0, 6.9, 0.9),
-             ('Sigma Dos / El Mundo',                '11-14 nov',        30.8, 26.1, 19.8, 6.7, 1.4),
-             ('Target Point / El Debate',            '12 nov',           30.6, 27.0, 18.7, 7.3, 1.6),
-             ('Data10 / OKDiario',                   '11-12 nov',        31.7, 25.5, 20.4, 6.7, 2.1),
-             ('NC Report / La Razón',                '6-12 nov',         32.1, 26.1, 19.0, 7.6, 1.5),
-             ('Winston / Artículo14',                '5-8 nov',          31.1, 26.4, 18.7, 8.4, 1.6),
-             ('DYM / Henneo',                        '4-6 nov',          33.1, 27.3, 18.6, 5.6, 1.9),
-             ('GAD3 / ABC',                          '3-5 nov',          31.9, 25.9, 18.6, 7.5, 1.4),
-             ('Ateneo del Dato / elDiario.es',       '2-5 nov',          31.5, 28.6, 18.6, 6.1, 1.5),
-             ('Celeste-Tel / Onda Cero',             '29 oct-3 nov',     31.4, 25.7, 19.2, 8.0, 1.9),
-             ('YouGov / Ara',                        '26 oct-2 nov',     29.6, 25.9, 20.3, 9.2, 1.8),
-             ('Hamalgama Métrica / Vozpópuli',       '22-28 oct',        32.0, 26.4, 19.9, 5.4, 2.2),
-             ('More in Common',                      '21-25 oct',        28.3, 27.6, 20.8, 7.8, 2.6)]
-CAMPO = '21 oct-15 nov 2026'   # trabajo de campo, de la última que termina antes a la última (sale en la web)
+ENCUESTAS = [('40dB / Prisa',                      '14-18 nov',        32.4, 30.4, 17.2, 5.4, 1.2),
+             ('Public First / Politico',           '15-17 nov',        29.5, 27.2, 19.6, 5.9, 2.2),
+             ('Sondaxe / La Voz de Galicia',       '13-17 nov',        28.5, 27.8, 19.6, 7.1, 1.0),
+             ('Sigma Dos / El Mundo',              '11-17 nov',        30.7, 26.7, 19.7, 6.9, 0.8),
+             ('SW Demoscopia / La Séptima',        '26 oct-17 nov',    29.1, 31.9, 16.4, 7.3, 1.6),
+             ('SocioMétrica / El Español',         '1 sep-15 nov',     31.6, 27.8, 19.1, 6.0, 1.2),
+             ('IMOP / El Confidencial',            '10-13 nov',        31.5, 26.9, 19.0, 6.9, 0.9),
+             ('InvyMark / laSexta',                '9-13 nov',         32.2, 28.2, 19.1, 6.4, None),
+             ('Target Point / El Debate',          '12 nov',           30.6, 27.0, 18.7, 7.3, 1.6),
+             ('Data10 / OKDiario',                 '11-12 nov',        31.7, 25.5, 20.4, 6.7, 2.1),
+             ('NC Report / La Razón',              '6-12 nov',         32.1, 26.1, 19.0, 7.6, 1.5),
+             ('Winston / Artículo14',              '5-8 nov',          31.1, 26.4, 18.7, 8.4, 1.6),
+             ('DYM / Henneo',                      '4-6 nov',          33.1, 27.3, 18.6, 5.6, 1.9),
+             ('GAD3 / ABC',                        '3-5 nov',          31.9, 25.9, 18.6, 7.5, 1.4),
+             ('Ateneo del Dato / elDiario.es',     '2-5 nov',          31.5, 28.6, 18.6, 6.1, 1.5),
+             ('Celeste-Tel / Onda Cero',           '29 oct-3 nov',     31.4, 25.7, 19.2, 8.0, 1.9),
+             ('YouGov / Ara',                      '26 oct-2 nov',     29.6, 25.9, 20.3, 9.2, 1.8),
+             ('Hamalgama Métrica / Vozpópuli',     '22-28 oct',        32.0, 26.4, 19.9, 5.4, 2.2)]
+CAMPO = '22 oct-18 nov 2026'   # trabajo de campo, de la última que termina antes a la última (sale en la web)
 media = {k: round(float(np.mean([e[i + 2] for e in ENCUESTAS if e[i + 2] is not None])), 1)
          for i, k in enumerate(['PP', 'PSOE', 'VOX', 'FA', 'POD'])}
 ERROR_2023 = {'PSOE': 3.4, 'PP': -1.3, 'VOX': -0.6}   # error medio de las encuestas finales de 2023

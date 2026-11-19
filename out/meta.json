@@ -1,23 +1,59 @@
 {
- "datos_a": "2026-11-15",
- "campo": "21 oct-15 nov 2026",
- "n_encuestas": 17,
+ "datos_a": "2026-11-18",
+ "campo": "22 oct-18 nov 2026",
+ "n_encuestas": 18,
  "media": {
-  "PP": 31.0,
-  "PSOE": 27.2,
+  "PP": 31.1,
+  "PSOE": 27.3,
   "VOX": 19.0,
-  "FA": 7.1,
-  "POD": 1.7
+  "FA": 6.9,
+  "POD": 1.6
  },
  "encuestas": [
   {
    "empresa": "40dB / Prisa",
-   "campo": "10-15 nov",
-   "PP": 31.5,
-   "PSOE": 30.3,
-   "VOX": 18.0,
+   "campo": "14-18 nov",
+   "PP": 32.4,
+   "PSOE": 30.4,
+   "VOX": 17.2,
    "FA": 5.4,
-   "POD": 1.1
+   "POD": 1.2
+  },
+  {
+   "empresa": "Public First / Politico",
+   "campo": "15-17 nov",
+   "PP": 29.5,
+   "PSOE": 27.2,
+   "VOX": 19.6,
+   "FA": 5.9,
+   "POD": 2.2
+  },
+  {
+   "empresa": "Sondaxe / La Voz de Galicia",
+   "campo": "13-17 nov",
+   "PP": 28.5,
+   "PSOE": 27.8,
+   "VOX": 19.6,
+   "FA": 7.1,
+   "POD": 1.0
+  },
+  {
+   "empresa": "Sigma Dos / El Mundo",
+   "campo": "11-17 nov",
+   "PP": 30.7,
+   "PSOE": 26.7,
+   "VOX": 19.7,
+   "FA": 6.9,
+   "POD": 0.8
+  },
+  {
+   "empresa": "SW Demoscopia / La Séptima",
+   "campo": "26 oct-17 nov",
+   "PP": 29.1,
+   "PSOE": 31.9,
+   "VOX": 16.4,
+   "FA": 7.3,
+   "POD": 1.6
   },
   {
    "empresa": "SocioMétrica / El Español",
@@ -29,24 +65,6 @@
    "POD": 1.2
   },
   {
-   "empresa": "Sondaxe / La Voz de Galicia",
-   "campo": "10-14 nov",
-   "PP": 30.2,
-   "PSOE": 26.7,
-   "VOX": 17.6,
-   "FA": 7.9,
-   "POD": 2.2
-  },
-  {
-   "empresa": "SW Demoscopia / La Séptima",
-   "campo": "26 oct-15 nov",
-   "PP": 28.6,
-   "PSOE": 31.8,
-   "VOX": 16.8,
-   "FA": 7.4,
-   "POD": 1.7
-  },
-  {
    "empresa": "IMOP / El Confidencial",
    "campo": "10-13 nov",
    "PP": 31.5,
@@ -56,13 +74,13 @@
    "POD": 0.9
   },
   {
-   "empresa": "Sigma Dos / El Mundo",
-   "campo": "11-14 nov",
-   "PP": 30.8,
-   "PSOE": 26.1,
-   "VOX": 19.8,
-   "FA": 6.7,
-   "POD": 1.4
+   "empresa": "InvyMark / laSexta",
+   "campo": "9-13 nov",
+   "PP": 32.2,
+   "PSOE": 28.2,
+   "VOX": 19.1,
+   "FA": 6.4,
+   "POD": null
   },
   {
    "empresa": "Target Point / El Debate",
@@ -153,15 +171,6 @@
    "VOX": 19.9,
    "FA": 5.4,
    "POD": 2.2
-  },
-  {
-   "empresa": "More in Common",
-   "campo": "21-25 oct",
-   "PP": 28.3,
-   "PSOE": 27.6,
-   "VOX": 20.8,
-   "FA": 7.8,
-   "POD": 2.6
   }
  ]
 }
