@@ -61,6 +61,25 @@ def situacion(shares, seats, vpp, opciones, err={}, prov=''):
     pT, B, L = points_to_lose(shares, seats, max_pts=MAX)
     frases, hechas = [], set()
     bloques = []
+    # Barrera (20-nov, a raíz de Madrid: Podemos en el 3,0 %): si el escaño se pierde porque l cae por debajo del 3 %, cualquier voto a
+    # otro partido lo empuja y la cifra de votos (700) aparenta una precisión que las encuestas no tienen. Se explica la barrera, sin cifra,
+    # y con quien se lleva de verdad el escaño (no siempre el que suma: en Madrid, Vox también con votos al PP).
+    barrera = {}
+    for p, k, l in att:
+        if l is None or p > CERCA or sh(l) < 3 or sh(l) * 100 / (100 + p) >= 3: continue
+        y = shares.copy(); y[PARTIES.index(k)] += p; y = y / y.sum() * 100
+        s = dhondt(y, seats); w = [x for x in PARTIES if s[PARTIES.index(x)] > base[PARTIES.index(x)]]
+        barrera.setdefault(l, {'w': w[0] if w else k, 'p': p, 'ks': []})['ks'].append(k)
+    att_b = [(p, k, l) for p, k, l in att if l in barrera and k in barrera[l]['ks']]
+    att = [a for a in att if a not in att_b]
+    for l, b in barrera.items():
+        ks = [k for k in b['ks'] if k in opciones] or b['ks']; w = b['w']
+        t = (f'{cap(el(l))} está justo en el 3 % de los votos, el mínimo para entrar en el reparto de escaños (un {f"{sh(l):.1f}".replace(".", ",")} % con la '
+             f'media de encuestas), así que las encuestas no pueden decir si lo superará. Si se queda por debajo, pierde su '
+             f'{ordadj(n(l))} escaño, que iría {al(w)} (sería su {ordn(n(w) + 1)}). Cada voto a otro partido, también '
+             f'{lista([al(k) for k in ks])}, lo acerca a quedarse fuera.')
+        c = f'{cap(el(l))} está justo en el 3 %, el mínimo para tener escaño: cada voto {lista([al(k) for k in ks])} lo acerca a quedarse fuera.'
+        bloques.append((b['p'], t, set(b['ks']), {k: c for k in b['ks'] if k in opciones}))
     if att and att[0][0] <= CERCA:
         fr = [f'con unos {votos(p, vpp)} votos más, {el(k)} le quitaría {al(l)} su {ordadj(n(l))} escaño (sería el {ordn(n(k) + 1)} {de(k)})'
               for p, k, l in att]

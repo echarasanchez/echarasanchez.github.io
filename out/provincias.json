@@ -1737,8 +1737,8 @@
    "VOX": 8,
    "FA": 3
   },
-  "explicacion_corta": "Con unos 700 votos más, el PP le quitaría a Podemos su primer escaño. Con unos 700 votos más, Vox le quitaría a Podemos su primer escaño.",
-  "explicacion": "Con unos 700 votos más, el PP le quitaría a Podemos su primer escaño (sería el 17.º del PP). Con unos 700 votos más, Vox le quitaría a Podemos su primer escaño (sería el noveno de Vox).",
+  "explicacion_corta": "Podemos está justo en el 3 %, el mínimo para tener escaño: cada voto al PP o a Vox lo acerca a quedarse fuera.",
+  "explicacion": "Podemos está justo en el 3 % de los votos, el mínimo para entrar en el reparto de escaños (un 3,0 % con la media de encuestas), así que las encuestas no pueden decir si lo superará. Si se queda por debajo, pierde su primer escaño, que iría a Vox (sería su noveno). Cada voto a otro partido, también al PP o a Vox, lo acerca a quedarse fuera.",
   "valor_SALF_vs_mejor": 0.05,
   "senado": {
    "grupo": "normal",
