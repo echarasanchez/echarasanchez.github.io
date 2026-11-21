@@ -9,8 +9,14 @@ valid_votes = (w * 1000).round(-3)
 B = base_2026(d)
 cat = (d.ccaa == 'CAT').values
 
-# CEO (oct-2026) calibrado a escaños: PSC 19, ERC(+Podem) 11, Comuns 2, PP 6, Junts 4, Vox 6
-CAT_TARGETS = {'PSOE': 32, 'ERC': 19, 'PP': 12.5, 'VOX': 11, 'JUNTS': 8, 'FA': 5.5}
+# Calibrado (21-nov) a la media de escaños en Cataluña de las encuestas privadas con submuestra catalana y campo terminado en las
+# tres semanas anteriores a DATOS_A (SocioMétrica 15-nov, SW 15-nov, Sondaxe 13-nov, Sigma Dos 13-nov, YouGov/Ara 12-nov, GAD3 5-nov;
+# Wikipedia, «Sub-national opinion polling for the 2026 Spanish general election»; solo dan escaños, con horquilla se toma el punto medio):
+# PSC 17,3 · ERC(+Podem) 10,9 · PP 6,5 · Vox 6,2 · Junts 4,9 · Comuns 2,7. El modelo da 17,3 · 10,8 · 6,4 · 6,1 · 4,8 · 2,7 (escenario A).
+# Los porcentajes quedan cerca del voto del CEO (GESOP, 1 sep-5 oct: PSC 29,6 · ERC 19,0 · PP 13,1 · Vox 12,2 · Junts 10,3 · Comuns 6,0).
+# Antes (hasta el 20-nov): CEO de octubre calibrado a escaños, PSC 19, ERC 11, Comuns 2, PP 6, Junts 4, Vox 6:
+# {'PSOE': 32, 'ERC': 19, 'PP': 12.5, 'VOX': 11, 'JUNTS': 8, 'FA': 5.5}.
+CAT_TARGETS = {'PSOE': 30, 'ERC': 19, 'PP': 13, 'VOX': 12.5, 'JUNTS': 9.5, 'FA': 7.5}
 
 # Fecha de corte de las encuestas de ENCUESTAS y CAT_TARGETS: es la que sale en la web («Datos a ...»). Cambiarla con ellas.
 DATOS_A = '2026-11-18'
